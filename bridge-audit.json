@@ -4,9 +4,9 @@
   "plates": [
     {
       "file": "plate_1.gcode",
-      "bridge_segments": 5674,
-      "bridge_layers": 15,
-      "bridge_path_mm": 24111.07,
+      "bridge_segments": 5650,
+      "bridge_layers": 13,
+      "bridge_path_mm": 24120.07,
       "max_bridge_segment_mm": 18.7,
       "longest_segment": {
         "layer": 5,
@@ -23,8 +23,8 @@
       },
       "objects": {
         "04_Desktop_Feet_Set.stl": {
-          "bridge_segments": 1269,
-          "bridge_path_mm": 5400.97,
+          "bridge_segments": 1244,
+          "bridge_path_mm": 5408.13,
           "max_bridge_segment_mm": 18.7
         },
         "02_Rear_Spine_A.stl": {
@@ -38,19 +38,14 @@
           "max_bridge_segment_mm": 12.23
         },
         "06_Vent_Insert.stl": {
-          "bridge_segments": 354,
-          "bridge_path_mm": 935.91,
-          "max_bridge_segment_mm": 12.39
+          "bridge_segments": 356,
+          "bridge_path_mm": 937.76,
+          "max_bridge_segment_mm": 12.4
         },
         "05_Magnet_Keystone_Peg_Test.stl": {
           "bridge_segments": 179,
           "bridge_path_mm": 412.62,
           "max_bridge_segment_mm": 8.44
-        },
-        "01_Bay_Fit_Test.stl": {
-          "bridge_segments": 1,
-          "bridge_path_mm": 0.0,
-          "max_bridge_segment_mm": 0.0
         },
         "08_Rack_Ear_Test.stl": {
           "bridge_segments": 225,
@@ -58,7 +53,7 @@
           "max_bridge_segment_mm": 10.17
         },
         "10_Seam_Tower_Female_Test.stl": {
-          "bridge_segments": 110,
+          "bridge_segments": 109,
           "bridge_path_mm": 279.06,
           "max_bridge_segment_mm": 7.88
         },
@@ -66,6 +61,11 @@
           "bridge_segments": 45,
           "bridge_path_mm": 108.25,
           "max_bridge_segment_mm": 4.66
+        },
+        "01_Bay_Fit_Test.stl": {
+          "bridge_segments": 1,
+          "bridge_path_mm": 0.0,
+          "max_bridge_segment_mm": 0.0
         }
       }
     },

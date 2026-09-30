@@ -96,7 +96,15 @@ cartridge_detent_arm_len = 15.8;
 cartridge_detent_peak_y = 14.0;
 cartridge_detent_protrusion = 0.45;
 cartridge_detent_pocket_depth = 0.65;
-bay_fit_coupon_depth = 22.0;
+vent_cartridge_depth = bay_depth - 1.0;
+vent_runner_x = bay_clearance + 0.8;
+vent_runner_w = 3.0;
+vent_runner_floor_t = 1.8;
+vent_runner_h = 3.4;
+vent_chevron_w = 1.8;
+vent_chevron_start_y = vent_cartridge_depth - 36.0;
+vent_chevron_peak_y = vent_cartridge_depth - 3.0;
+bay_fit_coupon_depth = 50.0;
 uk_ultra_size = [137.0, 84.0, 34.0];
 uk_ultra_clearance = 1.20;
 
@@ -235,6 +243,22 @@ module cartridge_service_detents() {
                 [right_x - 0.2, detent_end_y]
             ]);
         }
+}
+
+module bay_guide_lips(
+    x,
+    z,
+    start_y = face_clearance_depth,
+    length = bay_depth - face_clearance_depth + front_thickness
+) {
+    guide_w = 0.65;
+
+    for (guide_x = [
+        x + bay_clearance,
+        x + bay_width - bay_clearance - guide_w
+    ])
+        translate([guide_x, start_y, z])
+            cube([guide_w, length, 2.4]);
 }
 
 module keystone_cutout_at(x, z = 13.7) {
@@ -733,7 +757,6 @@ function bay_x(index) = bay_start + index * (bay_width + bay_gap);
 module modular_bay_rails(index) {
     x = bay_x(index);
     rail_h = bay_opening_z - base_thickness;
-    guide_w = 0.65;
 
     for (rail_x = [x + 1, x + bay_width - 4])
         translate([rail_x, front_thickness, base_thickness])
@@ -747,20 +770,7 @@ module modular_bay_rails(index) {
         cube([bay_width - 2, 3, rail_h + 2]);
 
     // Long guide lips constrain the drawer after it enters the face opening.
-    for (guide_x = [
-        x + bay_clearance,
-        x + bay_width - bay_clearance - guide_w
-    ])
-        translate([
-            guide_x,
-            face_clearance_depth,
-            bay_opening_z
-        ])
-            cube([
-                guide_w,
-                bay_depth - face_clearance_depth + front_thickness,
-                2.4
-            ]);
+    bay_guide_lips(x, bay_opening_z);
 }
 
 module dual_pi_module(hand = "left") {
@@ -1070,6 +1080,8 @@ module pi_mount_review_cutaway(
 module vent_cartridge(installed = false) {
     flange_x = -1.25;
     flange_w = bay_width + 2.5;
+    runner_right_x = bay_width - vent_runner_x - vent_runner_w;
+    chevron_center_x = bay_width / 2;
 
     module geometry() {
         difference() {
@@ -1119,6 +1131,63 @@ module vent_cartridge(installed = false) {
                                         ]
                                     ]
                             );
+
+                // Two L-section runners engage the same floor tracks and guide
+                // lips as the Pi drawers without changing the face fit.
+                for (runner_x = [vent_runner_x, runner_right_x]) {
+                    translate([runner_x, 0, 0])
+                        cube([
+                            vent_runner_w,
+                            vent_cartridge_depth,
+                            vent_runner_floor_t
+                        ]);
+                    translate([
+                        runner_x
+                            + (
+                                runner_x == vent_runner_x
+                                    ? 0
+                                    : vent_runner_w - 1.2
+                            ),
+                        0,
+                        0
+                    ])
+                        cube([
+                            1.2,
+                            vent_cartridge_depth,
+                            vent_runner_h
+                        ]);
+                }
+
+                // A rear chevron ties both runners into a triangle. In the
+                // face-down print orientation each leg grows inward from a
+                // supported runner without a transverse bridge.
+                for (side = [-1, 1])
+                    hull() {
+                        translate([
+                            side < 0
+                                ? vent_runner_x + vent_runner_w - vent_chevron_w
+                                : runner_right_x,
+                            vent_chevron_start_y,
+                            0
+                        ])
+                            cube([
+                                vent_chevron_w,
+                                vent_chevron_w,
+                                vent_runner_floor_t
+                            ]);
+                        translate([
+                            chevron_center_x
+                                + side * vent_chevron_w / 2
+                                - vent_chevron_w / 2,
+                            vent_chevron_peak_y,
+                            0
+                        ])
+                            cube([
+                                vent_chevron_w,
+                                vent_chevron_w,
+                                vent_runner_floor_t
+                            ]);
+                    }
                 cartridge_service_detents();
             }
 
@@ -1373,20 +1442,46 @@ module rack_ear_fit_test_print() {
 }
 
 module bay_fit_test() {
-    difference() {
-        cube([
-            bay_width + 8,
-            bay_fit_coupon_depth,
-            bay_opening_h + 8
-        ]);
-        bay_face_cutout(4, 4);
-        bay_service_detent_pockets(4, 4);
+    union() {
+        difference() {
+            union() {
+                cube([
+                    bay_width + 8,
+                    6,
+                    bay_opening_h + 8
+                ]);
+                for (rail_x = [5, bay_width])
+                    translate([rail_x, 5.8, 0])
+                        cube([
+                            3,
+                            bay_fit_coupon_depth - 5.8,
+                            4
+                        ]);
+                for (side_x = [0, bay_width + 4])
+                    translate([side_x, 5.8, 12])
+                        cube([4, 16.2, 14]);
+            }
+            bay_face_cutout(4, 4);
+            translate([4, faceplate_chamfer, 4])
+                cube([
+                    bay_width,
+                    bay_fit_coupon_depth,
+                    bay_opening_h
+                ]);
+            bay_service_detent_pockets(4, 4);
+        }
+        bay_guide_lips(
+            4,
+            4,
+            face_clearance_depth,
+            bay_fit_coupon_depth - face_clearance_depth
+        );
     }
 }
 
 module bay_fit_test_print() {
-    translate([0, 0, bay_fit_coupon_depth])
-        rotate([-90, 0, 0])
+    translate([0, bay_opening_h + 8, 0])
+        rotate([90, 0, 0])
             bay_fit_test();
 }
 
@@ -1609,6 +1704,97 @@ module modular_bay_preview() {
         installed_pi_cartridges();
     dummy_bay_labels();
     dummy_pis();
+}
+
+module arrow_y(length = 18, diameter = 2.2) {
+    rotate([-90, 0, 0]) {
+        cylinder(d = diameter, h = length - 4);
+        translate([0, 0, length - 4])
+            cylinder(d1 = diameter * 2.2, d2 = 0, h = 4);
+    }
+}
+
+module vent_cutaway_chassis() {
+    difference() {
+        intersection() {
+            dual_pi_module("left");
+            translate([
+                bay_x(1) - 6,
+                -3,
+                0
+            ])
+                cube([
+                    bay_width + 12,
+                    82,
+                    panel_height
+                ]);
+        }
+        translate([
+            bay_x(1) + bay_width / 2,
+            8,
+            bay_opening_z + 8
+        ])
+            cube([
+                bay_width,
+                76,
+                panel_height
+            ]);
+    }
+}
+
+module vent_cartridge_cutaway_preview() {
+    state_spacing = bay_width + 34;
+
+    for (state = [0, 1])
+        translate([state * state_spacing, 0, 0]) {
+            color([0.55, 0.58, 0.64, 0.55])
+                vent_cutaway_chassis();
+
+            color(
+                state == 0
+                    ? [0.12, 0.48, 0.78]
+                    : [0.12, 0.62, 0.34]
+            )
+                translate([
+                    bay_x(1),
+                    state == 0 ? -25 : 0,
+                    bay_opening_z
+                ])
+                    vent_cartridge(true);
+
+            color(
+                state == 0
+                    ? [0.12, 0.70, 0.30]
+                    : [0.92, 0.42, 0.08]
+            )
+                translate([
+                    bay_x(1) + bay_width / 2,
+                    state == 0 ? -34 : -5,
+                    bay_opening_z + bay_opening_h + 4
+                ])
+                    if (state == 0)
+                        arrow_y(22);
+                    else
+                        rotate([180, 0, 0])
+                            arrow_y(18);
+
+            color([0.12, 0.13, 0.16])
+                translate([
+                    bay_x(1) + bay_width / 2,
+                    -8,
+                    bay_opening_z + bay_opening_h + 10
+                ])
+                    rotate([90, 0, 0])
+                        linear_extrude(height = 0.5)
+                            text(
+                                state == 0
+                                    ? "PUSH TO CLICK"
+                                    : "PULL EVENLY",
+                                size = 4,
+                                halign = "center",
+                                valign = "center"
+                            );
+        }
 }
 
 module dummy_front_label(label, center_x, front_y, center_z, size = 5) {
@@ -1901,6 +2087,8 @@ else if (part == "side_join_preview")
     side_join_preview();
 else if (part == "modular_bay_preview")
     modular_bay_preview();
+else if (part == "vent_cartridge_cutaway_preview")
+    vent_cartridge_cutaway_preview();
 else if (part == "rack_preview")
     rack_preview();
 else

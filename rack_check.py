@@ -31,8 +31,19 @@ PI_MAGNETIC_GAP_MM = 0.35
 PI_MAGNETIC_SKIN_MM = 0.30
 CARTRIDGE_DETENT_PROTRUSION_MM = 0.45
 CARTRIDGE_DETENT_POCKET_DEPTH_MM = 0.65
+CARTRIDGE_DETENT_DEPTH_RELIEF_MM = (
+    CARTRIDGE_DETENT_POCKET_DEPTH_MM - CARTRIDGE_DETENT_PROTRUSION_MM
+)
 CARTRIDGE_DETENT_SLOPE_RUN_MM = 11.2
 CARTRIDGE_DETENT_SLOPE_RISE_MM = 11.2
+VENT_FACE_WIDTH_MM = 64.5
+VENT_FACE_HEIGHT_MM = 30.0
+VENT_CARTRIDGE_DEPTH_MM = 111.0
+VENT_TRACK_ENGAGEMENT_MM = VENT_CARTRIDGE_DEPTH_MM - 34.0
+VENT_REAR_STOP_CLEARANCE_MM = 2.0
+VENT_RUNNER_SIDE_CLEARANCE_MM = 0.15
+BAY_FIT_COUPON_DEPTH_MM = 50.0
+BAY_FIT_COUPON_GUIDE_LENGTH_MM = BAY_FIT_COUPON_DEPTH_MM - 34.0
 
 left_center = OUTER_HOLE_CENTER_MM
 right_center = HALF_WIDTH_MM + (
@@ -64,6 +75,13 @@ assert isclose(
     CARTRIDGE_DETENT_SLOPE_RISE_MM,
     abs_tol=1e-9,
 )
+assert isclose(VENT_FACE_WIDTH_MM, 64.5, abs_tol=1e-9)
+assert isclose(VENT_FACE_HEIGHT_MM, 30.0, abs_tol=1e-9)
+assert isclose(VENT_TRACK_ENGAGEMENT_MM, 77.0, abs_tol=1e-9)
+assert isclose(VENT_REAR_STOP_CLEARANCE_MM, 2.0, abs_tol=1e-9)
+assert isclose(VENT_RUNNER_SIDE_CLEARANCE_MM, 0.15, abs_tol=1e-9)
+assert isclose(CARTRIDGE_DETENT_DEPTH_RELIEF_MM, 0.20, abs_tol=1e-9)
+assert isclose(BAY_FIT_COUPON_GUIDE_LENGTH_MM, 16.0, abs_tol=1e-9)
 
 print(f"Paired width: {RACK_WIDTH_MM:.2f} mm")
 print(f"Half width: {HALF_WIDTH_MM:.2f} mm")
@@ -104,5 +122,19 @@ print(
     "Cartridge service detent: "
     f"{CARTRIDGE_DETENT_PROTRUSION_MM:.2f} mm local engagement into "
     f"{CARTRIDGE_DETENT_POCKET_DEPTH_MM:.2f} mm pockets, "
+    f"{CARTRIDGE_DETENT_DEPTH_RELIEF_MM:.2f} mm depth relief, "
     "45-degree support-free spring rise"
+)
+print(
+    "Vent track-guided cartridge: "
+    f"{VENT_FACE_WIDTH_MM:.1f} x {VENT_FACE_HEIGHT_MM:.1f} mm face, "
+    f"{VENT_CARTRIDGE_DEPTH_MM:.1f} mm runners, "
+    f"{VENT_TRACK_ENGAGEMENT_MM:.1f} mm guide-lip engagement, "
+    f"{VENT_REAR_STOP_CLEARANCE_MM:.1f} mm rear reserve, "
+    f"{VENT_RUNNER_SIDE_CLEARANCE_MM:.2f} mm per-side guide clearance"
+)
+print(
+    "Bay fit coupon: "
+    f"{BAY_FIT_COUPON_DEPTH_MM:.1f} mm deep with "
+    f"{BAY_FIT_COUPON_GUIDE_LENGTH_MM:.1f} mm of common guide-lip geometry"
 )

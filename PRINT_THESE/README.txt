@@ -16,8 +16,8 @@ Fastest way to load everything:
 The project was prepared with an A1 0.4 mm nozzle, 0.20 mm layers, 4 walls,
 5 top layers, 4 bottom layers, 20% gyroid, no supports, no brim, and no skirt.
 
-Candidate total: 538.12 g PLA and 23h24m33s across six plates. Plate 1 is
-75.03 g / 3h03m57s and includes both rear spines, the vent, all four feet,
+Candidate total: 529.89 g PLA and 23h47m24s across six plates. Plate 1 is
+66.80 g / 3h26m46s and includes both rear spines, the vent, all four feet,
 the polarity key, and the required fit coupons.
 
 Exposed chassis and UK-Ultra cap corners use restrained 1.5 mm support-free
@@ -42,11 +42,20 @@ screw heads and the installed screw-head protrusion is measured. The current
 CAD assumes 1.60 mm protrusion, a 0.35 mm working gap, and a 0.30 mm insulating
 skin. The through-floor alternative remains review-only.
 
-The vent and Pi cartridges now click into paired service detents behind the
-front face. Push straight in until both sides click. Remove by gripping the
-projecting faceplate edges and pulling evenly; rear ramps cam the spring arms
-inward. The validated 62 x 30 mm friction opening is unchanged, and its 1.2 mm
-receiving chamfer seats the faceplate flush.
+The vent is now a lightweight full-depth cartridge rather than a shallow
+friction plate. Its proven 64.5 x 30 mm face is unchanged. Two 111 mm
+L-section runners engage the same chassis tracks as the Pi drawers for 77 mm,
+with 0.15 mm side clearance and 2.0 mm reserve before the rear stop. A light
+rear chevron prevents racking without blocking airflow. Print the cartridge
+face-down as exported; both chevron legs grow inward from supported runners.
+
+The vent and Pi cartridges click into paired service detents behind the front
+face. Their 0.65 mm pockets provide 0.20 mm relief beyond the 0.45 mm local
+engagement, so the detents retain without overconstraining the guide tracks.
+Push straight in until both sides click. Remove by gripping the projecting
+faceplate edges and pulling evenly; rear ramps cam the spring arms inward. The
+validated 62 x 30 mm opening is unchanged, and its 1.2 mm receiving chamfer
+seats the faceplate flush.
 
 All magnet pockets now use the same 6 x 2 mm disc magnets. A fully populated,
 reorderable desktop build with both Pi drawers uses 60 magnets: 36 for

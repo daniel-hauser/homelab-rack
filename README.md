@@ -43,7 +43,7 @@ design revisions.
 The six-plate project uses a Bambu Lab A1 with a 0.4 mm nozzle, 0.20 mm layers,
 four walls, five top layers, four bottom layers, 20% gyroid, no supports, no
 brim, and no skirt. The current magnetic-direction candidate estimate is
-**538.12 g**, **180.42200 m**, **433.96577 cm³**, and **23h24m33s** serial
+**529.89 g**, **177.66264 m**, **427.32874 cm³**, and **23h47m24s** serial
 printing time. Physical magnetic attraction remains a release gate.
 
 Bambu Studio reports a conservative “floating cantilever” warning on the four
@@ -88,6 +88,8 @@ feet are on the test-first plate.
 - Pi and vent faceplates: 1.2 mm chamfers.
 - Pi bay receiving lead-in: 1.2 mm deep at 45°, opening to 64.4 × 32.4 mm at
   the front while retaining the 62 × 30 mm friction opening behind it.
+- Vent cartridge: 111 mm L-section side runners with 77 mm of guide-lip
+  engagement and a light rear chevron that prevents racking.
 
 The magnetic direction remains release-gated until a loose 6 × 2 mm magnet
 strongly attracts all four lower screw heads. Its current physical assumptions
@@ -97,12 +99,23 @@ through-floor concept remains review-only because it requires replacement
 screws. Review CAD and the full measurement list are in
 [`REVIEW_ONLY\Pi_Mount_Alternatives`](REVIEW_ONLY/Pi_Mount_Alternatives).
 
-The vent and both Pi cartridges use paired cam-release spring detents. Their
-normal 61.2 × 29.2 mm insertion body and the proven 62 × 30 mm bay friction
-opening are unchanged. Push a cartridge straight in until both side detents
-click into recessed pockets behind the face; the 1.2 mm receiving chamfer lets
-the faceplate seat flush. To remove it, grip the projecting faceplate edges and
-pull evenly. The shallow rear ramps flex both detents inward without tools.
+The vent is a proper track-guided cartridge rather than a shallow friction
+plate. Its proven 64.5 × 30 mm face is unchanged. Two long L-section runners
+engage the same floor tracks and guide lips as the Pi drawers, with 0.15 mm
+side clearance and 2.0 mm reserve before the chassis rear stop. Two
+inward-rising rear chevron legs prevent racking while leaving the airflow path
+open. The cartridge prints face-down; each chevron leg grows from a supported
+runner and keeps the maximum slicer-classified bridge below 20 mm.
+
+The vent and both Pi cartridges share paired cam-release spring detents. The
+detent pockets have 0.20 mm more depth than the 0.45 mm engagement, so they
+provide pull-out retention without defining lateral alignment or
+overconstraining the guide tracks. Push straight in until both sides click and
+the receiving chamfer seats the faceplate flush. Remove by gripping the
+projecting faceplate edges and pulling evenly; the rear ramps flex both
+detents inward without tools.
+
+![Vent cartridge insertion and removal cutaway](renders/vent_cartridge_cutaway.png)
 
 Rack-stack magnets retain joints while printed pegs and keys carry lateral
 loads. The Pi magnets provide vertical retention only; their printed locators
@@ -147,7 +160,7 @@ Use one workflow for all OpenSCAD-derived release assets:
 .\export.ps1 -Mode Verify
 
 # Deliberately replace the 20 numbered STLs, 11 viewer meshes,
-# four canonical renders, and viewer estimate copy.
+# five canonical renders, and viewer estimate copy.
 .\export.ps1 -Mode Generate
 ```
 
@@ -157,7 +170,7 @@ Use one workflow for all OpenSCAD-derived release assets:
 - all ten `PRINT_THESE\TEST_FIRST` files using order-independent mesh hashes;
 - ten viewer production copies plus the viewer-only installed-feet model using
   the same geometry check;
-- the four canonical CAD renders byte-for-byte; and
+- the five canonical CAD renders byte-for-byte; and
 - `viewer\public\estimate.json` against `slicer\release\estimate.json`.
 
 The mesh hash ignores harmless STL facet ordering differences between

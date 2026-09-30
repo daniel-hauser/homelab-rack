@@ -128,19 +128,31 @@ $previews = @(
     @{ Part = 'desk_preview'; File = 'desk_preview_final.png' },
     @{ Part = 'rack_preview'; File = 'rack_preview_final.png' },
     @{ Part = 'side_join_preview'; File = 'side_join_preview.png' },
-    @{ Part = 'modular_bay_preview'; File = 'modular_bay_preview_final.png' }
+    @{ Part = 'modular_bay_preview'; File = 'modular_bay_preview_final.png' },
+    @{ Part = 'vent_cartridge_cutaway_preview'; File = 'vent_cartridge_cutaway.png' }
 )
 
 foreach ($preview in $previews) {
     $generated = Join-Path $work $preview.File
-    & $openScad `
-        -o $generated `
-        '--imgsize=1600,1000' `
-        '--viewall' `
-        '--autocenter' `
-        --colorscheme Tomorrow `
-        -D "part=`"$($preview.Part)`"" `
-        $source 2>&1 | Out-Host
+    if ($preview.Part -eq 'vent_cartridge_cutaway_preview') {
+        & $openScad `
+            -o $generated `
+            '--imgsize=1600,900' `
+            '--camera=160,35,15,65,0,25,330' `
+            '--projection=ortho' `
+            --colorscheme Tomorrow `
+            -D "part=`"$($preview.Part)`"" `
+            $source 2>&1 | Out-Host
+    } else {
+        & $openScad `
+            -o $generated `
+            '--imgsize=1600,1000' `
+            '--viewall' `
+            '--autocenter' `
+            --colorscheme Tomorrow `
+            -D "part=`"$($preview.Part)`"" `
+            $source 2>&1 | Out-Host
+    }
     if ($LASTEXITCODE -ne 0) {
         throw "OpenSCAD failed while rendering $($preview.Part)."
     }
@@ -151,4 +163,4 @@ Sync-Or-Verify `
     (Join-Path $root 'slicer\release\estimate.json') `
     'viewer\public\estimate.json'
 
-Write-Host "$Mode completed for 20 release STLs, 11 viewer meshes, 4 canonical renders, and viewer estimates."
+Write-Host "$Mode completed for 20 release STLs, 11 viewer meshes, 5 canonical renders, and viewer estimates."

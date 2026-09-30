@@ -334,30 +334,30 @@
       "warning_evidence": "",
       "bbox": {
         "depth": 30.000001907348633,
-        "height": 20.399999618530273,
+        "height": 113.4000015258789,
         "width": 64.5,
         "x": 95.75,
         "y": 113.00000762939453,
         "z": 0.0
       },
-      "triangle_count": 348,
-      "model_time_seconds": 1.434,
-      "total_time_seconds": 1.836,
-      "filament_grams": 7.596,
+      "triangle_count": 452,
+      "model_time_seconds": 3554,
+      "total_time_seconds": 3931,
+      "filament_grams": 9.86,
       "bridge": {
-        "bridge_segments": 353,
+        "bridge_segments": 355,
         "bridge_layers": 2,
-        "max_bridge_segment_mm": 12.39,
+        "max_bridge_segment_mm": 12.4,
         "longest_bridge": {
           "layer": 23,
           "object": "unknown",
-          "length_mm": 12.389775340981773,
+          "length_mm": 12.402187952131673,
           "start_mm": [
             156.827,
-            124.953
+            124.975
           ],
           "end_mm": [
-            149.489,
+            149.498,
             114.97
           ]
         }
@@ -368,7 +368,7 @@
         "size_mm": [
           64.5,
           30.0,
-          20.4
+          113.4
         ],
         "min_z_mm": 0.0,
         "a1_volume_ok": true
@@ -538,16 +538,16 @@
       "warning_evidence": "",
       "bbox": {
         "depth": 38.000003814697266,
-        "height": 22.0,
+        "height": 50.0,
         "width": 70.0,
         "x": 93.0,
         "y": 109.00000762939453,
         "z": 0.0
       },
-      "triangle_count": 72,
-      "model_time_seconds": 2.096,
-      "total_time_seconds": 2.498,
-      "filament_grams": 19.074,
+      "triangle_count": 172,
+      "model_time_seconds": 1964,
+      "total_time_seconds": 2342,
+      "filament_grams": 8.57,
       "bridge": {
         "bridge_segments": 0,
         "bridge_layers": 0,
@@ -560,7 +560,7 @@
         "size_mm": [
           70.0,
           38.0,
-          22.0
+          50.0
         ],
         "min_z_mm": 0.0,
         "a1_volume_ok": true
@@ -781,30 +781,30 @@
       "warning_evidence": "",
       "bbox": {
         "depth": 30.000001907348633,
-        "height": 20.399999618530273,
+        "height": 113.4000015258789,
         "width": 64.5,
         "x": 95.75,
         "y": 113.00000762939453,
         "z": 0.0
       },
-      "triangle_count": 348,
-      "model_time_seconds": 1.432,
-      "total_time_seconds": 1.834,
-      "filament_grams": 7.596,
+      "triangle_count": 452,
+      "model_time_seconds": 3530,
+      "total_time_seconds": 3907,
+      "filament_grams": 9.86,
       "bridge": {
-        "bridge_segments": 353,
+        "bridge_segments": 355,
         "bridge_layers": 2,
-        "max_bridge_segment_mm": 12.39,
+        "max_bridge_segment_mm": 12.4,
         "longest_bridge": {
           "layer": 23,
           "object": "unknown",
-          "length_mm": 12.389775340981773,
+          "length_mm": 12.402187952131673,
           "start_mm": [
             156.827,
-            124.953
+            124.975
           ],
           "end_mm": [
-            149.489,
+            149.498,
             114.97
           ]
         }
@@ -815,7 +815,7 @@
         "size_mm": [
           64.5,
           30.0,
-          20.4
+          113.4
         ],
         "min_z_mm": 0.0,
         "a1_volume_ok": true
