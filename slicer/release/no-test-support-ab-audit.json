@@ -1,0 +1,179 @@
+{
+  "analysis": "The long upper paths are 17.51-17.52 mm forward seam-side corner-cap bridges, not roofs over the UCG/USW device cavities. The actual seam towers are farther rearward and remain excluded.",
+  "supported_feature": "One reachable 7 x 7 mm manual support column under the forward seam-side top cap of the UCG chassis. The support starts on the internal bottom cap because build-plate-only support cannot reach the enclosed corner-post cavity.",
+  "usw_decision": "No support is generated on either USW. Their seam-side forward cap overlaps the 34 mm-deep keystone clearance, while the opposite cap is part of the rack-ear/slot region. Supporting either would violate protected functional geometry for a 17.52 mm bridge that already passes the native bridge gate.",
+  "explicit_exclusions": [
+    "stack magnet pockets",
+    "peg/socket interfaces",
+    "seam keys and seam towers",
+    "rack-ear slots",
+    "device rails",
+    "keystone openings",
+    "rear-spine interfaces",
+    "inaccessible rear corner cavities"
+  ],
+  "totals": {
+    "baseline_grams": 516.7,
+    "targeted_grams": 517.58,
+    "support_delta_grams": 0.88,
+    "baseline_seconds": 83216,
+    "targeted_seconds": 83599,
+    "support_delta_seconds": 383
+  },
+  "plates": [
+    {
+      "plate": 1,
+      "objects": [
+        "09_Rear_Spine_A.stl",
+        "01_UCG_Ultra.stl"
+      ],
+      "baseline": {
+        "grams": 115.06,
+        "seconds": 17305,
+        "warning_message": "It seems object 01_UCG_Ultra.stl has floating cantilever. Please re-orient the object or enable support generation.",
+        "maximum_bridge_mm": 17.51
+      },
+      "targeted": {
+        "grams": 115.94,
+        "seconds": 17683,
+        "warning_message": "",
+        "maximum_bridge_mm": 17.51,
+        "support_toolpaths": {
+          "segments": 1209,
+          "path_mm": 5986.18,
+          "layers": [
+            17,
+            317
+          ],
+          "bbox_mm": [
+            235.31,
+            57.37,
+            243.5,
+            67.2
+          ]
+        }
+      },
+      "delta": {
+        "grams": 0.88,
+        "seconds": 378
+      }
+    },
+    {
+      "plate": 2,
+      "objects": [
+        "10_Rear_Spine_B.stl",
+        "02_USW_Ultra_Left.stl"
+      ],
+      "baseline": {
+        "grams": 103.87,
+        "seconds": 16097,
+        "warning_message": "It seems object 02_USW_Ultra_Left.stl has floating regions. Please re-orient the object or enable support generation.",
+        "maximum_bridge_mm": 17.51
+      },
+      "targeted": {
+        "grams": 103.87,
+        "seconds": 16097,
+        "warning_message": "",
+        "maximum_bridge_mm": 17.51,
+        "support_toolpaths": {
+          "segments": 0,
+          "path_mm": 0,
+          "layers": [],
+          "bbox_mm": null
+        }
+      },
+      "delta": {
+        "grams": 0.0,
+        "seconds": 0
+      }
+    },
+    {
+      "plate": 3,
+      "objects": [
+        "07_Vent_Insert.stl",
+        "04_Dual_Pi_Chassis.stl"
+      ],
+      "baseline": {
+        "grams": 119.17,
+        "seconds": 20066,
+        "warning_message": "It seems object 04_Dual_Pi_Chassis.stl has floating cantilever. Please re-orient the object or enable support generation.",
+        "maximum_bridge_mm": 17.51
+      },
+      "targeted": {
+        "grams": 119.17,
+        "seconds": 20072,
+        "warning_message": "",
+        "maximum_bridge_mm": 17.51,
+        "support_toolpaths": {
+          "segments": 0,
+          "path_mm": 0,
+          "layers": [],
+          "bbox_mm": null
+        }
+      },
+      "delta": {
+        "grams": 0.0,
+        "seconds": 6
+      }
+    },
+    {
+      "plate": 4,
+      "objects": [
+        "03_USW_Ultra_Right.stl",
+        "06_Pi_Drawer_2.stl"
+      ],
+      "baseline": {
+        "grams": 110.65,
+        "seconds": 18181,
+        "warning_message": "It seems object 03_USW_Ultra_Right.stl has floating regions. Please re-orient the object or enable support generation.",
+        "maximum_bridge_mm": 17.52
+      },
+      "targeted": {
+        "grams": 110.65,
+        "seconds": 18181,
+        "warning_message": "",
+        "maximum_bridge_mm": 17.52,
+        "support_toolpaths": {
+          "segments": 0,
+          "path_mm": 0,
+          "layers": [],
+          "bbox_mm": null
+        }
+      },
+      "delta": {
+        "grams": 0.0,
+        "seconds": 0
+      }
+    },
+    {
+      "plate": 5,
+      "objects": [
+        "04_Desktop_Feet_Set.stl",
+        "08_UK_Ultra_Top.stl",
+        "05_Pi_Drawer_1.stl"
+      ],
+      "baseline": {
+        "grams": 67.95,
+        "seconds": 11567,
+        "warning_message": "",
+        "maximum_bridge_mm": 18.84
+      },
+      "targeted": {
+        "grams": 67.95,
+        "seconds": 11566,
+        "warning_message": "",
+        "maximum_bridge_mm": 18.84,
+        "support_toolpaths": {
+          "segments": 0,
+          "path_mm": 0,
+          "layers": [],
+          "bbox_mm": null
+        }
+      },
+      "delta": {
+        "grams": 0.0,
+        "seconds": -1
+      }
+    }
+  ]
+}

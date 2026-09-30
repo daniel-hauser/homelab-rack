@@ -9,7 +9,7 @@
       "bridge_path_mm": 13185.43,
       "max_bridge_segment_mm": 17.51,
       "longest_segment": {
-        "layer": 319,
+        "layer": 205,
         "object": "01_UCG_Ultra.stl",
         "length_mm": 17.51432787748363,
         "start_mm": [

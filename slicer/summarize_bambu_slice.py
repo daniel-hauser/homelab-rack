@@ -50,6 +50,9 @@ def main() -> None:
 
     plates = []
     with ZipFile(args.project) as archive:
+        project_settings = json.loads(
+            archive.read("Metadata/project_settings.config")
+        )
         for index, gcode in enumerate(
             sorted(args.production_dir.glob("plate_*.gcode")), start=1
         ):
@@ -95,11 +98,16 @@ def main() -> None:
         f"{total_seconds % 3600 // 60:02d}m"
         f"{total_seconds % 60:02d}s"
     )
+    support_label = (
+        "manual targeted normal supports / supports may start on model"
+        if project_settings.get("enable_support") == "1"
+        else "no support"
+    )
     report = {
         "profile": (
             "Bambu Studio 02.08.02.61 / A1 0.4 / 0.20 Standard / "
             "existing pinned filament profile / 4 walls / 5 top / "
-            "4 bottom / 20% gyroid / no support / no brim or skirt"
+            f"4 bottom / 20% gyroid / {support_label} / no brim or skirt"
         ),
         "plates": plates,
         "totals": totals,

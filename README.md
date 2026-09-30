@@ -19,8 +19,11 @@ vent insert, and a UK-Ultra top carrier.
 Open
 [`PRINT_THESE\homelab-rack-Bambu-Studio-5-plates-NO-TEST.3mf`](PRINT_THESE/homelab-rack-Bambu-Studio-5-plates-NO-TEST.3mf)
 or double-click `PRINT_THESE\OPEN_NO_TEST_PROJECT.cmd`. This is the optimized
-production project: five A1 visits, no coupons, no polarity key, and every
-final assembly object exactly once.
+production project: five A1 visits, no coupons, no polarity key, every final
+assembly object exactly once, and one deliberately small manual support.
+The optional
+[`homelab-rack-Bambu-Studio-5-plates-NO-TEST-NO-SUPPORT.3mf`](PRINT_THESE/homelab-rack-Bambu-Studio-5-plates-NO-TEST-NO-SUPPORT.3mf)
+preserves the native A/B baseline.
 
 The project deliberately includes the current
 `TEST_FIRST\04_Desktop_Feet_Set.stl`. The foot-to-stack peg and magnet geometry
@@ -36,8 +39,9 @@ included as final production objects.
 | 4 | right USW-Ultra module; Pi drawer 2 |
 | 5 | UK-Ultra top; Pi drawer 1; revised desktop feet set |
 
-The pinned native-Bambu estimate is **516.70 g**, **173.23944 m**,
-**416.68971 cm³**, and **23h06m56s** serial printing time. Five plates are the
+The recommended targeted-support estimate is **517.58 g**, **173.53468 m**,
+**417.39985 cm³**, and **23h13m19s** serial printing time. It adds **0.88 g**
+and **6m23s** over the no-support baseline. Five plates remain the
 geometric lower bound: the four chassis and the UK-Ultra top each have an
 axis-aligned footprint wider than 241 mm and deeper than 150 mm, so no two fit
 on one 256 × 256 mm A1 plate without overlap. Smaller parts occupy otherwise
@@ -84,9 +88,28 @@ first; if both seam-tower coupons are clean, keep automatic supports disabled
 for the production chassis because generated supports obstruct functional
 pockets and fill large open areas.
 
-The five-plate no-test project was sliced natively with the same pinned profile.
-Its maximum classified bridge is 18.84 mm, all objects remain inside the A1
-volume, and the only warnings are the same four explained chassis warnings.
+Native A/B slicing found no roof over the UCG or USW device cavities. The
+17.51–17.52 mm upper paths are forward seam-side corner-cap bridges; the
+seam-tower paths are shorter and farther rearward. The recommended project
+adds one reachable 7 × 7 mm manual support column beneath that cap on the UCG.
+It starts on the internal bottom cap because the
+enclosed corner-post cavity is not reachable from the build plate.
+
+The same seam-side location on each USW intersects its 34 mm-deep keystone
+clearance; the opposite cap is the rack-ear/slot region. Both USWs therefore
+remain unsupported rather than placing material in protected geometry for a
+17.52 mm bridge that already passes the native bridge gate.
+
+No support is generated around magnet pockets, peg/socket interfaces, seam
+keys or towers, rack-ear slots, device rails, keystone openings, rear-spine
+interfaces, or rear corner cavities. Support toolpath renders are under
+`renders\supports-no-test`. The maximum classified bridge remains 18.84 mm
+(the revised feet); supported chassis bridge lines remain classified as
+bridges because of the removable 0.2 mm support gap.
+
+Bambu clears the floating-region banner globally when manual support mode is
+enabled, including on plates with no support extrusion. The A/B audit therefore
+uses actual support toolpath segments—not warning disappearance—as its gate.
 
 ## Production STLs
 
@@ -293,7 +316,11 @@ The separated five-plate evidence is tracked in:
 
 - `slicer\release\no-test-estimate.json`
 - `slicer\release\no-test-bridge-audit.json`
+- `slicer\release\no-test-no-support-estimate.json`
+- `slicer\release\no-test-no-support-bridge-audit.json`
+- `slicer\release\no-test-support-ab-audit.json`
 - `renders\beds-no-test`
+- `renders\supports-no-test`
 
 ## Viewer
 

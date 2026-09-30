@@ -1,5 +1,5 @@
 {
-  "profile": "Bambu Studio 02.08.02.61 / A1 0.4 / 0.20 Standard / existing pinned filament profile / 4 walls / 5 top / 4 bottom / 20% gyroid / no support / no brim or skirt",
+  "profile": "Bambu Studio 02.08.02.61 / A1 0.4 / 0.20 Standard / existing pinned filament profile / 4 walls / 5 top / 4 bottom / 20% gyroid / manual targeted normal supports / supports may start on model / no brim or skirt",
   "plates": [
     {
       "plate": "plate_1",
@@ -7,13 +7,13 @@
         "09_Rear_Spine_A.stl",
         "01_UCG_Ultra.stl"
       ],
-      "model_time": "4h 42m 8s",
-      "total_time": "4h 48m 25s",
-      "seconds": 17305,
-      "g": 115.06,
-      "m": 38.57664,
-      "cm3": 92.78768,
-      "warning_message": "It seems object 01_UCG_Ultra.stl has floating cantilever. Please re-orient the object or enable support generation."
+      "model_time": "4h 48m 26s",
+      "total_time": "4h 54m 43s",
+      "seconds": 17683,
+      "g": 115.94,
+      "m": 38.87188,
+      "cm3": 93.49782,
+      "warning_message": ""
     },
     {
       "plate": "plate_2",
@@ -27,7 +27,7 @@
       "g": 103.87,
       "m": 34.82482,
       "cm3": 83.76352,
-      "warning_message": "It seems object 02_USW_Ultra_Left.stl has floating regions. Please re-orient the object or enable support generation."
+      "warning_message": ""
     },
     {
       "plate": "plate_3",
@@ -35,13 +35,13 @@
         "07_Vent_Insert.stl",
         "04_Dual_Pi_Chassis.stl"
       ],
-      "model_time": "5h 28m 9s",
-      "total_time": "5h 34m 26s",
-      "seconds": 20066,
+      "model_time": "5h 28m 15s",
+      "total_time": "5h 34m 32s",
+      "seconds": 20072,
       "g": 119.17,
       "m": 39.955870000000004,
       "cm3": 96.10514,
-      "warning_message": "It seems object 04_Dual_Pi_Chassis.stl has floating cantilever. Please re-orient the object or enable support generation."
+      "warning_message": ""
     },
     {
       "plate": "plate_4",
@@ -55,7 +55,7 @@
       "g": 110.65,
       "m": 37.0998,
       "cm3": 89.23549,
-      "warning_message": "It seems object 03_USW_Ultra_Right.stl has floating regions. Please re-orient the object or enable support generation."
+      "warning_message": ""
     },
     {
       "plate": "plate_5",
@@ -64,9 +64,9 @@
         "08_UK_Ultra_Top.stl",
         "05_Pi_Drawer_1.stl"
       ],
-      "model_time": "3h 6m 31s",
-      "total_time": "3h 12m 47s",
-      "seconds": 11567,
+      "model_time": "3h 6m 29s",
+      "total_time": "3h 12m 46s",
+      "seconds": 11566,
       "g": 67.95,
       "m": 22.782310000000003,
       "cm3": 54.79788,
@@ -75,10 +75,10 @@
   ],
   "totals": {
     "beds": 5,
-    "grams": 516.7,
-    "length_m": 173.23944,
-    "volume_cm3": 416.68971,
-    "serial_seconds": 83216,
-    "serial_time": "23h06m56s"
+    "grams": 517.58,
+    "length_m": 173.53468,
+    "volume_cm3": 417.39985,
+    "serial_seconds": 83599,
+    "serial_time": "23h13m19s"
   }
 }
