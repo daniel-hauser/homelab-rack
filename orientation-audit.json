@@ -87,7 +87,7 @@
       "size_mm": [
         64.5,
         30.0,
-        5.4
+        20.4
       ],
       "min_z_mm": 0.0,
       "a1_volume_ok": true,
@@ -139,7 +139,7 @@
       "size_mm": [
         70.0,
         38.0,
-        8.0
+        22.0
       ],
       "min_z_mm": 0.0,
       "a1_volume_ok": true,
@@ -204,7 +204,7 @@
       "size_mm": [
         64.5,
         30.0,
-        5.4
+        20.4
       ],
       "min_z_mm": 0.0,
       "a1_volume_ok": true,

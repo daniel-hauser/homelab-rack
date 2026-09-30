@@ -14,7 +14,7 @@ of PLA to production plates 2-6:
 - Reinforced side tower, diamond key, and matching socket
 - Rack-ear slots
 - Keystone cutout
-- Pi-bay opening and removable vent insert
+- Pi-bay opening, receiving chamfer, service detents, and removable vent
 - Four removable desktop feet with optional 16 mm felt/rubber-pad recesses
 - "UP" magnet polarity reference key
 

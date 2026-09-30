@@ -16,8 +16,8 @@ Fastest way to load everything:
 The project was prepared with an A1 0.4 mm nozzle, 0.20 mm layers, 4 walls,
 5 top layers, 4 bottom layers, 20% gyroid, no supports, no brim, and no skirt.
 
-Expected total: 527.96 g PLA and 23h03m33s across six plates. Plate 1 is
-62.82 g / 2h43m07s and includes both rear spines, the vent, all four feet,
+Candidate total: 538.12 g PLA and 23h24m33s across six plates. Plate 1 is
+75.03 g / 3h03m57s and includes both rear spines, the vent, all four feet,
 the polarity key, and the required fit coupons.
 
 Exposed chassis and UK-Ultra cap corners use restrained 1.5 mm support-free
@@ -35,17 +35,24 @@ The two rear-spine STL files are intentionally identical: print one of each.
 The rack-ear profile visually matches existing rack hardware and retains the
 validated 482.60 mm outer width and 465.10 mm mounting centers.
 
-Pi mounting is awaiting physical selection between review-only magnetic and
-through-floor concepts. The packaged drawer retains the current through-floor
-fallback geometry, but do not select replacement hardware until measuring the
-installed screw and female-standoff thread depth. The required under-head
-length increase is exactly the 1.20 mm local printed floor stack; no purchased
-screw length is yet specified. See REVIEW_ONLY\Pi_Mount_Alternatives.
+The Pi drawers use four 6 x 2 mm magnet pockets beneath the existing lower
+screw heads, with printed side/corner locators carrying shear. Do not release
+or install this direction until a loose magnet strongly attracts all four
+screw heads and the installed screw-head protrusion is measured. The current
+CAD assumes 1.60 mm protrusion, a 0.35 mm working gap, and a 0.30 mm insulating
+skin. The through-floor alternative remains review-only.
+
+The vent and Pi cartridges now click into paired service detents behind the
+front face. Push straight in until both sides click. Remove by gripping the
+projecting faceplate edges and pulling evenly; rear ramps cam the spring arms
+inward. The validated 62 x 30 mm friction opening is unchanged, and its 1.2 mm
+receiving chamfer seats the faceplate flush.
 
 All magnet pockets now use the same 6 x 2 mm disc magnets. A fully populated,
-reorderable desktop build uses 52 magnets: 36 for module/cap stacking and
-16 for the two rear spines and their module-side mating pockets. Side-seam
-magnets are only needed later when pairing halves in a 19-inch rack.
+reorderable desktop build with both Pi drawers uses 60 magnets: 36 for
+module/cap stacking, 16 for the two rear spines and their module-side mating
+pockets, and 8 for Pi retention. Side-seam magnets are only needed later when
+pairing halves in a 19-inch rack.
 
 The six-plate project was validated and sliced natively with Bambu Studio
 02.08.02.61. Its skeleton and skin line widths are explicit millimetre values,
@@ -61,8 +68,8 @@ keep supports disabled for the full-height production chassis if its
 seam-tower coupons print cleanly.
 
 The redesigned Pi drawers, vent insert, and UK-Ultra top slice without
-warnings. Their independently measured maximum bridge spans are 6.41 mm,
-12.89 mm, and 16.76 mm respectively.
+warnings. Their independently measured maximum bridge spans are 6.39 mm,
+12.39 mm, and 16.76 mm respectively.
 
 Plate 1 is explicitly axis-aligned rather than automatically rotated. Its
 maximum bridge is 18.70 mm, with 8.44 mm on the fit coupon, no bridge paths on

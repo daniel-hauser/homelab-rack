@@ -42,8 +42,9 @@ design revisions.
 
 The six-plate project uses a Bambu Lab A1 with a 0.4 mm nozzle, 0.20 mm layers,
 four walls, five top layers, four bottom layers, 20% gyroid, no supports, no
-brim, and no skirt. The validated estimate is **527.96 g**, **177.01742 m**,
-**425.77681 cm³**, and **23h03m33s** serial printing time.
+brim, and no skirt. The current magnetic-direction candidate estimate is
+**538.12 g**, **180.42200 m**, **433.96577 cm³**, and **23h24m33s** serial
+printing time. Physical magnetic attraction remains a release gate.
 
 Bambu Studio reports a conservative “floating cantilever” warning on the four
 full-height chassis. Their maximum measured bridge is 13.79 mm. Print plate 1
@@ -81,26 +82,32 @@ feet are on the test-first plate.
 - Side joining: tapered diamond keys in reinforced seam towers.
 - Paired seam: 0.0 mm designed face gap with 1.5 mm socket-depth reserve.
 - Desktop stabilization: two removable rear spines and four removable feet.
-- Pi mounting: magnetic and through-floor concepts are under physical review;
-  neither review-only alternative is selected as production-final.
+- Pi mounting direction: four 6 × 2 mm magnets beneath the existing exposed
+  lower screw heads, with printed side/corner locators carrying shear.
 - Exposed chassis/top corners: 1.5 mm support-free chamfers.
 - Pi and vent faceplates: 1.2 mm chamfers.
 - Pi bay receiving lead-in: 1.2 mm deep at 45°, opening to 64.4 × 32.4 mm at
   the front while retaining the 62 × 30 mm friction opening behind it.
 
-The through-floor fallback adds exactly **1.20 mm** of printed material below
-the Pi PCB. Its replacement screw therefore needs an under-head length equal
-to the measured existing screw length plus 1.20 mm, while retaining the same
-thread and head type. Do not select a purchased length until the existing
-screw and usable female-standoff thread depth are measured. The magnetic
-alternative additionally requires physical confirmation that all four lower
-screw heads strongly attract a loose 6 × 2 mm magnet. Review CAD and the full
-measurement list are in
+The magnetic direction remains release-gated until a loose 6 × 2 mm magnet
+strongly attracts all four lower screw heads. Its current physical assumptions
+are a 1.60 mm screw-head protrusion, 0.35 mm working gap, and 0.30 mm printed
+insulating skin; measure the installed stack before final release. The
+through-floor concept remains review-only because it requires replacement
+screws. Review CAD and the full measurement list are in
 [`REVIEW_ONLY\Pi_Mount_Alternatives`](REVIEW_ONLY/Pi_Mount_Alternatives).
 
-Magnets retain joints but are not structural. Printed pegs and keys carry
-lateral loads. A 19-inch installation still requires normal rack screws and
-cage nuts. The UK-Ultra carrier assumes the OEM keyed backplate/cradle remains
+The vent and both Pi cartridges use paired cam-release spring detents. Their
+normal 61.2 × 29.2 mm insertion body and the proven 62 × 30 mm bay friction
+opening are unchanged. Push a cartridge straight in until both side detents
+click into recessed pockets behind the face; the 1.2 mm receiving chamfer lets
+the faceplate seat flush. To remove it, grip the projecting faceplate edges and
+pull evenly. The shallow rear ramps flex both detents inward without tools.
+
+Rack-stack magnets retain joints while printed pegs and keys carry lateral
+loads. The Pi magnets provide vertical retention only; their printed locators
+carry shear. A 19-inch installation still requires normal rack screws and cage
+nuts. The UK-Ultra carrier assumes the OEM keyed backplate/cradle remains
 attached.
 
 Run the analytical checks before changing structural parameters:

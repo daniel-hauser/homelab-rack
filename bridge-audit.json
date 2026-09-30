@@ -4,9 +4,9 @@
   "plates": [
     {
       "file": "plate_1.gcode",
-      "bridge_segments": 5901,
+      "bridge_segments": 5674,
       "bridge_layers": 15,
-      "bridge_path_mm": 24636.55,
+      "bridge_path_mm": 24111.07,
       "max_bridge_segment_mm": 18.7,
       "longest_segment": {
         "layer": 5,
@@ -38,9 +38,9 @@
           "max_bridge_segment_mm": 12.23
         },
         "06_Vent_Insert.stl": {
-          "bridge_segments": 581,
-          "bridge_path_mm": 1461.4,
-          "max_bridge_segment_mm": 12.89
+          "bridge_segments": 354,
+          "bridge_path_mm": 935.91,
+          "max_bridge_segment_mm": 12.39
         },
         "05_Magnet_Keystone_Peg_Test.stl": {
           "bridge_segments": 179,
@@ -152,9 +152,9 @@
     },
     {
       "file": "plate_5.gcode",
-      "bridge_segments": 1998,
-      "bridge_layers": 24,
-      "bridge_path_mm": 5016.93,
+      "bridge_segments": 2161,
+      "bridge_layers": 25,
+      "bridge_path_mm": 5182.56,
       "max_bridge_segment_mm": 13.79,
       "longest_segment": {
         "layer": 205,
@@ -171,22 +171,22 @@
       },
       "objects": {
         "03_USW_Ultra_Right.stl": {
-          "bridge_segments": 1716,
+          "bridge_segments": 1715,
           "bridge_path_mm": 4136.19,
           "max_bridge_segment_mm": 13.79
         },
         "06_Pi_Drawer_2.stl": {
-          "bridge_segments": 282,
-          "bridge_path_mm": 880.74,
-          "max_bridge_segment_mm": 6.82
+          "bridge_segments": 446,
+          "bridge_path_mm": 1046.36,
+          "max_bridge_segment_mm": 6.33
         }
       }
     },
     {
       "file": "plate_6.gcode",
-      "bridge_segments": 970,
+      "bridge_segments": 1133,
       "bridge_layers": 5,
-      "bridge_path_mm": 3067.28,
+      "bridge_path_mm": 3232.9,
       "max_bridge_segment_mm": 16.76,
       "longest_segment": {
         "layer": 16,
@@ -203,14 +203,14 @@
       },
       "objects": {
         "08_UK_Ultra_Top.stl": {
-          "bridge_segments": 690,
+          "bridge_segments": 689,
           "bridge_path_mm": 2186.62,
           "max_bridge_segment_mm": 16.76
         },
         "05_Pi_Drawer_1.stl": {
-          "bridge_segments": 280,
-          "bridge_path_mm": 880.66,
-          "max_bridge_segment_mm": 6.82
+          "bridge_segments": 444,
+          "bridge_path_mm": 1046.28,
+          "max_bridge_segment_mm": 6.33
         }
       }
     }

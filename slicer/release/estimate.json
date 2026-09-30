@@ -15,12 +15,12 @@
         "09_Seam_Tower_Male_Test.stl",
         "10_Seam_Tower_Female_Test.stl"
       ],
-      "model_time": "2h 36m 50s",
-      "total_time": "2h 43m 7s",
-      "seconds": 9787,
-      "g": 62.82,
-      "m": 21.06392,
-      "cm3": 50.66466,
+      "model_time": "2h 57m 40s",
+      "total_time": "3h 3m 57s",
+      "seconds": 11037,
+      "g": 75.03,
+      "m": 25.15542,
+      "cm3": 60.50588,
       "warning_message": ""
     },
     {
@@ -54,9 +54,9 @@
       "objects": [
         "04_Dual_Pi_Chassis.stl"
       ],
-      "model_time": "4h 22m 39s",
-      "total_time": "4h 28m 56s",
-      "seconds": 16136,
+      "model_time": "4h 22m 38s",
+      "total_time": "4h 28m 55s",
+      "seconds": 16135,
       "g": 105.01,
       "m": 35.20835,
       "cm3": 84.68601,
@@ -68,12 +68,12 @@
         "03_USW_Ultra_Right.stl",
         "06_Pi_Drawer_2.stl"
       ],
-      "model_time": "4h 46m 0s",
-      "total_time": "4h 52m 17s",
-      "seconds": 17537,
-      "g": 108.11,
-      "m": 36.24867,
-      "cm3": 87.18827,
+      "model_time": "4h 46m 8s",
+      "total_time": "4h 52m 25s",
+      "seconds": 17545,
+      "g": 107.09,
+      "m": 35.90521,
+      "cm3": 86.36214,
       "warning_message": "It seems object 03_USW_Ultra_Right.stl has floating cantilever. Please re-orient the object or enable support generation."
     },
     {
@@ -82,12 +82,12 @@
         "08_UK_Ultra_Top.stl",
         "05_Pi_Drawer_1.stl"
       ],
-      "model_time": "2h 39m 52s",
-      "total_time": "2h 46m 9s",
-      "seconds": 9969,
-      "g": 59.09,
-      "m": 19.81105,
-      "cm3": 47.65117,
+      "model_time": "2h 39m 55s",
+      "total_time": "2h 46m 12s",
+      "seconds": 9972,
+      "g": 58.06,
+      "m": 19.46759,
+      "cm3": 46.82504,
       "warning_message": ""
     }
   ],
@@ -95,11 +95,11 @@
     "beds": 6,
     "test_beds": 1,
     "production_beds": 5,
-    "grams": 527.96,
-    "production_grams": 465.14,
-    "length_m": 177.01742,
-    "volume_cm3": 425.77681,
-    "serial_seconds": 83013,
-    "serial_time": "23h 3m 33s"
+    "grams": 538.12,
+    "production_grams": 463.09,
+    "length_m": 180.422,
+    "volume_cm3": 433.96577,
+    "serial_seconds": 84273,
+    "serial_time": "23h 24m 33s"
   }
 }

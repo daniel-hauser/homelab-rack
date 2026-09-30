@@ -22,6 +22,11 @@ if (-not $openScad) {
     throw 'OpenSCAD was not found. Install OpenSCAD 2021.01, then rerun this script.'
 }
 
+$openScadConsole = [IO.Path]::ChangeExtension($openScad, '.com')
+if (Test-Path $openScadConsole) {
+    $openScad = $openScadConsole
+}
+
 $version = (& $openScad --version 2>&1 | Out-String).Trim()
 if ($version -notmatch '2021\.01') {
     throw "This release is pinned to OpenSCAD 2021.01; found: $version"
@@ -32,6 +37,9 @@ $source = Join-Path $root 'homelab_rack.scad'
 $work = Join-Path $root 'out\release-work'
 $renders = Join-Path $root 'renders'
 $viewerModels = Join-Path $root 'viewer\public\models'
+if (Test-Path $work) {
+    Remove-Item -Recurse -Force $work
+}
 New-Item -ItemType Directory -Force -Path $work, $renders, $viewerModels | Out-Null
 
 $artifacts = @(

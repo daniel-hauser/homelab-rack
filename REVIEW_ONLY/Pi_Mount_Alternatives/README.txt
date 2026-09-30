@@ -1,11 +1,12 @@
 PI MOUNT ALTERNATIVES - REVIEW ONLY
 ===================================
 
-These files compare two unselected Raspberry Pi 5 retention concepts. They
-are not production release files and are intentionally excluded from
-PRINT_THESE, the six-plate Bambu project, release estimates, and audits.
+These files document the selected magnetic Raspberry Pi 5 mounting direction
+and its through-floor fallback. The magnetic direction remains physically
+gated and is not final until all four screw heads pass the attraction test and
+the installed screw-head height is measured.
 
-A_Magnetic_Cradle_Review.stl
+A_Magnetic_Cradle_Review.stl - selected direction, physically gated
   Four 6 x 2 mm magnet glue pockets align to the accessible lower screw heads
   on the official 58 x 49 mm Pi pattern. A provisional 0.30 mm printed
   insulating skin separates each magnet from the screw-head recess. Four side
@@ -25,7 +26,7 @@ A_Magnetic_Cradle_Review.stl
   the same pole facing the PCB for consistency. Do not use this option until
   all four screw heads show strong attraction to a loose 6 x 2 mm magnet.
 
-B_Through_Floor_M2.5_Review.stl
+B_Through_Floor_M2.5_Review.stl - review fallback only
   Four M2.5 clearance holes and recessed head counterbores align to the same
   58 x 49 mm pattern. The replacement screw passes through the 1.20 mm local
   printed shoulder, the Pi PCB, and into the existing female HAT standoff.

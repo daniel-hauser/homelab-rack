@@ -24,6 +24,11 @@ if (-not $openScad) {
     throw 'OpenSCAD was not found.'
 }
 
+$openScadConsole = [IO.Path]::ChangeExtension($openScad, '.com')
+if (Test-Path $openScadConsole) {
+    $openScad = $openScadConsole
+}
+
 $exports = @(
     @{
         Part = 'pi_mount_review_magnetic_stl'

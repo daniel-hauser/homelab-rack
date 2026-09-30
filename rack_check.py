@@ -26,6 +26,13 @@ BAY_FRONT_HEIGHT_MM = BAY_OPENING_HEIGHT_MM + 2 * BAY_RECEIVING_CHAMFER_MM
 PI_DRAWER_SHOULDER_MM = 1.2
 PI_PCB_THICKNESS_MM = 1.6
 PI_REPLACEMENT_SCREW_DELTA_MM = PI_DRAWER_SHOULDER_MM
+PI_MAGNETIC_HEAD_PROTRUSION_MM = 1.6
+PI_MAGNETIC_GAP_MM = 0.35
+PI_MAGNETIC_SKIN_MM = 0.30
+CARTRIDGE_DETENT_PROTRUSION_MM = 0.45
+CARTRIDGE_DETENT_POCKET_DEPTH_MM = 0.65
+CARTRIDGE_DETENT_SLOPE_RUN_MM = 11.2
+CARTRIDGE_DETENT_SLOPE_RISE_MM = 11.2
 
 left_center = OUTER_HOLE_CENTER_MM
 right_center = HALF_WIDTH_MM + (
@@ -52,6 +59,11 @@ assert isclose(SIDE_SOCKET_AXIAL_RESERVE_MM, 1.5, abs_tol=1e-9)
 assert isclose(BAY_FRONT_WIDTH_MM, 64.4, abs_tol=1e-9)
 assert isclose(BAY_FRONT_HEIGHT_MM, 32.4, abs_tol=1e-9)
 assert isclose(PI_REPLACEMENT_SCREW_DELTA_MM, 1.2, abs_tol=1e-9)
+assert isclose(
+    CARTRIDGE_DETENT_SLOPE_RUN_MM,
+    CARTRIDGE_DETENT_SLOPE_RISE_MM,
+    abs_tol=1e-9,
+)
 
 print(f"Paired width: {RACK_WIDTH_MM:.2f} mm")
 print(f"Half width: {HALF_WIDTH_MM:.2f} mm")
@@ -81,4 +93,16 @@ print(
     f"{PI_DRAWER_SHOULDER_MM:.1f} mm printed shoulder + "
     f"{PI_PCB_THICKNESS_MM:.1f} mm PCB; replacement screw must be "
     f"existing under-head length + {PI_REPLACEMENT_SCREW_DELTA_MM:.1f} mm"
+)
+print(
+    "Pi magnetic direction (physical gate pending): "
+    f"{PI_MAGNETIC_HEAD_PROTRUSION_MM:.2f} mm assumed head protrusion, "
+    f"{PI_MAGNETIC_GAP_MM:.2f} mm target gap, "
+    f"{PI_MAGNETIC_SKIN_MM:.2f} mm insulating skin"
+)
+print(
+    "Cartridge service detent: "
+    f"{CARTRIDGE_DETENT_PROTRUSION_MM:.2f} mm local engagement into "
+    f"{CARTRIDGE_DETENT_POCKET_DEPTH_MM:.2f} mm pockets, "
+    "45-degree support-free spring rise"
 )

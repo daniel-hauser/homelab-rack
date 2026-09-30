@@ -33,7 +33,7 @@ allow the site to run at `https://daniel-hauser.github.io/homelab-rack/`.
 - Printer: Bambu Lab A1, 0.4 mm nozzle
 - Profile: 0.20 mm layers, four walls, five top/bottom layers, 20% gyroid
 - Supports/brim/skirt: none
-- Total: 529.43 g, 177.51173 m, 426.96577 cm³, 23h04m49s
+- Candidate total: 538.12 g, 180.42200 m, 433.96577 cm³, 23h24m33s
 - Magnets: universal 6 × 2 mm discs
 - Module depth: 150 mm
 

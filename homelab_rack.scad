@@ -72,12 +72,12 @@ pi_mount_pattern_x = [3.5, 52.5];
 pi_mount_pattern_y = [3.5, 61.5];
 pi_locator_clearance = 0.30;
 
-// Review-only mount assumptions. Measure the installed hardware before use.
-pi_review_screw_head_d = 5.0;
-pi_review_screw_head_h = 1.6;
-pi_review_magnetic_gap = 0.35;
-pi_review_insulating_skin = 0.30;
-pi_review_magnet_pocket_d = stack_magnet_d + magnet_clearance;
+// Magnetic production direction; dimensions remain physically gated.
+pi_magnetic_assumed_screw_head_d = 5.0;
+pi_magnetic_assumed_screw_head_h = 1.6;
+pi_magnetic_target_gap = 0.35;
+pi_magnetic_insulating_skin = 0.30;
+pi_magnet_pocket_d = stack_magnet_d + magnet_clearance;
 bay_count = 3;
 bay_width = 62.0;
 bay_gap = 4.0;
@@ -88,6 +88,15 @@ bay_opening_z = 6.0;
 bay_opening_h = 30.0;
 bay_depth = 112.0;
 bay_clearance = 0.40;
+cartridge_detent_z = 13.0;
+cartridge_detent_h = 4.0;
+cartridge_detent_arm_t = 1.0;
+cartridge_detent_arm_y = 2.2;
+cartridge_detent_arm_len = 15.8;
+cartridge_detent_peak_y = 14.0;
+cartridge_detent_protrusion = 0.45;
+cartridge_detent_pocket_depth = 0.65;
+bay_fit_coupon_depth = 22.0;
 uk_ultra_size = [137.0, 84.0, 34.0];
 uk_ultra_clearance = 1.20;
 
@@ -133,6 +142,99 @@ module bay_face_cutout(x, z) {
         translate([x, faceplate_chamfer, z])
             cube([bay_width, 0.01, bay_opening_h]);
     }
+}
+
+module bay_service_detent_pockets(x, z) {
+    pocket_y = cartridge_detent_peak_y - 4.2;
+    pocket_len = 8.4;
+
+    translate([
+        x - cartridge_detent_pocket_depth,
+        pocket_y,
+        z + cartridge_detent_z
+    ])
+        cube([
+            cartridge_detent_pocket_depth + 0.1,
+            pocket_len,
+            cartridge_detent_h
+        ]);
+    translate([
+        x + bay_width - 0.1,
+        pocket_y,
+        z + cartridge_detent_z
+    ])
+        cube([
+            cartridge_detent_pocket_depth + 0.1,
+            pocket_len,
+            cartridge_detent_h
+        ]);
+}
+
+module cartridge_service_detents() {
+    left_x = bay_clearance;
+    right_x = bay_width - bay_clearance;
+    detent_end_y = cartridge_detent_arm_y
+        + cartridge_detent_arm_len;
+    slope_end_y = cartridge_detent_peak_y - 0.6;
+    root_z = base_thickness;
+
+    for (x = [
+        left_x,
+        right_x - cartridge_detent_arm_t
+    ]) {
+        hull() {
+            translate([
+                x,
+                cartridge_detent_arm_y,
+                root_z
+            ])
+                cube([
+                    cartridge_detent_arm_t,
+                    0.8,
+                    cartridge_detent_h
+                ]);
+            translate([
+                x,
+                slope_end_y,
+                cartridge_detent_z
+            ])
+                cube([
+                    cartridge_detent_arm_t,
+                    0.8,
+                    cartridge_detent_h
+                ]);
+        }
+        translate([
+            x,
+            slope_end_y,
+            cartridge_detent_z
+        ])
+            cube([
+                cartridge_detent_arm_t,
+                detent_end_y - slope_end_y,
+                cartridge_detent_h
+            ]);
+    }
+
+    translate([0, 0, cartridge_detent_z])
+        linear_extrude(height = cartridge_detent_h) {
+            polygon([
+                [left_x + 0.2, cartridge_detent_peak_y - 4],
+                [left_x + 0.2, detent_end_y],
+                [
+                    -cartridge_detent_protrusion,
+                    cartridge_detent_peak_y
+                ]
+            ]);
+            polygon([
+                [right_x - 0.2, cartridge_detent_peak_y - 4],
+                [
+                    bay_width + cartridge_detent_protrusion,
+                    cartridge_detent_peak_y
+                ],
+                [right_x - 0.2, detent_end_y]
+            ]);
+        }
 }
 
 module keystone_cutout_at(x, z = 13.7) {
@@ -670,11 +772,16 @@ module dual_pi_module(hand = "left") {
         }
 
         common_cuts(hand);
-        for (index = [0 : bay_count - 1])
+        for (index = [0 : bay_count - 1]) {
             bay_face_cutout(
                 bay_x(index),
                 bay_opening_z
             );
+            bay_service_detent_pockets(
+                bay_x(index),
+                bay_opening_z
+            );
+        }
     }
 }
 
@@ -713,7 +820,7 @@ module pi_cartridge_locators() {
             cube([5, 1.5, locator_z - 1.6]);
 }
 
-module pi_cartridge_mount(mount_variant = "through_floor") {
+module pi_cartridge_mount(mount_variant = "magnetic") {
     board_x = (bay_width - pi_board[0]) / 2;
     board_y = 23;
     mount_z = 1.6;
@@ -738,12 +845,13 @@ module pi_cartridge_mount(mount_variant = "through_floor") {
 }
 
 module pi_cartridge_retention_cuts(
-    mount_variant = "through_floor"
+    mount_variant = "magnetic"
 ) {
     shoulder_z = pi_mount_height - pi_mount_shoulder;
-    screw_head_bottom = pi_mount_height - pi_review_screw_head_h;
-    skin_top = screw_head_bottom - pi_review_magnetic_gap;
-    skin_bottom = skin_top - pi_review_insulating_skin;
+    screw_head_bottom = pi_mount_height
+        - pi_magnetic_assumed_screw_head_h;
+    skin_top = screw_head_bottom - pi_magnetic_target_gap;
+    skin_bottom = skin_top - pi_magnetic_insulating_skin;
 
     pi_mount_positions()
         if (mount_variant == "magnetic") {
@@ -751,7 +859,7 @@ module pi_cartridge_retention_cuts(
             // while epoxy cures, then fill the access recess flush if desired.
             translate([0, 0, -0.2])
                 cylinder(
-                    d = pi_review_magnet_pocket_d,
+                    d = pi_magnet_pocket_d,
                     h = skin_bottom + 0.2
                 );
             translate([0, 0, skin_top])
@@ -776,7 +884,7 @@ module pi_cartridge_retention_cuts(
 module pi_cartridge(
     label = "PI",
     installed = false,
-    mount_variant = "through_floor"
+    mount_variant = "magnetic"
 ) {
     tray_x = bay_clearance + 0.8;
     tray_w = bay_width - 2 * tray_x;
@@ -814,6 +922,7 @@ module pi_cartridge(
                         bay_opening_h - 2 * bay_clearance
                     ]);
                 pi_cartridge_mount(mount_variant);
+                cartridge_service_detents();
             }
 
             pi_cartridge_retention_cuts(mount_variant);
@@ -842,9 +951,10 @@ module pi_review_hardware(mount_variant = "through_floor") {
     board_y = 23;
     board_z = pi_mount_height;
     shoulder_z = pi_mount_height - pi_mount_shoulder;
-    screw_head_bottom = board_z - pi_review_screw_head_h;
-    skin_top = screw_head_bottom - pi_review_magnetic_gap;
-    skin_bottom = skin_top - pi_review_insulating_skin;
+    screw_head_bottom = board_z
+        - pi_magnetic_assumed_screw_head_h;
+    skin_top = screw_head_bottom - pi_magnetic_target_gap;
+    skin_bottom = skin_top - pi_magnetic_insulating_skin;
     magnet_bottom = skin_bottom - stack_magnet_h;
     standoff_z = board_z + pi_board[2];
 
@@ -861,8 +971,8 @@ module pi_review_hardware(mount_variant = "through_floor") {
             color([0.72, 0.74, 0.78]) {
                 translate([0, 0, screw_head_bottom])
                     cylinder(
-                        d = pi_review_screw_head_d,
-                        h = pi_review_screw_head_h
+                        d = pi_magnetic_assumed_screw_head_d,
+                        h = pi_magnetic_assumed_screw_head_h
                     );
                 translate([0, 0, board_z])
                     cylinder(
@@ -881,11 +991,11 @@ module pi_review_hardware(mount_variant = "through_floor") {
                 translate([
                     0,
                     0,
-                    shoulder_z - pi_review_screw_head_h
+                    shoulder_z - pi_magnetic_assumed_screw_head_h
                 ])
                     cylinder(
-                        d = pi_review_screw_head_d,
-                        h = pi_review_screw_head_h
+                        d = pi_magnetic_assumed_screw_head_d,
+                        h = pi_magnetic_assumed_screw_head_h
                     );
                 translate([0, 0, shoulder_z])
                     cylinder(
@@ -1009,6 +1119,7 @@ module vent_cartridge(installed = false) {
                                         ]
                                     ]
                             );
+                cartridge_service_detents();
             }
 
             for (x = [8 : 11 : bay_width - 8])
@@ -1265,22 +1376,27 @@ module bay_fit_test() {
     difference() {
         cube([
             bay_width + 8,
-            8,
+            bay_fit_coupon_depth,
             bay_opening_h + 8
         ]);
         bay_face_cutout(4, 4);
+        bay_service_detent_pockets(4, 4);
     }
 }
 
 module bay_fit_test_print() {
-    translate([0, 0, 8])
+    translate([0, 0, bay_fit_coupon_depth])
         rotate([-90, 0, 0])
             bay_fit_test();
 }
 
 module vent_cartridge_print() {
-    translate([0, 0, 5.4])
-        rotate([-90, 0, 0])
+    translate([
+        0,
+        bay_opening_h,
+        0
+    ])
+        rotate([90, 0, 0])
             vent_cartridge(false);
 }
 
