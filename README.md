@@ -33,7 +33,7 @@ design revisions.
    - `PRINT_THESE\TEST_FIRST\10_Seam_Tower_Female_Test.stl`
 
 2. Confirm the magnet pockets, stack peg/socket, keystone opening, Pi bay,
-   seam towers, rack-ear slots, and snap post fit your hardware.
+   seam towers, and rack-ear slots fit your hardware.
 3. If the test plate succeeds, open
    [`PRINT_THESE\homelab-rack-Bambu-Studio-6-plates.3mf`](PRINT_THESE/homelab-rack-Bambu-Studio-6-plates.3mf)
    or double-click `PRINT_THESE\OPEN_IN_BAMBU_STUDIO.cmd`.
@@ -42,8 +42,8 @@ design revisions.
 
 The six-plate project uses a Bambu Lab A1 with a 0.4 mm nozzle, 0.20 mm layers,
 four walls, five top layers, four bottom layers, 20% gyroid, no supports, no
-brim, and no skirt. The validated estimate is **528.99 g**, **177.36286 m**,
-**426.60769 cm³**, and **23h04m41s** serial printing time.
+brim, and no skirt. The validated estimate is **527.96 g**, **177.01742 m**,
+**425.77681 cm³**, and **23h03m33s** serial printing time.
 
 Bambu Studio reports a conservative “floating cantilever” warning on the four
 full-height chassis. Their maximum measured bridge is 13.79 mm. Print plate 1
@@ -81,11 +81,19 @@ feet are on the test-first plate.
 - Side joining: tapered diamond keys in reinforced seam towers.
 - Paired seam: 0.0 mm designed face gap with 1.5 mm socket-depth reserve.
 - Desktop stabilization: two removable rear spines and four removable feet.
-- Pi mounting: split printed snap posts for official 2.7 mm mounting holes.
+- Pi mounting: four recessed M2.5 through-fastener towers reuse the installed
+  Waveshare HAT standoffs without adding another part at the occupied holes.
 - Exposed chassis/top corners: 1.5 mm support-free chamfers.
 - Pi and vent faceplates: 1.2 mm chamfers.
 - Pi bay receiving lead-in: 1.2 mm deep at 45°, opening to 64.4 × 32.4 mm at
   the front while retaining the 62 × 30 mm friction opening behind it.
+
+Each Pi drawer requires four **M2.5 × 6 mm pan- or button-head screws** with
+heads no larger than 5.0 mm diameter. The screw passes through a 1.2 mm printed
+shoulder and the 1.6 mm Pi PCB, leaving 3.2 mm nominal engagement in the
+existing female Waveshare standoff. Reuse the supplied lower screws only if
+they measure 6 mm under the head; otherwise replace those four screws. No
+additional standoffs are required.
 
 Magnets retain joints but are not structural. Printed pegs and keys carry
 lateral loads. A 19-inch installation still requires normal rack screws and

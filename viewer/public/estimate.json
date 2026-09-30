@@ -15,12 +15,12 @@
         "09_Seam_Tower_Male_Test.stl",
         "10_Seam_Tower_Female_Test.stl"
       ],
-      "model_time": "2h 38m 54s",
-      "total_time": "2h 45m 11s",
-      "seconds": 9911,
-      "g": 63.3,
-      "m": 21.22447,
-      "cm3": 51.05084,
+      "model_time": "2h 36m 50s",
+      "total_time": "2h 43m 7s",
+      "seconds": 9787,
+      "g": 62.82,
+      "m": 21.06392,
+      "cm3": 50.66466,
       "warning_message": ""
     },
     {
@@ -68,12 +68,12 @@
         "03_USW_Ultra_Right.stl",
         "06_Pi_Drawer_2.stl"
       ],
-      "model_time": "4h 45m 29s",
-      "total_time": "4h 51m 46s",
-      "seconds": 17506,
-      "g": 108.39,
-      "m": 36.34111,
-      "cm3": 87.41062,
+      "model_time": "4h 46m 0s",
+      "total_time": "4h 52m 17s",
+      "seconds": 17537,
+      "g": 108.11,
+      "m": 36.24867,
+      "cm3": 87.18827,
       "warning_message": "It seems object 03_USW_Ultra_Right.stl has floating cantilever. Please re-orient the object or enable support generation."
     },
     {
@@ -82,12 +82,12 @@
         "08_UK_Ultra_Top.stl",
         "05_Pi_Drawer_1.stl"
       ],
-      "model_time": "2h 39m 27s",
-      "total_time": "2h 45m 44s",
-      "seconds": 9944,
-      "g": 59.36,
-      "m": 19.9035,
-      "cm3": 47.87352,
+      "model_time": "2h 39m 52s",
+      "total_time": "2h 46m 9s",
+      "seconds": 9969,
+      "g": 59.09,
+      "m": 19.81105,
+      "cm3": 47.65117,
       "warning_message": ""
     }
   ],
@@ -95,11 +95,11 @@
     "beds": 6,
     "test_beds": 1,
     "production_beds": 5,
-    "grams": 528.99,
-    "production_grams": 465.69,
-    "length_m": 177.36286,
-    "volume_cm3": 426.60769,
-    "serial_seconds": 83081,
-    "serial_time": "23h 4m 41s"
+    "grams": 527.96,
+    "production_grams": 465.14,
+    "length_m": 177.01742,
+    "volume_cm3": 425.77681,
+    "serial_seconds": 83013,
+    "serial_time": "23h 3m 33s"
   }
 }

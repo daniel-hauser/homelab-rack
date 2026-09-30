@@ -4,9 +4,9 @@
   "plates": [
     {
       "file": "plate_1.gcode",
-      "bridge_segments": 5957,
+      "bridge_segments": 5901,
       "bridge_layers": 15,
-      "bridge_path_mm": 24771.54,
+      "bridge_path_mm": 24636.55,
       "max_bridge_segment_mm": 18.7,
       "longest_segment": {
         "layer": 5,
@@ -43,8 +43,8 @@
           "max_bridge_segment_mm": 12.89
         },
         "05_Magnet_Keystone_Peg_Test.stl": {
-          "bridge_segments": 235,
-          "bridge_path_mm": 547.6,
+          "bridge_segments": 179,
+          "bridge_path_mm": 412.62,
           "max_bridge_segment_mm": 8.44
         },
         "01_Bay_Fit_Test.stl": {
@@ -152,9 +152,9 @@
     },
     {
       "file": "plate_5.gcode",
-      "bridge_segments": 2130,
+      "bridge_segments": 1998,
       "bridge_layers": 24,
-      "bridge_path_mm": 5348.18,
+      "bridge_path_mm": 5016.93,
       "max_bridge_segment_mm": 13.79,
       "longest_segment": {
         "layer": 205,
@@ -176,17 +176,17 @@
           "max_bridge_segment_mm": 13.79
         },
         "06_Pi_Drawer_2.stl": {
-          "bridge_segments": 414,
-          "bridge_path_mm": 1211.99,
+          "bridge_segments": 282,
+          "bridge_path_mm": 880.74,
           "max_bridge_segment_mm": 6.82
         }
       }
     },
     {
       "file": "plate_6.gcode",
-      "bridge_segments": 1102,
+      "bridge_segments": 970,
       "bridge_layers": 5,
-      "bridge_path_mm": 3398.45,
+      "bridge_path_mm": 3067.28,
       "max_bridge_segment_mm": 16.76,
       "longest_segment": {
         "layer": 16,
@@ -208,8 +208,8 @@
           "max_bridge_segment_mm": 16.76
         },
         "05_Pi_Drawer_1.stl": {
-          "bridge_segments": 412,
-          "bridge_path_mm": 1211.83,
+          "bridge_segments": 280,
+          "bridge_path_mm": 880.66,
           "max_bridge_segment_mm": 6.82
         }
       }

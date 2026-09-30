@@ -16,8 +16,8 @@ Fastest way to load everything:
 The project was prepared with an A1 0.4 mm nozzle, 0.20 mm layers, 4 walls,
 5 top layers, 4 bottom layers, 20% gyroid, no supports, no brim, and no skirt.
 
-Expected total: 528.99 g PLA and 23h04m41s across six plates. Plate 1 is
-63.30 g / 2h45m11s and includes both rear spines, the vent, all four feet,
+Expected total: 527.96 g PLA and 23h03m33s across six plates. Plate 1 is
+62.82 g / 2h43m07s and includes both rear spines, the vent, all four feet,
 the polarity key, and the required fit coupons.
 
 Exposed chassis and UK-Ultra cap corners use restrained 1.5 mm support-free
@@ -34,6 +34,12 @@ The two rear-spine STL files are intentionally identical: print one of each.
 
 The rack-ear profile visually matches existing rack hardware and retains the
 validated 482.60 mm outer width and 465.10 mm mounting centers.
+
+Each Pi drawer uses the four installed Waveshare HAT standoffs. Secure it with
+four M2.5 x 6 mm pan- or button-head screws whose heads are no larger than
+5.0 mm diameter. Reuse the supplied lower screws only if they measure 6 mm
+under the head; otherwise replace those four screws. No extra standoffs are
+required.
 
 All magnet pockets now use the same 6 x 2 mm disc magnets. A fully populated,
 reorderable desktop build uses 52 magnets: 36 for module/cap stacking and
@@ -54,12 +60,12 @@ keep supports disabled for the full-height production chassis if its
 seam-tower coupons print cleanly.
 
 The redesigned Pi drawers, vent insert, and UK-Ultra top slice without
-warnings. Their independently measured maximum bridge spans are 6.37 mm,
+warnings. Their independently measured maximum bridge spans are 6.41 mm,
 12.89 mm, and 16.76 mm respectively.
 
 Plate 1 is explicitly axis-aligned rather than automatically rotated. Its
-maximum bridge is 18.70 mm, with 9.23 mm on the fit coupon, no bridge paths on
-the polarity key, and 10.68 mm on each rear spine.
+maximum bridge is 18.70 mm, with 8.44 mm on the fit coupon, no bridge paths on
+the polarity key, and 12.23 mm on each rear spine.
 
 All 20 packaged STLs were also sliced independently with native Bambu Studio:
 20 pass, no unexpected warnings, and no bridge over 18.70 mm. The unchanged

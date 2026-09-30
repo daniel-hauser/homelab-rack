@@ -63,6 +63,11 @@ usw_size = [203.0, 76.0, 33.0];
 pi_board = [56.0, 85.0, 1.6]; // Rotated: connector edge faces front
 poe_hat_plan = [56.0, 85.0];  // Waveshare PoE M.2 HAT+ (B)
 pi_side_margin = 20.0;
+pi_mount_height = 6.8;
+pi_mount_boss_d = 8.0;
+pi_mount_screw_d = 2.8;
+pi_mount_head_clearance_d = 5.6;
+pi_mount_shoulder = 1.2;
 bay_count = 3;
 bay_width = 62.0;
 bay_gap = 4.0;
@@ -611,54 +616,6 @@ module usw_module(hand = "right") {
     }
 }
 
-module pi_standoff(x, y, height = 5.0) {
-    difference() {
-        union() {
-            cylinder(d = 6.5, h = height);
-
-            // Split snap post for the Pi's official 2.7 mm mounting hole.
-            translate([0, 0, height])
-                cylinder(d = 2.30, h = 1.8);
-            translate([0, 0, height + 1.6])
-                cylinder(d1 = 3.05, d2 = 2.30, h = 1.25);
-        }
-
-        // The split lets PETG prongs flex inward during board installation.
-        translate([-0.35, -2.0, height - 0.2])
-            cube([0.70, 4.0, 3.3]);
-    }
-}
-
-module pi_mount(board_x) {
-    board_y = front_thickness;
-
-    // Crossrails bridge the ventilation slots beneath both mounting-hole rows.
-    for (rail_y = [board_y + 19.5, board_y + 77.5])
-        translate([board_x, rail_y, 0])
-            cube([pi_board[0], 8, base_thickness]);
-
-    // Official Pi pattern, transformed so USB/Ethernet face front:
-    // 49 mm across and 58 mm front-to-back.
-    for (dx = [3.5, 52.5])
-        for (dy = [23.5, 81.5])
-            translate([
-                board_x + dx,
-                board_y + dy,
-                base_thickness - 0.2
-            ])
-                pi_standoff(0, 0, 5.2);
-
-    // Small side fences protect the board without obstructing HAT airflow.
-    translate([board_x - 2, board_y + 18, base_thickness - 0.2])
-        cube([2, 68, 5.2]);
-    translate([
-        board_x + pi_board[0],
-        board_y + 18,
-        base_thickness - 0.2
-    ])
-        cube([2, 68, 5.2]);
-}
-
 function bay_x(index) = bay_start + index * (bay_width + bay_gap);
 
 module modular_bay_rails(index) {
@@ -714,23 +671,57 @@ module dual_pi_module(hand = "left") {
 module pi_cartridge_mount() {
     board_x = (bay_width - pi_board[0]) / 2;
     board_y = 23;
+    mount_z = 1.6;
 
     for (rail_y = [board_y - 1, board_y + 57])
         translate([board_x, rail_y, 0])
             cube([pi_board[0], 8, 3.4]);
 
+    // The existing HAT standoffs remain installed. M2.5 x 6 mm screws pass
+    // through recessed access pockets and a 1.2 mm printed shoulder.
     for (dx = [3.5, 52.5])
         for (dy = [3.5, 61.5])
             translate([
                 board_x + dx,
                 board_y + dy,
-                1.6
+                mount_z
             ])
-                pi_standoff(0, 0, 5.2);
+                cylinder(
+                    d = pi_mount_boss_d,
+                    h = pi_mount_height - mount_z
+                );
 
     for (x = [board_x - 1.5, board_x + pi_board[0]])
         translate([x, board_y - 2, 1.6])
             cube([1.5, pi_board[1] + 4, 5.2]);
+}
+
+module pi_cartridge_screw_cuts() {
+    board_x = (bay_width - pi_board[0]) / 2;
+    board_y = 23;
+    shoulder_z = pi_mount_height - pi_mount_shoulder;
+
+    for (dx = [3.5, 52.5])
+        for (dy = [3.5, 61.5]) {
+            translate([
+                board_x + dx,
+                board_y + dy,
+                -0.2
+            ])
+                cylinder(
+                    d = pi_mount_head_clearance_d,
+                    h = shoulder_z + 0.2
+                );
+            translate([
+                board_x + dx,
+                board_y + dy,
+                shoulder_z
+            ])
+                cylinder(
+                    d = pi_mount_screw_d,
+                    h = pi_mount_shoulder + 0.4
+                );
+        }
 }
 
 module pi_cartridge(label = "PI", installed = false) {
@@ -772,6 +763,7 @@ module pi_cartridge(label = "PI", installed = false) {
                 pi_cartridge_mount();
             }
 
+            pi_cartridge_screw_cuts();
             translate([
                 (bay_width - connector_w) / 2,
                 -2.6,
@@ -1046,8 +1038,7 @@ module fit_test_coupon() {
                 [10, 10],
                 [24, 10],
                 [59, 10],
-                [59, 24],
-                [10, 24]
+                [59, 24]
             ])
                 translate([p[0], p[1], 0])
                     cylinder(d = 12, h = 6);
@@ -1077,10 +1068,6 @@ module fit_test_coupon() {
 
     translate([59, 24, 6])
         cylinder(d1 = 5.0, d2 = 4.6, h = 3.0);
-
-    // Sacrificial Pi snap post for flex/layer-adhesion testing.
-    translate([10, 24, 6])
-        pi_standoff(0, 0, 3.0);
 }
 
 module rack_ear_fit_test() {

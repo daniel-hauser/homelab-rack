@@ -23,6 +23,12 @@ BAY_OPENING_HEIGHT_MM = 30.0
 BAY_RECEIVING_CHAMFER_MM = 1.2
 BAY_FRONT_WIDTH_MM = BAY_OPENING_WIDTH_MM + 2 * BAY_RECEIVING_CHAMFER_MM
 BAY_FRONT_HEIGHT_MM = BAY_OPENING_HEIGHT_MM + 2 * BAY_RECEIVING_CHAMFER_MM
+PI_SCREW_LENGTH_MM = 6.0
+PI_DRAWER_SHOULDER_MM = 1.2
+PI_PCB_THICKNESS_MM = 1.6
+PI_THREAD_ENGAGEMENT_MM = (
+    PI_SCREW_LENGTH_MM - PI_DRAWER_SHOULDER_MM - PI_PCB_THICKNESS_MM
+)
 
 left_center = OUTER_HOLE_CENTER_MM
 right_center = HALF_WIDTH_MM + (
@@ -48,6 +54,7 @@ assert isclose(DESIGNED_SEAM_FACE_GAP_MM, 0.0, abs_tol=1e-9)
 assert isclose(SIDE_SOCKET_AXIAL_RESERVE_MM, 1.5, abs_tol=1e-9)
 assert isclose(BAY_FRONT_WIDTH_MM, 64.4, abs_tol=1e-9)
 assert isclose(BAY_FRONT_HEIGHT_MM, 32.4, abs_tol=1e-9)
+assert isclose(PI_THREAD_ENGAGEMENT_MM, 3.2, abs_tol=1e-9)
 
 print(f"Paired width: {RACK_WIDTH_MM:.2f} mm")
 print(f"Half width: {HALF_WIDTH_MM:.2f} mm")
@@ -71,4 +78,11 @@ print(
 print(
     "Pi bay retained friction opening: "
     f"{BAY_OPENING_WIDTH_MM:.1f} x {BAY_OPENING_HEIGHT_MM:.1f} mm"
+)
+print(
+    "Pi drawer fastener stack: M2.5 x "
+    f"{PI_SCREW_LENGTH_MM:.0f} mm through "
+    f"{PI_DRAWER_SHOULDER_MM:.1f} mm printed shoulder + "
+    f"{PI_PCB_THICKNESS_MM:.1f} mm PCB = "
+    f"{PI_THREAD_ENGAGEMENT_MM:.1f} mm nominal engagement"
 )

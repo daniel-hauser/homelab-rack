@@ -15,7 +15,6 @@ of PLA to production plates 2-6:
 - Rack-ear slots
 - Keystone cutout
 - Pi-bay opening and removable vent insert
-- Sacrificial Pi snap post
 - Four removable desktop feet with optional 16 mm felt/rubber-pad recesses
 - "UP" magnet polarity reference key
 

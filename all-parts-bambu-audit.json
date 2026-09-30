@@ -238,25 +238,25 @@
         "y": 70.80000305175781,
         "z": 0.0
       },
-      "triangle_count": 3180,
-      "model_time_seconds": 3219.039,
-      "total_time_seconds": 3620.767,
-      "filament_grams": 16.413,
+      "triangle_count": 3184,
+      "model_time_seconds": 3.262,
+      "total_time_seconds": 3.663,
+      "filament_grams": 16.143,
       "bridge": {
-        "bridge_segments": 370,
+        "bridge_segments": 294,
         "bridge_layers": 1,
-        "max_bridge_segment_mm": 6.37,
+        "max_bridge_segment_mm": 6.41,
         "longest_bridge": {
           "layer": 13,
           "object": "unknown",
-          "length_mm": 6.370010361059094,
+          "length_mm": 6.41448142876727,
           "start_mm": [
-            128.008,
-            101.427
+            143.243,
+            96.973
           ],
           "end_mm": [
-            123.454,
-            96.973
+            147.859,
+            101.427
           ]
         }
       },
@@ -289,24 +289,24 @@
         "y": 70.80000305175781,
         "z": 0.0
       },
-      "triangle_count": 3180,
-      "model_time_seconds": 3214.504,
-      "total_time_seconds": 3616.232,
-      "filament_grams": 16.413,
+      "triangle_count": 3184,
+      "model_time_seconds": 3.251,
+      "total_time_seconds": 3.653,
+      "filament_grams": 16.143,
       "bridge": {
-        "bridge_segments": 370,
+        "bridge_segments": 294,
         "bridge_layers": 1,
-        "max_bridge_segment_mm": 6.37,
+        "max_bridge_segment_mm": 6.41,
         "longest_bridge": {
           "layer": 13,
           "object": "unknown",
-          "length_mm": 6.370010361059094,
+          "length_mm": 6.41448142876727,
           "start_mm": [
-            123.454,
+            143.243,
             96.973
           ],
           "end_mm": [
-            128.008,
+            147.859,
             101.427
           ]
         }
@@ -730,31 +730,31 @@
       "warning_evidence": "",
       "bbox": {
         "depth": 32.000003814697266,
-        "height": 11.850000381469727,
+        "height": 9.0,
         "width": 70.0,
         "x": 93.0,
         "y": 112.00000762939453,
         "z": 0.0
       },
-      "triangle_count": 2304,
-      "model_time_seconds": 1246.754,
-      "total_time_seconds": 1648.623,
-      "filament_grams": 7.482,
+      "triangle_count": 1544,
+      "model_time_seconds": 1.102,
+      "total_time_seconds": 1.504,
+      "filament_grams": 7.003,
       "bridge": {
-        "bridge_segments": 236,
+        "bridge_segments": 180,
         "bridge_layers": 3,
         "max_bridge_segment_mm": 8.44,
         "longest_bridge": {
           "layer": 15,
           "object": "unknown",
-          "length_mm": 8.44326240264981,
+          "length_mm": 8.444490037888608,
           "start_mm": [
             113.667,
-            119.409
+            119.408
           ],
           "end_mm": [
             120.333,
-            124.591
+            124.592
           ]
         }
       },
@@ -764,7 +764,7 @@
         "size_mm": [
           70.0,
           32.0,
-          11.85
+          9.0
         ],
         "min_z_mm": 0.0,
         "a1_volume_ok": true
