@@ -4,9 +4,9 @@
   "plates": [
     {
       "file": "plate_1.gcode",
-      "bridge_segments": 5899,
+      "bridge_segments": 5894,
       "bridge_layers": 12,
-      "bridge_path_mm": 24684.42,
+      "bridge_path_mm": 24686.25,
       "max_bridge_segment_mm": 18.7,
       "longest_segment": {
         "layer": 5,
@@ -43,9 +43,9 @@
           "max_bridge_segment_mm": 12.89
         },
         "05_Magnet_Keystone_Peg_Test.stl": {
-          "bridge_segments": 240,
-          "bridge_path_mm": 545.77,
-          "max_bridge_segment_mm": 9.23
+          "bridge_segments": 235,
+          "bridge_path_mm": 547.6,
+          "max_bridge_segment_mm": 8.44
         },
         "08_Rack_Ear_Test.stl": {
           "bridge_segments": 225,
@@ -66,7 +66,7 @@
     },
     {
       "file": "plate_2.gcode",
-      "bridge_segments": 1659,
+      "bridge_segments": 1658,
       "bridge_layers": 18,
       "bridge_path_mm": 3970.32,
       "max_bridge_segment_mm": 13.79,
@@ -85,7 +85,7 @@
       },
       "objects": {
         "unknown": {
-          "bridge_segments": 1659,
+          "bridge_segments": 1658,
           "bridge_path_mm": 3970.32,
           "max_bridge_segment_mm": 13.79
         }
@@ -93,7 +93,7 @@
     },
     {
       "file": "plate_3.gcode",
-      "bridge_segments": 1713,
+      "bridge_segments": 1714,
       "bridge_layers": 19,
       "bridge_path_mm": 4085.51,
       "max_bridge_segment_mm": 13.79,
@@ -112,7 +112,7 @@
       },
       "objects": {
         "unknown": {
-          "bridge_segments": 1713,
+          "bridge_segments": 1714,
           "bridge_path_mm": 4085.51,
           "max_bridge_segment_mm": 13.79
         }
@@ -147,8 +147,8 @@
     },
     {
       "file": "plate_5.gcode",
-      "bridge_segments": 2052,
-      "bridge_layers": 21,
+      "bridge_segments": 2054,
+      "bridge_layers": 22,
       "bridge_path_mm": 5180.74,
       "max_bridge_segment_mm": 13.79,
       "longest_segment": {
@@ -166,7 +166,7 @@
       },
       "objects": {
         "03_USW_Ultra_Right.stl": {
-          "bridge_segments": 1639,
+          "bridge_segments": 1641,
           "bridge_path_mm": 3968.75,
           "max_bridge_segment_mm": 13.79
         },

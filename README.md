@@ -42,8 +42,8 @@ design revisions.
 
 The six-plate project uses a Bambu Lab A1 with a 0.4 mm nozzle, 0.20 mm layers,
 four walls, five top layers, four bottom layers, 20% gyroid, no supports, no
-brim, and no skirt. The validated estimate is **529.43 g**, **177.51018 m**,
-**426.96198 cm³**, and **23h04m22s** serial printing time.
+brim, and no skirt. The validated estimate is **529.01 g**, **177.37239 m**,
+**426.63059 cm³**, and **23h03m11s** serial printing time.
 
 Bambu Studio reports a conservative “floating cantilever” warning on the four
 full-height chassis. Their maximum measured bridge is 13.79 mm. Print plate 1

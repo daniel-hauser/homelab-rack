@@ -35,11 +35,11 @@
         "z": 0.0
       },
       "triangle_count": 8634,
-      "model_time_seconds": 14727.439,
-      "total_time_seconds": 15129.302,
-      "filament_grams": 101.819,
+      "model_time_seconds": 14703.081,
+      "total_time_seconds": 15104.943,
+      "filament_grams": 101.659,
       "bridge": {
-        "bridge_segments": 1602,
+        "bridge_segments": 1600,
         "bridge_layers": 16,
         "max_bridge_segment_mm": 13.79,
         "longest_bridge": {
@@ -86,9 +86,9 @@
         "z": 0.0
       },
       "triangle_count": 8558,
-      "model_time_seconds": 13669.346,
-      "total_time_seconds": 14071.208,
-      "filament_grams": 91.283,
+      "model_time_seconds": 13677.725,
+      "total_time_seconds": 14079.587,
+      "filament_grams": 91.213,
       "bridge": {
         "bridge_segments": 1656,
         "bridge_layers": 17,
@@ -137,11 +137,11 @@
         "z": 0.0
       },
       "triangle_count": 8534,
-      "model_time_seconds": 13927.267,
-      "total_time_seconds": 14329.02,
-      "filament_grams": 91.709,
+      "model_time_seconds": 13919.126,
+      "total_time_seconds": 14320.879,
+      "filament_grams": 91.639,
       "bridge": {
-        "bridge_segments": 1637,
+        "bridge_segments": 1638,
         "bridge_layers": 21,
         "max_bridge_segment_mm": 13.79,
         "longest_bridge": {
@@ -737,24 +737,24 @@
         "z": 0.0
       },
       "triangle_count": 2304,
-      "model_time_seconds": 1263.385,
-      "total_time_seconds": 1665.254,
-      "filament_grams": 7.595,
+      "model_time_seconds": 1246.754,
+      "total_time_seconds": 1648.623,
+      "filament_grams": 7.482,
       "bridge": {
-        "bridge_segments": 241,
+        "bridge_segments": 236,
         "bridge_layers": 3,
-        "max_bridge_segment_mm": 9.23,
+        "max_bridge_segment_mm": 8.44,
         "longest_bridge": {
-          "layer": 26,
+          "layer": 15,
           "object": "unknown",
-          "length_mm": 9.226039941383283,
+          "length_mm": 8.44326240264981,
           "start_mm": [
-            145.257,
-            136.283
+            113.667,
+            119.409
           ],
           "end_mm": [
-            153.45,
-            132.041
+            120.333,
+            124.591
           ]
         }
       },

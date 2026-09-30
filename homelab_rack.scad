@@ -79,6 +79,7 @@ keystone_cutout = [
     14.5 + keystone_clearance,
     16.0 + keystone_clearance
 ];
+keystone_top_clearance = 1.0;
 keystone_body = [16.5, 32.0, 18.0];
 face_clearance_depth = 34.0;
 
@@ -100,7 +101,12 @@ module face_cutout(x, z, width, height) {
 }
 
 module keystone_cutout_at(x, z = 13.7) {
-    face_cutout(x, z, keystone_cutout[0], keystone_cutout[1]);
+    face_cutout(
+        x,
+        z,
+        keystone_cutout[0],
+        keystone_cutout[1] + keystone_top_clearance
+    );
 }
 
 module xy_corner_chamfer_cut(chamfer, height) {
@@ -1040,7 +1046,11 @@ module fit_test_coupon() {
         translate([24, 10, 3.8])
             cylinder(d = 6 + 0.10, h = 2.4);
         translate([36, 7, -0.2])
-            cube([keystone_cutout[0], keystone_cutout[1], 6.4]);
+            cube([
+                keystone_cutout[0],
+                keystone_cutout[1] + keystone_top_clearance,
+                6.4
+            ]);
         translate([59, 10, -0.2])
             cylinder(d = 5 + peg_clearance, h = 6.4);
     }

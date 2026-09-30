@@ -16,8 +16,8 @@ Fastest way to load everything:
 The project was prepared with an A1 0.4 mm nozzle, 0.20 mm layers, 4 walls,
 5 top layers, 4 bottom layers, 20% gyroid, no supports, no brim, and no skirt.
 
-Expected total: 529.43 g PLA and 23h04m22s across six plates. Plate 1 is
-63.32 g / 2h44m45s and includes both rear spines, the vent, all four feet,
+Expected total: 529.01 g PLA and 23h03m11s across six plates. Plate 1 is
+63.20 g / 2h44m28s and includes both rear spines, the vent, all four feet,
 the polarity key, and the required fit coupons.
 
 Exposed chassis and UK-Ultra cap corners use restrained 1.5 mm support-free
