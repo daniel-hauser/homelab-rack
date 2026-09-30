@@ -334,16 +334,16 @@
       "warning_evidence": "",
       "bbox": {
         "depth": 30.000001907348633,
-        "height": 6.0,
+        "height": 5.400000095367432,
         "width": 64.5,
         "x": 95.75,
         "y": 113.00000762939453,
         "z": 0.0
       },
-      "triangle_count": 460,
-      "model_time_seconds": 1229.426,
-      "total_time_seconds": 1631.292,
-      "filament_grams": 7.457,
+      "triangle_count": 268,
+      "model_time_seconds": 1217.262,
+      "total_time_seconds": 1619.127,
+      "filament_grams": 7.45,
       "bridge": {
         "bridge_segments": 585,
         "bridge_layers": 1,
@@ -368,7 +368,7 @@
         "size_mm": [
           64.5,
           30.0,
-          6.0
+          5.4
         ],
         "min_z_mm": 0.0,
         "a1_volume_ok": true
@@ -781,16 +781,16 @@
       "warning_evidence": "",
       "bbox": {
         "depth": 30.000001907348633,
-        "height": 6.0,
+        "height": 5.400000095367432,
         "width": 64.5,
         "x": 95.75,
         "y": 113.00000762939453,
         "z": 0.0
       },
-      "triangle_count": 460,
-      "model_time_seconds": 1229.426,
-      "total_time_seconds": 1631.292,
-      "filament_grams": 7.457,
+      "triangle_count": 268,
+      "model_time_seconds": 1217.262,
+      "total_time_seconds": 1619.127,
+      "filament_grams": 7.45,
       "bridge": {
         "bridge_segments": 585,
         "bridge_layers": 1,
@@ -815,7 +815,7 @@
         "size_mm": [
           64.5,
           30.0,
-          6.0
+          5.4
         ],
         "min_z_mm": 0.0,
         "a1_volume_ok": true

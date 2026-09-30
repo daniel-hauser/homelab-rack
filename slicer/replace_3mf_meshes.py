@@ -34,7 +34,7 @@ def stl_index(roots: list[Path]) -> dict[str, Path]:
     return indexed
 
 
-def mesh_xml(path: Path) -> tuple[str, int]:
+def mesh_xml(path: Path, minimum_z: float) -> tuple[str, int]:
     loaded = trimesh.load_mesh(path, process=False)
     if isinstance(loaded, trimesh.Scene):
         mesh = loaded.to_geometry()
@@ -50,6 +50,7 @@ def mesh_xml(path: Path) -> tuple[str, int]:
 
     center = (mesh.bounds[0] + mesh.bounds[1]) / 2
     vertices = mesh.vertices - center
+    vertices[:, 2] += minimum_z - vertices[:, 2].min()
     vertex_lines = "\n".join(
         f'     <vertex x="{x:.9g}" y="{y:.9g}" z="{z:.9g}"/>'
         for x, y, z in vertices
@@ -115,8 +116,12 @@ def replace_project(
             raise FileNotFoundError(f"No replacement STL found for {name}")
 
         model_path = object_paths[obj.attrib["id"]]
-        mesh_markup, face_count = mesh_xml(stl)
         text = entries[model_path].decode("utf-8")
+        minimum_z = min(
+            float(value)
+            for value in re.findall(r'<vertex [^>]*z="([^"]+)"', text)
+        )
+        mesh_markup, face_count = mesh_xml(stl, minimum_z)
         text, count = re.subn(
             r"   <mesh>.*?   </mesh>",
             mesh_markup,

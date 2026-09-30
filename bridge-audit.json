@@ -66,9 +66,9 @@
     },
     {
       "file": "plate_2.gcode",
-      "bridge_segments": 1655,
+      "bridge_segments": 1659,
       "bridge_layers": 18,
-      "bridge_path_mm": 3969.2,
+      "bridge_path_mm": 3970.32,
       "max_bridge_segment_mm": 13.79,
       "longest_segment": {
         "layer": 205,
@@ -85,17 +85,17 @@
       },
       "objects": {
         "unknown": {
-          "bridge_segments": 1655,
-          "bridge_path_mm": 3969.2,
+          "bridge_segments": 1659,
+          "bridge_path_mm": 3970.32,
           "max_bridge_segment_mm": 13.79
         }
       }
     },
     {
       "file": "plate_3.gcode",
-      "bridge_segments": 1709,
+      "bridge_segments": 1713,
       "bridge_layers": 19,
-      "bridge_path_mm": 4084.38,
+      "bridge_path_mm": 4085.51,
       "max_bridge_segment_mm": 13.79,
       "longest_segment": {
         "layer": 205,
@@ -112,17 +112,17 @@
       },
       "objects": {
         "unknown": {
-          "bridge_segments": 1709,
-          "bridge_path_mm": 4084.38,
+          "bridge_segments": 1713,
+          "bridge_path_mm": 4085.51,
           "max_bridge_segment_mm": 13.79
         }
       }
     },
     {
       "file": "plate_4.gcode",
-      "bridge_segments": 1731,
+      "bridge_segments": 1734,
       "bridge_layers": 21,
-      "bridge_path_mm": 4072.84,
+      "bridge_path_mm": 4073.97,
       "max_bridge_segment_mm": 13.79,
       "longest_segment": {
         "layer": 205,
@@ -139,17 +139,17 @@
       },
       "objects": {
         "unknown": {
-          "bridge_segments": 1731,
-          "bridge_path_mm": 4072.84,
+          "bridge_segments": 1734,
+          "bridge_path_mm": 4073.97,
           "max_bridge_segment_mm": 13.79
         }
       }
     },
     {
       "file": "plate_5.gcode",
-      "bridge_segments": 2049,
+      "bridge_segments": 2052,
       "bridge_layers": 21,
-      "bridge_path_mm": 5176.91,
+      "bridge_path_mm": 5180.74,
       "max_bridge_segment_mm": 13.79,
       "longest_segment": {
         "layer": 205,
@@ -166,8 +166,8 @@
       },
       "objects": {
         "03_USW_Ultra_Right.stl": {
-          "bridge_segments": 1636,
-          "bridge_path_mm": 3964.92,
+          "bridge_segments": 1639,
+          "bridge_path_mm": 3968.75,
           "max_bridge_segment_mm": 13.79
         },
         "06_Pi_Drawer_2.stl": {

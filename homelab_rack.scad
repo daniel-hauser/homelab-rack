@@ -826,16 +826,6 @@ module vent_cartridge(installed = false) {
                         cube([6.4, 6.0, 7]);
         }
 
-        color([0.68, 0.69, 0.72])
-            translate([bay_width / 2, -2.4, 26.5])
-                rotate([90, 0, 0])
-                    linear_extrude(height = 0.6)
-                        text(
-                            "VENT",
-                            size = 3.2,
-                            halign = "center",
-                            valign = "center"
-                        );
     }
 
     if (installed)

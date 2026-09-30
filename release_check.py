@@ -38,9 +38,9 @@ TEST_FIRST = [
 ]
 EXPECTED_TOTALS = {
     "grams": 529.43,
-    "length_m": 177.51173,
-    "volume_cm3": 426.96577,
-    "serial_seconds": 83089,
+    "length_m": 177.51018,
+    "volume_cm3": 426.96198,
+    "serial_seconds": 83062,
 }
 
 
