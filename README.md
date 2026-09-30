@@ -81,19 +81,22 @@ feet are on the test-first plate.
 - Side joining: tapered diamond keys in reinforced seam towers.
 - Paired seam: 0.0 mm designed face gap with 1.5 mm socket-depth reserve.
 - Desktop stabilization: two removable rear spines and four removable feet.
-- Pi mounting: four recessed M2.5 through-fastener towers reuse the installed
-  Waveshare HAT standoffs without adding another part at the occupied holes.
+- Pi mounting: magnetic and through-floor concepts are under physical review;
+  neither review-only alternative is selected as production-final.
 - Exposed chassis/top corners: 1.5 mm support-free chamfers.
 - Pi and vent faceplates: 1.2 mm chamfers.
 - Pi bay receiving lead-in: 1.2 mm deep at 45°, opening to 64.4 × 32.4 mm at
   the front while retaining the 62 × 30 mm friction opening behind it.
 
-Each Pi drawer requires four **M2.5 × 6 mm pan- or button-head screws** with
-heads no larger than 5.0 mm diameter. The screw passes through a 1.2 mm printed
-shoulder and the 1.6 mm Pi PCB, leaving 3.2 mm nominal engagement in the
-existing female Waveshare standoff. Reuse the supplied lower screws only if
-they measure 6 mm under the head; otherwise replace those four screws. No
-additional standoffs are required.
+The through-floor fallback adds exactly **1.20 mm** of printed material below
+the Pi PCB. Its replacement screw therefore needs an under-head length equal
+to the measured existing screw length plus 1.20 mm, while retaining the same
+thread and head type. Do not select a purchased length until the existing
+screw and usable female-standoff thread depth are measured. The magnetic
+alternative additionally requires physical confirmation that all four lower
+screw heads strongly attract a loose 6 × 2 mm magnet. Review CAD and the full
+measurement list are in
+[`REVIEW_ONLY\Pi_Mount_Alternatives`](REVIEW_ONLY/Pi_Mount_Alternatives).
 
 Magnets retain joints but are not structural. Printed pegs and keys carry
 lateral loads. A 19-inch installation still requires normal rack screws and

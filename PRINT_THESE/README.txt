@@ -35,11 +35,12 @@ The two rear-spine STL files are intentionally identical: print one of each.
 The rack-ear profile visually matches existing rack hardware and retains the
 validated 482.60 mm outer width and 465.10 mm mounting centers.
 
-Each Pi drawer uses the four installed Waveshare HAT standoffs. Secure it with
-four M2.5 x 6 mm pan- or button-head screws whose heads are no larger than
-5.0 mm diameter. Reuse the supplied lower screws only if they measure 6 mm
-under the head; otherwise replace those four screws. No extra standoffs are
-required.
+Pi mounting is awaiting physical selection between review-only magnetic and
+through-floor concepts. The packaged drawer retains the current through-floor
+fallback geometry, but do not select replacement hardware until measuring the
+installed screw and female-standoff thread depth. The required under-head
+length increase is exactly the 1.20 mm local printed floor stack; no purchased
+screw length is yet specified. See REVIEW_ONLY\Pi_Mount_Alternatives.
 
 All magnet pockets now use the same 6 x 2 mm disc magnets. A fully populated,
 reorderable desktop build uses 52 magnets: 36 for module/cap stacking and
