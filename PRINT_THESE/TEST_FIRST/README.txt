@@ -5,13 +5,13 @@ Open plate_1-test.3mf. It stores plate 1 as independently arranged objects, so
 every coupon and useful part remains inside the A1 build area and can be moved
 or removed individually.
 
-Plate 1 validates the important fits before committing 21h15m21s and 479.32 g
+Plate 1 validates the important fits before committing 21h14m23s and 479.31 g
 of PLA to production plates 2-6:
 
 - 6 x 2 mm production glue-fit magnet pocket
 - Tighter 6 x 2 mm diagnostic magnet pocket
-- Stack registration peg and socket, each shown with its associated 6 x 2 mm
-  magnet-pocket position
+- Peel-away stack registration tiles with a mating peg/socket and aligned
+  6 x 2 mm magnet-pocket pair
 - Reinforced side tower, diamond key, and matching socket
 - Rack-ear slots
 - Keystone cutout
@@ -23,11 +23,13 @@ of PLA to production plates 2-6:
 Use the normal production profile. Glue is still recommended for final magnet
 installation even if the tighter diagnostic pocket appears to hold by friction.
 
-The peg and socket are independent gauges on the connected card and cannot
-mate to each other. Their adjacent pockets reproduce the exact production
-offset on the top and bottom faces, making the four-pair stack pattern
-unambiguous. The standalone pockets still validate production and tighter
-diagnostic diameters.
+The earlier connected-card peg and socket were independent gauges and could
+not validate mating. On this revision, break the two narrow sprues and remove
+the stack tiles. Flip the socket tile into assembly orientation and place it
+over the peg tile. The peg/socket and magnet pockets then reproduce one exact
+production stack pair. This geometry still requires physical validation; do
+not record the earlier fixed-gauge print as a mating pass. The standalone
+pockets continue to validate production and tighter diagnostic diameters.
 
 Magnet orientation:
 
@@ -52,10 +54,15 @@ functional features are carried by local bosses on a thin connected base, and
 the polarity key uses a local magnet boss, avoiding broad unsupported top
 skins.
 
-Insert the vent through the coupon before printing the chassis. Confirm that
-the runners enter the guide lips without binding, both detents click, the face
-seats flush, and an even pull releases it without tools.
+Complete one consolidated physical acceptance before printing plates 2-6:
 
-Do not continue with plates 2-6 if the peg, key, bay insert, keystone, or magnet
-fit requires excessive force. Adjust the corresponding clearance in
-homelab_rack.scad and regenerate the project first.
+1. Break off and mate the two stack tiles. Confirm easy peg/socket engagement,
+   face closure, lateral registration, and magnet clamping without rocking.
+2. Insert the vent through the coupon. Confirm the runners do not bind, both
+   detents click, the face seats flush, and an even pull releases it.
+3. On the assembled Pi/HAT, confirm a loose 6 x 2 mm magnet strongly attracts
+   all four intended underside screw heads and verify the installed head
+   protrusion against the documented 1.60 mm assumption.
+
+This is the single unavoidable user acceptance session; no second full test
+plate is planned. Do not continue if any stack, bay, or Pi check fails.

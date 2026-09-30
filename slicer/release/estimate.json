@@ -15,12 +15,12 @@
         "09_Seam_Tower_Male_Test.stl",
         "10_Seam_Tower_Female_Test.stl"
       ],
-      "model_time": "3h 22m 6s",
-      "total_time": "3h 28m 23s",
-      "seconds": 12503,
-      "g": 67.62,
-      "m": 22.67346,
-      "cm3": 54.53606,
+      "model_time": "3h 23m 10s",
+      "total_time": "3h 29m 27s",
+      "seconds": 12567,
+      "g": 67.8,
+      "m": 22.73135,
+      "cm3": 54.67532,
       "warning_message": ""
     },
     {
@@ -68,12 +68,12 @@
         "03_USW_Ultra_Right.stl",
         "06_Pi_Drawer_2.stl"
       ],
-      "model_time": "4h 57m 39s",
-      "total_time": "5h 3m 56s",
-      "seconds": 18236,
-      "g": 110.66,
-      "m": 37.10411,
-      "cm3": 89.24583,
+      "model_time": "4h 56m 44s",
+      "total_time": "5h 3m 1s",
+      "seconds": 18181,
+      "g": 110.65,
+      "m": 37.09981,
+      "cm3": 89.23549,
       "warning_message": "It seems object 03_USW_Ultra_Right.stl has floating regions. Please re-orient the object or enable support generation."
     },
     {
@@ -82,9 +82,9 @@
         "08_UK_Ultra_Top.stl",
         "05_Pi_Drawer_1.stl"
       ],
-      "model_time": "2h 40m 59s",
-      "total_time": "2h 47m 16s",
-      "seconds": 10036,
+      "model_time": "2h 40m 57s",
+      "total_time": "2h 47m 14s",
+      "seconds": 10034,
       "g": 58.47,
       "m": 19.60516,
       "cm3": 47.15595,
@@ -95,11 +95,11 @@
     "beds": 6,
     "test_beds": 1,
     "production_beds": 5,
-    "grams": 546.94,
-    "production_grams": 479.32,
-    "length_m": 183.38589,
-    "volume_cm3": 441.09476,
-    "serial_seconds": 89024,
-    "serial_time": "24h43m44s"
+    "grams": 547.11,
+    "production_grams": 479.31,
+    "length_m": 183.43948,
+    "volume_cm3": 441.22368,
+    "serial_seconds": 89031,
+    "serial_time": "24h43m51s"
   }
 }

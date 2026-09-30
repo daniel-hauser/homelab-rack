@@ -44,6 +44,14 @@ VENT_REAR_STOP_CLEARANCE_MM = 2.0
 VENT_RUNNER_SIDE_CLEARANCE_MM = 0.15
 BAY_FIT_COUPON_DEPTH_MM = 50.0
 BAY_FIT_COUPON_GUIDE_LENGTH_MM = BAY_FIT_COUPON_DEPTH_MM - 34.0
+KEYSTONE_OPENING_WIDTH_MM = 14.5 + 0.30
+KEYSTONE_BASE_HEIGHT_MM = 16.0 + 0.30
+KEYSTONE_UPPER_CLEARANCE_MM = 1.0
+STACK_COUPON_TILE_SIZE_MM = (16.0, 15.0)
+STACK_COUPON_TOP_MAGNET_MM = (5.0, 5.0)
+STACK_COUPON_TOP_PEG_MM = (10.0, 10.0)
+STACK_COUPON_BOTTOM_MAGNET_MM = (5.0, 10.0)
+STACK_COUPON_BOTTOM_SOCKET_MM = (10.0, 5.0)
 STACK_MAGNET_POSITIONS_MM = (
     (8.0, 20.0),
     (HALF_WIDTH_MM - 8.0, 20.0),
@@ -123,6 +131,24 @@ assert isclose(VENT_REAR_STOP_CLEARANCE_MM, 2.0, abs_tol=1e-9)
 assert isclose(VENT_RUNNER_SIDE_CLEARANCE_MM, 0.15, abs_tol=1e-9)
 assert isclose(CARTRIDGE_DETENT_DEPTH_RELIEF_MM, 0.20, abs_tol=1e-9)
 assert isclose(BAY_FIT_COUPON_GUIDE_LENGTH_MM, 16.0, abs_tol=1e-9)
+assert isclose(KEYSTONE_OPENING_WIDTH_MM, 14.8, abs_tol=1e-9)
+assert isclose(KEYSTONE_BASE_HEIGHT_MM, 16.3, abs_tol=1e-9)
+assert isclose(KEYSTONE_UPPER_CLEARANCE_MM, 1.0, abs_tol=1e-9)
+assert isclose(
+    STACK_COUPON_TILE_SIZE_MM[1] - STACK_COUPON_BOTTOM_MAGNET_MM[1],
+    STACK_COUPON_TOP_MAGNET_MM[1],
+    abs_tol=1e-9,
+)
+assert isclose(
+    STACK_COUPON_TILE_SIZE_MM[1] - STACK_COUPON_BOTTOM_SOCKET_MM[1],
+    STACK_COUPON_TOP_PEG_MM[1],
+    abs_tol=1e-9,
+)
+assert (
+    STACK_COUPON_BOTTOM_MAGNET_MM[0]
+    == STACK_COUPON_TOP_MAGNET_MM[0]
+)
+assert STACK_COUPON_BOTTOM_SOCKET_MM[0] == STACK_COUPON_TOP_PEG_MM[0]
 assert len(STACK_MAGNET_POSITIONS_MM) == STACK_PAIRS_PER_INTERFACE
 assert len(STACK_PEG_POSITIONS_MM) == STACK_PAIRS_PER_INTERFACE
 assert FRONT_MAGNET_TO_SLOT_CLEARANCE_MM > 0.5
@@ -185,6 +211,18 @@ print(
     "Bay fit coupon: "
     f"{BAY_FIT_COUPON_DEPTH_MM:.1f} mm deep with "
     f"{BAY_FIT_COUPON_GUIDE_LENGTH_MM:.1f} mm of common guide-lip geometry"
+)
+print(
+    "Keystone opening: "
+    f"{KEYSTONE_OPENING_WIDTH_MM:.1f} x "
+    f"{KEYSTONE_BASE_HEIGHT_MM + KEYSTONE_UPPER_CLEARANCE_MM:.1f} mm; "
+    f"only the top edge moves by {KEYSTONE_UPPER_CLEARANCE_MM:.1f} mm"
+)
+print(
+    "Stack mating coupon: two peel-away "
+    f"{STACK_COUPON_TILE_SIZE_MM[0]:.0f} x "
+    f"{STACK_COUPON_TILE_SIZE_MM[1]:.0f} mm tiles; "
+    "the mirrored bottom features align after flipping"
 )
 print(
     "Vertical stack interfaces: "

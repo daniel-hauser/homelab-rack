@@ -107,6 +107,24 @@ print(mesh.identifier_hash)
         Write-Host "Verified geometry for $RelativeTarget (tracked SHA-256 $targetHash)"
         return
     }
+    if ([IO.Path]::GetExtension($target) -ieq '.png') {
+        $script = @'
+import hashlib
+import sys
+from PIL import Image
+
+with Image.open(sys.argv[1]) as image:
+    rgba = image.convert("RGBA")
+    print(f"{rgba.width}x{rgba.height}:{hashlib.sha256(rgba.tobytes()).hexdigest()}")
+'@
+        $generatedPixels = ($script | python - $Generated).Trim()
+        $targetPixels = ($script | python - $target).Trim()
+        if ($LASTEXITCODE -ne 0 -or $generatedPixels -ne $targetPixels) {
+            throw "Pixel mismatch for $RelativeTarget"
+        }
+        Write-Host "Verified pixels for $RelativeTarget (tracked SHA-256 $targetHash)"
+        return
+    }
     if ($generatedHash -ne $targetHash) {
         throw "Hash mismatch for $RelativeTarget`nGenerated: $generatedHash`nTracked:   $targetHash"
     }

@@ -32,8 +32,8 @@ design revisions.
    - `PRINT_THESE\TEST_FIRST\09_Seam_Tower_Male_Test.stl`
    - `PRINT_THESE\TEST_FIRST\10_Seam_Tower_Female_Test.stl`
 
-2. Confirm the magnet pockets, stack peg/socket, keystone opening, Pi bay,
-   seam towers, and rack-ear slots fit your hardware.
+2. Break off and mate the stack tiles, then confirm the magnet pockets,
+   keystone opening, Pi bay, seam towers, and rack-ear slots fit your hardware.
 3. If the test plate succeeds, open
    [`PRINT_THESE\homelab-rack-Bambu-Studio-6-plates.3mf`](PRINT_THESE/homelab-rack-Bambu-Studio-6-plates.3mf)
    or double-click `PRINT_THESE\OPEN_IN_BAMBU_STUDIO.cmd`.
@@ -43,7 +43,7 @@ design revisions.
 The six-plate project uses a Bambu Lab A1 with a 0.4 mm nozzle, 0.20 mm layers,
 four walls, five top layers, four bottom layers, 20% gyroid, no supports, no
 brim, and no skirt. The current magnetic-direction candidate estimate is
-**546.94 g**, **183.38589 m**, **441.09476 cm³**, and **24h43m44s** serial
+**547.11 g**, **183.43948 m**, **441.22368 cm³**, and **24h43m51s** serial
 printing time. Physical magnetic attraction remains a release gate.
 
 Bambu Studio reports a conservative “floating cantilever” warning on the four
@@ -99,6 +99,13 @@ insulating skin; measure the installed stack before final release. The
 through-floor concept remains review-only because it requires replacement
 screws. Review CAD and the full measurement list are in
 [`REVIEW_ONLY\Pi_Mount_Alternatives`](REVIEW_ONLY/Pi_Mount_Alternatives).
+
+The only remaining production gate is one consolidated hardware acceptance
+using the existing test-first plate: break off and mate its stack tiles, test
+the full-depth vent and detents in the bay coupon, and test all four assembled
+Pi/HAT screw heads with a loose magnet while checking the 1.60 mm protrusion
+assumption. The earlier fixed peg/socket gauges did not mate and are not a
+physical stack-interface pass. No second full test plate is planned.
 
 The vent is a proper track-guided cartridge rather than a shallow friction
 plate. Its proven 64.5 × 30 mm face is unchanged. Two long L-section runners
@@ -194,7 +201,8 @@ Use one workflow for all OpenSCAD-derived release assets:
 - all ten `PRINT_THESE\TEST_FIRST` files using order-independent mesh hashes;
 - ten viewer production copies plus the viewer-only installed-feet model using
   the same geometry check;
-- the five canonical CAD renders byte-for-byte; and
+- the five canonical CAD renders pixel-for-pixel, ignoring harmless PNG
+  compression differences; and
 - `viewer\public\estimate.json` against `slicer\release\estimate.json`.
 
 The mesh hash ignores harmless STL facet ordering differences between
@@ -219,6 +227,10 @@ python .\slicer\replace_3mf_meshes.py `
   .\out\plate_1-arranged-unsliced.3mf `
   .\PRINT_THESE\STLs .\PRINT_THESE\TEST_FIRST
 ```
+
+When only a subset changed, pass `--skip-missing` with a directory containing
+only those STLs. This preserves the validated triangulation and arrangement of
+every unaffected project mesh while still removing stale embedded G-code.
 
 Open those copies in **Bambu Studio 02.08.02.61**, confirm the pinned A1
 profile, slice every plate, inspect warnings, and save the final projects over

@@ -1437,17 +1437,25 @@ module desk_spine_print(units = 4) {
 module fit_test_coupon() {
     difference() {
         union() {
-            // A shell-thickness carrier keeps every test feature connected
-            // without creating a broad top skin over sparse infill.
-            cube([70, 32, 1.8]);
+            // The main card and two peel-away stack tiles remain one printable
+            // body without creating a broad top skin over sparse infill.
+            cube([52, 32, 1.8]);
+            translate([54, 0, 0])
+                cube([16, 15, 1.8]);
+            translate([54, 17, 0])
+                cube([16, 15, 1.8]);
+            translate([52, 7, 0])
+                cube([2, 1.2, 1.0]);
+            translate([52, 24, 0])
+                cube([2, 1.2, 1.0]);
 
             for (p = [[10, 10], [24, 10]])
                 translate([p[0], p[1], 0])
                     cylinder(d = 12, h = 6);
 
             for (pair = [
-                [[59, 10], [54, 5]],
-                [[59, 24], [54, 19]]
+                [[64, 5], [59, 10]],
+                [[64, 27], [59, 22]]
             ])
                 hull()
                     for (p = pair)
@@ -1467,8 +1475,8 @@ module fit_test_coupon() {
             cylinder(d = 6 + magnet_clearance, h = 2.4);
         translate([24, 10, 3.8])
             cylinder(d = 6 + 0.10, h = 2.4);
-        // Bottom-face stack gauge: socket plus its matching magnet pocket.
-        translate([54, 5, -0.2])
+        // Bottom-face tile is mirrored so it aligns after being flipped.
+        translate([59, 10, -0.2])
             cylinder(
                 d = stack_magnet_d + magnet_clearance,
                 h = stack_magnet_h + 0.25
@@ -1479,17 +1487,17 @@ module fit_test_coupon() {
                 keystone_cutout[1] + keystone_top_clearance,
                 6.4
             ]);
-        translate([59, 10, -0.2])
+        translate([64, 5, -0.2])
             cylinder(d = 5 + peg_clearance, h = 6.4);
-        // Top-face stack gauge: peg plus its matching magnet pocket.
-        translate([54, 19, 3.8])
+        // Top-face tile reproduces the production peg-to-magnet offset.
+        translate([59, 22, 3.8])
             cylinder(
                 d = stack_magnet_d + magnet_clearance,
                 h = stack_magnet_h + 0.4
             );
     }
 
-    translate([59, 24, 6])
+    translate([64, 27, 6])
         cylinder(d1 = 5.0, d2 = 4.6, h = 3.0);
 }
 
@@ -1886,19 +1894,19 @@ module dummy_front_label(label, center_x, front_y, center_z, size = 5) {
 }
 
 module dummy_bay_labels() {
-    labels = ["PI 1", "VENT", "PI 2"];
+    labels = ["PI 1", "PI 2"];
 
-    for (index = [0 : bay_count - 1])
+    for (entry = [[0, 0], [2, 1]])
         color([0.72, 0.73, 0.76])
             translate([
-                bay_x(index) + bay_width / 2,
+                bay_x(entry[0]) + bay_width / 2,
                 -2.6,
                 bay_opening_z + 26.5
             ])
                 rotate([90, 0, 0])
                     linear_extrude(height = 0.5)
                         text(
-                            labels[index],
+                            labels[entry[1]],
                             size = 3.3,
                             halign = "center",
                             valign = "center"

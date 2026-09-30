@@ -736,25 +736,25 @@
         "y": 112.00000762939453,
         "z": 0.0
       },
-      "triangle_count": 1896,
-      "model_time_seconds": 1088.845,
-      "total_time_seconds": 1490.714,
-      "filament_grams": 6.879,
+      "triangle_count": 2060,
+      "model_time_seconds": 1152.787,
+      "total_time_seconds": 1554.608,
+      "filament_grams": 7.052,
       "bridge": {
-        "bridge_segments": 320,
+        "bridge_segments": 308,
         "bridge_layers": 4,
-        "max_bridge_segment_mm": 8.44,
+        "max_bridge_segment_mm": 12.58,
         "longest_bridge": {
           "layer": 15,
           "object": "unknown",
-          "length_mm": 8.444490037888608,
+          "length_mm": 12.577756874737227,
           "start_mm": [
-            113.667,
-            119.408
+            149.174,
+            132.458
           ],
           "end_mm": [
-            120.333,
-            124.592
+            159.082,
+            140.206
           ]
         }
       },

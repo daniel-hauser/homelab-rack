@@ -16,8 +16,15 @@ Fastest way to load everything:
 The project was prepared with an A1 0.4 mm nozzle, 0.20 mm layers, 4 walls,
 5 top layers, 4 bottom layers, 20% gyroid, no supports, no brim, and no skirt.
 
-Candidate total: 546.94 g PLA and 24h43m44s across six plates. Plate 1 is
-67.62 g / 3h28m23s and includes both rear spines, the vent, all four feet,
+Before plates 2-6, complete the single consolidated acceptance session on the
+existing test-first plate: break off and mate the stack tiles, test the vent
+tracks/chamfer/detents, and verify strong attraction at all four Pi screw heads
+plus the documented 1.60 mm head-protrusion assumption. The earlier fixed
+peg/socket gauges did not mate and do not count as a stack-interface pass. No
+second full test plate is planned.
+
+Candidate total: 547.11 g PLA and 24h43m51s across six plates. Plate 1 is
+67.80 g / 3h29m28s and includes both rear spines, the vent, all four feet,
 the polarity key, and the required fit coupons.
 
 Exposed chassis and UK-Ultra cap corners use restrained 1.5 mm support-free
@@ -95,8 +102,12 @@ warnings. Their independently measured maximum bridge spans are 6.39 mm,
 12.40 mm, and 16.74 mm respectively.
 
 Plate 1 is explicitly axis-aligned rather than automatically rotated. Its
-maximum bridge is 18.84 mm, with 8.44 mm on the fit coupon, no bridge paths on
+maximum bridge is 18.84 mm, with 12.58 mm on the fit coupon, no bridge paths on
 the polarity key, and 12.23 mm on each rear spine.
+
+Plate 5 keeps the right USW module at exact 0-degree XY rotation. The print
+face is unchanged, but this avoids a slicer-only diagonal bridge path that
+appeared with a near-180-degree transform; the validated maximum is 17.52 mm.
 
 All 20 packaged STLs were also sliced independently with native Bambu Studio:
 20 pass, no unexpected warnings, and no bridge over 18.84 mm. The unchanged
