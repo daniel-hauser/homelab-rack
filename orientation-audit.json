@@ -1,0 +1,266 @@
+{
+  "validated_files": 20,
+  "failed_files": 0,
+  "files": [
+    {
+      "file": "PRINT_THESE\\STLs\\01_UCG_Ultra.stl",
+      "watertight": true,
+      "bodies": 1,
+      "size_mm": [
+        244.5,
+        152.0,
+        46.7
+      ],
+      "min_z_mm": 0.0,
+      "a1_volume_ok": true,
+      "ok": true
+    },
+    {
+      "file": "PRINT_THESE\\STLs\\02_USW_Ultra_Left.stl",
+      "watertight": true,
+      "bodies": 1,
+      "size_mm": [
+        244.5,
+        152.0,
+        46.7
+      ],
+      "min_z_mm": 0.0,
+      "a1_volume_ok": true,
+      "ok": true
+    },
+    {
+      "file": "PRINT_THESE\\STLs\\03_USW_Ultra_Right.stl",
+      "watertight": true,
+      "bodies": 1,
+      "size_mm": [
+        241.3,
+        152.0,
+        46.7
+      ],
+      "min_z_mm": 0.0,
+      "a1_volume_ok": true,
+      "ok": true
+    },
+    {
+      "file": "PRINT_THESE\\STLs\\04_Dual_Pi_Chassis.stl",
+      "watertight": true,
+      "bodies": 1,
+      "size_mm": [
+        244.5,
+        152.0,
+        46.7
+      ],
+      "min_z_mm": 0.0,
+      "a1_volume_ok": true,
+      "ok": true
+    },
+    {
+      "file": "PRINT_THESE\\STLs\\05_Pi_Drawer_1.stl",
+      "watertight": true,
+      "bodies": 1,
+      "size_mm": [
+        64.5,
+        114.4,
+        30.0
+      ],
+      "min_z_mm": 0.0,
+      "a1_volume_ok": true,
+      "ok": true
+    },
+    {
+      "file": "PRINT_THESE\\STLs\\06_Pi_Drawer_2.stl",
+      "watertight": true,
+      "bodies": 1,
+      "size_mm": [
+        64.5,
+        114.4,
+        30.0
+      ],
+      "min_z_mm": 0.0,
+      "a1_volume_ok": true,
+      "ok": true
+    },
+    {
+      "file": "PRINT_THESE\\STLs\\07_Vent_Insert.stl",
+      "watertight": true,
+      "bodies": 1,
+      "size_mm": [
+        64.5,
+        30.0,
+        6.0
+      ],
+      "min_z_mm": 0.0,
+      "a1_volume_ok": true,
+      "ok": true
+    },
+    {
+      "file": "PRINT_THESE\\STLs\\08_UK_Ultra_Top.stl",
+      "watertight": true,
+      "bodies": 1,
+      "size_mm": [
+        241.3,
+        150.0,
+        14.0
+      ],
+      "min_z_mm": 0.0,
+      "a1_volume_ok": true,
+      "ok": true
+    },
+    {
+      "file": "PRINT_THESE\\STLs\\09_Rear_Spine_A.stl",
+      "watertight": true,
+      "bodies": 1,
+      "size_mm": [
+        14.0,
+        177.05,
+        8.0
+      ],
+      "min_z_mm": 0.0,
+      "a1_volume_ok": true,
+      "ok": true
+    },
+    {
+      "file": "PRINT_THESE\\STLs\\10_Rear_Spine_B.stl",
+      "watertight": true,
+      "bodies": 1,
+      "size_mm": [
+        14.0,
+        177.05,
+        8.0
+      ],
+      "min_z_mm": 0.0,
+      "a1_volume_ok": true,
+      "ok": true
+    },
+    {
+      "file": "PRINT_THESE\\TEST_FIRST\\01_Bay_Fit_Test.stl",
+      "watertight": true,
+      "bodies": 1,
+      "size_mm": [
+        70.0,
+        38.0,
+        8.0
+      ],
+      "min_z_mm": 0.0,
+      "a1_volume_ok": true,
+      "ok": true
+    },
+    {
+      "file": "PRINT_THESE\\TEST_FIRST\\02_Rear_Spine_A.stl",
+      "watertight": true,
+      "bodies": 1,
+      "size_mm": [
+        14.0,
+        177.05,
+        8.0
+      ],
+      "min_z_mm": 0.0,
+      "a1_volume_ok": true,
+      "ok": true
+    },
+    {
+      "file": "PRINT_THESE\\TEST_FIRST\\03_Rear_Spine_B.stl",
+      "watertight": true,
+      "bodies": 1,
+      "size_mm": [
+        14.0,
+        177.05,
+        8.0
+      ],
+      "min_z_mm": 0.0,
+      "a1_volume_ok": true,
+      "ok": true
+    },
+    {
+      "file": "PRINT_THESE\\TEST_FIRST\\04_Desktop_Feet_Set.stl",
+      "watertight": true,
+      "bodies": 1,
+      "size_mm": [
+        50.0,
+        50.0,
+        9.0
+      ],
+      "min_z_mm": 0.0,
+      "a1_volume_ok": true,
+      "ok": true
+    },
+    {
+      "file": "PRINT_THESE\\TEST_FIRST\\05_Magnet_Keystone_Peg_Test.stl",
+      "watertight": true,
+      "bodies": 1,
+      "size_mm": [
+        70.0,
+        32.0,
+        11.85
+      ],
+      "min_z_mm": 0.0,
+      "a1_volume_ok": true,
+      "ok": true
+    },
+    {
+      "file": "PRINT_THESE\\TEST_FIRST\\06_Vent_Insert.stl",
+      "watertight": true,
+      "bodies": 1,
+      "size_mm": [
+        64.5,
+        30.0,
+        6.0
+      ],
+      "min_z_mm": 0.0,
+      "a1_volume_ok": true,
+      "ok": true
+    },
+    {
+      "file": "PRINT_THESE\\TEST_FIRST\\07_Magnet_Polarity_Key.stl",
+      "watertight": true,
+      "bodies": 1,
+      "size_mm": [
+        50.0,
+        18.0,
+        4.0
+      ],
+      "min_z_mm": 0.0,
+      "a1_volume_ok": true,
+      "ok": true
+    },
+    {
+      "file": "PRINT_THESE\\TEST_FIRST\\08_Rack_Ear_Test.stl",
+      "watertight": true,
+      "bodies": 1,
+      "size_mm": [
+        17.5,
+        43.7,
+        5.0
+      ],
+      "min_z_mm": 0.0,
+      "a1_volume_ok": true,
+      "ok": true
+    },
+    {
+      "file": "PRINT_THESE\\TEST_FIRST\\09_Seam_Tower_Male_Test.stl",
+      "watertight": true,
+      "bodies": 1,
+      "size_mm": [
+        21.2,
+        14.0,
+        43.7
+      ],
+      "min_z_mm": 0.0,
+      "a1_volume_ok": true,
+      "ok": true
+    },
+    {
+      "file": "PRINT_THESE\\TEST_FIRST\\10_Seam_Tower_Female_Test.stl",
+      "watertight": true,
+      "bodies": 1,
+      "size_mm": [
+        18.0,
+        14.0,
+        43.7
+      ],
+      "min_z_mm": 0.0,
+      "a1_volume_ok": true,
+      "ok": true
+    }
+  ]
+}

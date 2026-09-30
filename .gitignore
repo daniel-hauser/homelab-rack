@@ -1,0 +1,51 @@
+# Generated CAD exports (the curated release STLs live in PRINT_THESE/)
+out/
+
+# Slicer workspaces and bulky intermediate toolpaths
+slicer/baseline/
+slicer/production/
+slicer/results/
+slicer/user/
+*.gcode
+*.gcode.3mf
+*.log
+
+# Local Bambu Studio configuration
+BambuStudio/
+*.bbsflmt
+*.bbscfg
+
+# Python and tool caches
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Local/session artifacts
+.copilot/
+session-state/
+*.tmp
+*.temp
+*.bak
+*.autosave
+*.zip
+*.7z
+*.rar
+
+# Secrets and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials.json
+
+# OS/editor metadata
+.DS_Store
+Thumbs.db
+Desktop.ini
+.vscode/
+.idea/

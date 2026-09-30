@@ -1,0 +1,10 @@
+{
+  "type": "process",
+  "name": "Rack benchmark overrides",
+  "from": "user",
+  "instantiation": "true",
+  "brim_type": "no_brim",
+  "brim_width": "0",
+  "skirt_loops": "0",
+  "use_relative_e_distances": "1"
+}

@@ -1,0 +1,105 @@
+{
+  "profile": "Bambu Studio 02.08.02.61 / A1 0.4 / 0.20 Standard / Generic PLA / 4 walls / 5 top / 4 bottom / 20% gyroid / no support / no brim or skirt",
+  "plates": [
+    {
+      "plate": "plate_1",
+      "objects": [
+        "01_Bay_Fit_Test.stl",
+        "02_Rear_Spine_A.stl",
+        "03_Rear_Spine_B.stl",
+        "04_Desktop_Feet_Set.stl",
+        "05_Magnet_Keystone_Peg_Test.stl",
+        "06_Vent_Insert.stl",
+        "07_Magnet_Polarity_Key.stl",
+        "08_Rack_Ear_Test.stl",
+        "09_Seam_Tower_Male_Test.stl",
+        "10_Seam_Tower_Female_Test.stl"
+      ],
+      "model_time": "2h 38m 13s",
+      "total_time": "2h 44m 55s",
+      "seconds": 9895,
+      "g": 63.32,
+      "m": 21.2317,
+      "cm3": 51.06822,
+      "warning_message": ""
+    },
+    {
+      "plate": "plate_2",
+      "objects": [
+        "01_UCG_Ultra.stl"
+      ],
+      "model_time": "4h 9m 17s",
+      "total_time": "4h 15m 59s",
+      "seconds": 15359,
+      "g": 101.85,
+      "m": 34.14737,
+      "cm3": 82.13406,
+      "warning_message": "It seems object 01_UCG_Ultra.stl has floating cantilever. Please re-orient the object or enable support generation."
+    },
+    {
+      "plate": "plate_3",
+      "objects": [
+        "02_USW_Ultra_Left.stl"
+      ],
+      "model_time": "3h 51m 31s",
+      "total_time": "3h 58m 12s",
+      "seconds": 14292,
+      "g": 91.31,
+      "m": 30.6145,
+      "cm3": 73.63651,
+      "warning_message": "It seems object 02_USW_Ultra_Left.stl has floating cantilever. Please re-orient the object or enable support generation."
+    },
+    {
+      "plate": "plate_4",
+      "objects": [
+        "04_Dual_Pi_Chassis.stl"
+      ],
+      "model_time": "4h 22m 1s",
+      "total_time": "4h 28m 43s",
+      "seconds": 16123,
+      "g": 105.44,
+      "m": 35.35303,
+      "cm3": 85.03401,
+      "warning_message": "It seems object 04_Dual_Pi_Chassis.stl has floating cantilever. Please re-orient the object or enable support generation."
+    },
+    {
+      "plate": "plate_5",
+      "objects": [
+        "03_USW_Ultra_Right.stl",
+        "06_Pi_Drawer_2.stl"
+      ],
+      "model_time": "4h 44m 36s",
+      "total_time": "4h 51m 18s",
+      "seconds": 17478,
+      "g": 108.15,
+      "m": 36.26163,
+      "cm3": 87.21945,
+      "warning_message": "It seems object 03_USW_Ultra_Right.stl has floating cantilever. Please re-orient the object or enable support generation."
+    },
+    {
+      "plate": "plate_6",
+      "objects": [
+        "08_UK_Ultra_Top.stl",
+        "05_Pi_Drawer_1.stl"
+      ],
+      "model_time": "2h 39m 0s",
+      "total_time": "2h 45m 42s",
+      "seconds": 9942,
+      "g": 59.36,
+      "m": 19.9035,
+      "cm3": 47.87352,
+      "warning_message": ""
+    }
+  ],
+  "totals": {
+    "beds": 6,
+    "test_beds": 1,
+    "production_beds": 5,
+    "grams": 529.43,
+    "production_grams": 466.11,
+    "length_m": 177.51173,
+    "volume_cm3": 426.96577,
+    "serial_seconds": 83089,
+    "serial_time": "23h 4m 49s"
+  }
+}
