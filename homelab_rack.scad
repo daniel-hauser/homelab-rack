@@ -68,6 +68,16 @@ pi_mount_boss_d = 8.0;
 pi_mount_screw_d = 2.8;
 pi_mount_head_clearance_d = 5.6;
 pi_mount_shoulder = 1.2;
+pi_mount_pattern_x = [3.5, 52.5];
+pi_mount_pattern_y = [3.5, 61.5];
+pi_locator_clearance = 0.30;
+
+// Review-only mount assumptions. Measure the installed hardware before use.
+pi_review_screw_head_d = 5.0;
+pi_review_screw_head_h = 1.6;
+pi_review_magnetic_gap = 0.35;
+pi_review_insulating_skin = 0.30;
+pi_review_magnet_pocket_d = stack_magnet_d + magnet_clearance;
 bay_count = 3;
 bay_width = 62.0;
 bay_gap = 4.0;
@@ -668,7 +678,42 @@ module dual_pi_module(hand = "left") {
     }
 }
 
-module pi_cartridge_mount() {
+module pi_mount_positions() {
+    board_x = (bay_width - pi_board[0]) / 2;
+    board_y = 23;
+
+    for (dx = pi_mount_pattern_x)
+        for (dy = pi_mount_pattern_y)
+            translate([board_x + dx, board_y + dy, 0])
+                children();
+}
+
+module pi_cartridge_locators() {
+    board_x = (bay_width - pi_board[0]) / 2;
+    board_y = 23;
+    locator_z = pi_mount_height + 1.0;
+    tab_depth = 10;
+
+    // Four side tabs carry shear without covering the PCB top.
+    for (x = [
+        board_x - pi_locator_clearance - 1.5,
+        board_x + pi_board[0] + pi_locator_clearance
+    ])
+        for (y = [board_y + 8, board_y + 67])
+            translate([x, y, 1.6])
+                cube([1.5, tab_depth, locator_z - 1.6]);
+
+    // Rear corner stops leave the central microSD access area open.
+    for (x = [board_x + 1, board_x + pi_board[0] - 6])
+        translate([
+            x,
+            board_y + pi_board[1] + pi_locator_clearance,
+            1.6
+        ])
+            cube([5, 1.5, locator_z - 1.6]);
+}
+
+module pi_cartridge_mount(mount_variant = "through_floor") {
     board_x = (bay_width - pi_board[0]) / 2;
     board_y = 23;
     mount_z = 1.6;
@@ -677,46 +722,50 @@ module pi_cartridge_mount() {
         translate([board_x, rail_y, 0])
             cube([pi_board[0], 8, 3.4]);
 
-    // The existing HAT standoffs remain installed. M2.5 x 6 mm screws pass
-    // through recessed access pockets and a 1.2 mm printed shoulder.
-    for (dx = [3.5, 52.5])
-        for (dy = [3.5, 61.5])
-            translate([
-                board_x + dx,
-                board_y + dy,
-                mount_z
-            ])
-                cylinder(
-                    d = pi_mount_boss_d,
-                    h = pi_mount_height - mount_z
-                );
+    pi_mount_positions()
+        translate([0, 0, mount_z])
+            cylinder(
+                d = pi_mount_boss_d,
+                h = pi_mount_height - mount_z
+            );
 
-    for (x = [board_x - 1.5, board_x + pi_board[0]])
-        translate([x, board_y - 2, 1.6])
-            cube([1.5, pi_board[1] + 4, 5.2]);
+    if (mount_variant == "magnetic")
+        pi_cartridge_locators();
+    else
+        for (x = [board_x - 1.5, board_x + pi_board[0]])
+            translate([x, board_y - 2, 1.6])
+                cube([1.5, pi_board[1] + 4, 5.2]);
 }
 
-module pi_cartridge_screw_cuts() {
-    board_x = (bay_width - pi_board[0]) / 2;
-    board_y = 23;
+module pi_cartridge_retention_cuts(
+    mount_variant = "through_floor"
+) {
     shoulder_z = pi_mount_height - pi_mount_shoulder;
+    screw_head_bottom = pi_mount_height - pi_review_screw_head_h;
+    skin_top = screw_head_bottom - pi_review_magnetic_gap;
+    skin_bottom = skin_top - pi_review_insulating_skin;
 
-    for (dx = [3.5, 52.5])
-        for (dy = [3.5, 61.5]) {
-            translate([
-                board_x + dx,
-                board_y + dy,
-                -0.2
-            ])
+    pi_mount_positions()
+        if (mount_variant == "magnetic") {
+            // Underside glue pocket. Hold the magnet against the printed roof
+            // while epoxy cures, then fill the access recess flush if desired.
+            translate([0, 0, -0.2])
+                cylinder(
+                    d = pi_review_magnet_pocket_d,
+                    h = skin_bottom + 0.2
+                );
+            translate([0, 0, skin_top])
+                cylinder(
+                    d = pi_mount_head_clearance_d,
+                    h = pi_mount_height - skin_top + 0.4
+                );
+        } else {
+            translate([0, 0, -0.2])
                 cylinder(
                     d = pi_mount_head_clearance_d,
                     h = shoulder_z + 0.2
                 );
-            translate([
-                board_x + dx,
-                board_y + dy,
-                shoulder_z
-            ])
+            translate([0, 0, shoulder_z])
                 cylinder(
                     d = pi_mount_screw_d,
                     h = pi_mount_shoulder + 0.4
@@ -724,7 +773,11 @@ module pi_cartridge_screw_cuts() {
         }
 }
 
-module pi_cartridge(label = "PI", installed = false) {
+module pi_cartridge(
+    label = "PI",
+    installed = false,
+    mount_variant = "through_floor"
+) {
     tray_x = bay_clearance + 0.8;
     tray_w = bay_width - 2 * tray_x;
     flange_x = -1.25;
@@ -760,10 +813,10 @@ module pi_cartridge(label = "PI", installed = false) {
                         3.0,
                         bay_opening_h - 2 * bay_clearance
                     ]);
-                pi_cartridge_mount();
+                pi_cartridge_mount(mount_variant);
             }
 
-            pi_cartridge_screw_cuts();
+            pi_cartridge_retention_cuts(mount_variant);
             translate([
                 (bay_width - connector_w) / 2,
                 -2.6,
@@ -782,6 +835,126 @@ module pi_cartridge(label = "PI", installed = false) {
     else
         translate([1.25, 2.4, 0])
             geometry();
+}
+
+module pi_review_hardware(mount_variant = "through_floor") {
+    board_x = (bay_width - pi_board[0]) / 2;
+    board_y = 23;
+    board_z = pi_mount_height;
+    shoulder_z = pi_mount_height - pi_mount_shoulder;
+    screw_head_bottom = board_z - pi_review_screw_head_h;
+    skin_top = screw_head_bottom - pi_review_magnetic_gap;
+    skin_bottom = skin_top - pi_review_insulating_skin;
+    magnet_bottom = skin_bottom - stack_magnet_h;
+    standoff_z = board_z + pi_board[2];
+
+    color([0.10, 0.48, 0.22])
+        translate([board_x, board_y, board_z])
+            cube(pi_board);
+
+    pi_mount_positions() {
+        color([0.72, 0.56, 0.22])
+            translate([0, 0, standoff_z])
+                cylinder(d = 5.0, h = 8.4, $fn = 6);
+
+        if (mount_variant == "magnetic") {
+            color([0.72, 0.74, 0.78]) {
+                translate([0, 0, screw_head_bottom])
+                    cylinder(
+                        d = pi_review_screw_head_d,
+                        h = pi_review_screw_head_h
+                    );
+                translate([0, 0, board_z])
+                    cylinder(
+                        d = 2.5,
+                        h = pi_board[2] + 3.2
+                    );
+            }
+            color([0.82, 0.16, 0.13])
+                translate([0, 0, magnet_bottom])
+                    cylinder(
+                        d = stack_magnet_d,
+                        h = stack_magnet_h
+                    );
+        } else
+            color([0.72, 0.74, 0.78]) {
+                translate([
+                    0,
+                    0,
+                    shoulder_z - pi_review_screw_head_h
+                ])
+                    cylinder(
+                        d = pi_review_screw_head_d,
+                        h = pi_review_screw_head_h
+                    );
+                translate([0, 0, shoulder_z])
+                    cylinder(
+                        d = 2.5,
+                        h = pi_mount_shoulder
+                            + pi_board[2]
+                            + 3.2
+                    );
+            }
+    }
+}
+
+module pi_mount_review_assembly(
+    mount_variant = "through_floor",
+    underside = false
+) {
+    module assembly() {
+        color([0.72, 0.74, 0.78, 0.82])
+            pi_cartridge(
+                "REVIEW",
+                false,
+                mount_variant
+            );
+        translate([1.25, 2.4, 0])
+            pi_review_hardware(mount_variant);
+    }
+
+    if (underside)
+        rotate([180, 0, 0])
+            assembly();
+    else
+        assembly();
+}
+
+module pi_mount_review_cutaway(
+    mount_variant = "through_floor"
+) {
+    board_x = (bay_width - pi_board[0]) / 2;
+    board_y = 23;
+    mount_x = board_x + pi_mount_pattern_x[0];
+    mount_y = board_y + pi_mount_pattern_y[0];
+
+    scale([4, 4, 4])
+        translate([-mount_x, -mount_y, 0]) {
+            color([0.72, 0.74, 0.78, 0.82])
+                intersection() {
+                    pi_cartridge(
+                        "REVIEW",
+                        true,
+                        mount_variant
+                    );
+                    translate([
+                        mount_x - 6,
+                        mount_y - 7,
+                        -0.2
+                    ])
+                        cube([6.05, 14, 12]);
+                }
+
+            intersection() {
+                pi_review_hardware(mount_variant);
+                translate([
+                    mount_x - 6,
+                    mount_y - 7,
+                    -0.2
+                ])
+                    cube([12, 14, 22]);
+            }
+        }
 }
 
 module vent_cartridge(installed = false) {
@@ -1560,6 +1733,18 @@ else if (part == "pi_cartridge_1")
     pi_cartridge("PI 1", false);
 else if (part == "pi_cartridge_2")
     pi_cartridge("PI 2", false);
+else if (part == "pi_mount_review_magnetic_stl")
+    pi_cartridge("REVIEW A", false, "magnetic");
+else if (part == "pi_mount_review_mechanical_stl")
+    pi_cartridge("REVIEW B", false, "through_floor");
+else if (part == "pi_mount_review_magnetic_cutaway")
+    pi_mount_review_cutaway("magnetic");
+else if (part == "pi_mount_review_mechanical_cutaway")
+    pi_mount_review_cutaway("through_floor");
+else if (part == "pi_mount_review_magnetic_underside")
+    pi_mount_review_assembly("magnetic", true);
+else if (part == "pi_mount_review_mechanical_underside")
+    pi_mount_review_assembly("through_floor", true);
 else if (part == "vent_cartridge")
     vent_cartridge_print();
 else if (part == "blank_left")
