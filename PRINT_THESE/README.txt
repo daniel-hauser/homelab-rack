@@ -4,7 +4,39 @@ HOMELAB RACK - PRINT-ONLY PACKAGE
 The "STLs" folder contains exactly the 10 parts needed for the current
 desktop rack. It contains no blanks, alternate variants, or fit-test coupons.
 
-Fastest way to load everything:
+ALREADY PRINTED THE OLDER TEST PLATE
+====================================
+
+Double-click OPEN_NO_TEST_PROJECT.cmd or open
+homelab-rack-Bambu-Studio-5-plates-NO-TEST.3mf.
+
+Use this five-plate project for the fewest printer visits. It excludes every
+fit coupon, seam coupon, rack-ear coupon, polarity key, and old test-only part.
+It contains every final assembly object exactly once.
+
+The revised 04_Desktop_Feet_Set.stl is intentionally included. The foot stack
+peg and magnet geometry changed, so feet from the older test plate are
+obsolete. No other test-only artifact is needed: the final rail-guided vent
+and both rear spines are already included.
+
+Plate 1: UCG-Ultra module + rear spine A
+Plate 2: left USW-Ultra module + rear spine B
+Plate 3: dual-Pi chassis + final rail-guided vent cartridge
+Plate 4: right USW-Ultra module + Pi drawer 2
+Plate 5: UK-Ultra top + Pi drawer 1 + revised desktop feet set
+
+Pinned estimate: 516.70 g PLA and 23h06m56s serial printing time. The maximum
+classified bridge is 18.84 mm. The only slicer warnings are the four known,
+explained chassis cantilever/region warnings.
+
+Five plates are the geometric minimum. Each of the four chassis and the
+UK-Ultra top is over 241 mm wide and at least 150 mm deep in its validated
+axis-aligned print orientation, so no two can share a 256 x 256 mm A1 bed.
+
+HAVE NOT PRINTED A TEST PLATE
+==============================
+
+Fastest way to load the original test-first workflow:
 
 1. Extract the ZIP.
 2. Double-click OPEN_IN_BAMBU_STUDIO.cmd.
@@ -13,7 +45,7 @@ Fastest way to load everything:
 4. Confirm your installed A1 0.4 mm printer and actual filament before
    printing. The included project is already sliced natively by Bambu Studio.
 
-The project was prepared with an A1 0.4 mm nozzle, 0.20 mm layers, 4 walls,
+Both projects were prepared with an A1 0.4 mm nozzle, 0.20 mm layers, 4 walls,
 5 top layers, 4 bottom layers, 20% gyroid, no supports, no brim, and no skirt.
 
 Loose magnets physically attract all four intended assembled Pi/HAT screw

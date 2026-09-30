@@ -6,7 +6,10 @@ from __future__ import annotations
 
 import hashlib
 import json
+import math
+import xml.etree.ElementTree as ET
 from pathlib import Path
+from zipfile import ZipFile
 
 import trimesh
 
@@ -42,6 +45,24 @@ EXPECTED_TOTALS = {
     "volume_cm3": 441.22368,
     "serial_seconds": 89031,
 }
+NO_TEST_TOTALS = {
+    "beds": 5,
+    "grams": 516.7,
+    "length_m": 173.23944,
+    "volume_cm3": 416.68971,
+    "serial_seconds": 83216,
+}
+NO_TEST_PLATES = [
+    {"01_UCG_Ultra.stl", "09_Rear_Spine_A.stl"},
+    {"02_USW_Ultra_Left.stl", "10_Rear_Spine_B.stl"},
+    {"04_Dual_Pi_Chassis.stl", "07_Vent_Insert.stl"},
+    {"03_USW_Ultra_Right.stl", "06_Pi_Drawer_2.stl"},
+    {
+        "08_UK_Ultra_Top.stl",
+        "05_Pi_Drawer_1.stl",
+        "04_Desktop_Feet_Set.stl",
+    },
+]
 
 
 def digest(path: Path) -> str:
@@ -73,6 +94,105 @@ def check_mesh(path: Path) -> None:
     )
 
 
+def check_no_test_project(path: Path) -> None:
+    with ZipFile(path) as archive:
+        if archive.testzip() is not None:
+            raise ValueError("No-test 3MF has a CRC failure")
+        settings = ET.fromstring(
+            archive.read("Metadata/model_settings.config")
+        )
+        names = {
+            node.attrib["id"]: node.find(
+                "./metadata[@key='name']"
+            ).attrib["value"]
+            for node in settings.findall("object")
+        }
+        actual_plates = []
+        for plate in settings.findall("plate"):
+            actual_plates.append(
+                {
+                    names[
+                        instance.find(
+                            "./metadata[@key='object_id']"
+                        ).attrib["value"]
+                    ]
+                    for instance in plate.findall("model_instance")
+                }
+            )
+        if actual_plates != NO_TEST_PLATES:
+            raise ValueError(
+                f"Unexpected no-test plate inventory: {actual_plates}"
+            )
+        flattened = [name for plate in actual_plates for name in plate]
+        if len(flattened) != len(set(flattened)) or len(flattened) != 11:
+            raise ValueError("No-test project has duplicate or missing objects")
+
+        for index in range(1, 6):
+            plate_json = json.loads(
+                archive.read(f"Metadata/plate_{index}.json")
+            )
+            boxes = [item["bbox"] for item in plate_json["bbox_objects"]]
+            for box in boxes:
+                if min(box) < 0 or max(box) > 256:
+                    raise ValueError(
+                        f"No-test plate {index} exceeds the A1 bed"
+                    )
+            for left_index, left in enumerate(boxes):
+                for right in boxes[left_index + 1 :]:
+                    separated = (
+                        left[2] < right[0]
+                        or right[2] < left[0]
+                        or left[3] < right[1]
+                        or right[3] < left[1]
+                    )
+                    if not separated:
+                        raise ValueError(
+                            f"No-test plate {index} has overlapping bboxes"
+                        )
+
+            gcode_name = f"Metadata/plate_{index}.gcode"
+            md5_name = f"{gcode_name}.md5"
+            expected = archive.read(md5_name).decode("ascii").strip().lower()
+            actual = hashlib.md5(
+                archive.read(gcode_name), usedforsecurity=False
+            ).hexdigest()
+            if actual != expected:
+                raise ValueError(f"Embedded G-code MD5 mismatch: plate {index}")
+
+        core = "http://schemas.microsoft.com/3dmanufacturing/core/2015/02"
+        model = ET.fromstring(archive.read("3D/3dmodel.model"))
+        for item in model.findall(f".//{{{core}}}build/{{{core}}}item"):
+            values = [float(value) for value in item.attrib["transform"].split()]
+            if (
+                len(values) != 12
+                or any(abs(values[index]) > 1e-8 for index in (2, 5, 6, 7))
+                or abs(values[8] - 1) > 1e-8
+                or not math.isclose(
+                    abs(values[0] * values[4] - values[1] * values[3]),
+                    1,
+                    abs_tol=1e-6,
+                )
+            ):
+                raise ValueError("No-test project tips an object off its validated face")
+
+        project = json.loads(
+            archive.read("Metadata/project_settings.config")
+        )
+        expected_settings = {
+            "enable_support": "0",
+            "brim_type": "no_brim",
+            "skirt_loops": "0",
+            "wall_loops": "4",
+            "sparse_infill_density": "20%",
+            "sparse_infill_pattern": "gyroid",
+            "top_shell_layers": "5",
+            "bottom_shell_layers": "4",
+        }
+        for key, value in expected_settings.items():
+            if project.get(key) != value:
+                raise ValueError(f"Unexpected no-test setting {key}")
+
+
 def main() -> None:
     production_dir = ROOT / "PRINT_THESE" / "STLs"
     test_dir = ROOT / "PRINT_THESE" / "TEST_FIRST"
@@ -94,8 +214,42 @@ def main() -> None:
         if totals[key] != expected:
             raise ValueError(f"Unexpected release total {key}: {totals[key]}")
 
+    no_test_project = (
+        ROOT
+        / "PRINT_THESE"
+        / "homelab-rack-Bambu-Studio-5-plates-NO-TEST.3mf"
+    )
+    check_no_test_project(no_test_project)
+    no_test_audit = json.loads(
+        (ROOT / "PRINT_THESE" / "NO_TEST_BAMBU_AUDIT.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    if no_test_audit["project_sha256"] != digest(no_test_project):
+        raise ValueError("No-test project audit is not synchronized")
+    no_test_estimate = json.loads(
+        (ROOT / "slicer" / "release" / "no-test-estimate.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    for key, expected in NO_TEST_TOTALS.items():
+        if no_test_estimate["totals"][key] != expected:
+            raise ValueError(
+                f"Unexpected no-test release total {key}: "
+                f"{no_test_estimate['totals'][key]}"
+            )
+    bridge = json.loads(
+        (
+            ROOT / "slicer" / "release" / "no-test-bridge-audit.json"
+        ).read_text(encoding="utf-8")
+    )
+    if bridge["maximum_observed_span_mm"] > 20:
+        raise ValueError("No-test project exceeds the 20 mm bridge gate")
+
     required = [
         ROOT / "PRINT_THESE" / "homelab-rack-Bambu-Studio-6-plates.3mf",
+        no_test_project,
+        ROOT / "PRINT_THESE" / "NO_TEST_BAMBU_AUDIT.json",
         test_dir / "plate_1-test.3mf",
         ROOT / "LICENSES" / "CERN-OHL-S-2.0.txt",
         ROOT / "LICENSES" / "MIT.txt",
@@ -107,7 +261,7 @@ def main() -> None:
 
     print(
         "Release package verified: 20 printable STLs, 10 viewer copies, "
-        "pinned totals, two Bambu projects, and three license texts."
+        "pinned totals, three Bambu projects, and three license texts."
     )
 
 

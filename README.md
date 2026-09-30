@@ -12,7 +12,38 @@ vent insert, and a UK-Ultra top carrier.
 
 ![Assembled desktop homelab rack](renders/desk_preview_final.png)
 
-## Print first
+## Choose the right project
+
+### Already printed the older test-first plate
+
+Open
+[`PRINT_THESE\homelab-rack-Bambu-Studio-5-plates-NO-TEST.3mf`](PRINT_THESE/homelab-rack-Bambu-Studio-5-plates-NO-TEST.3mf)
+or double-click `PRINT_THESE\OPEN_NO_TEST_PROJECT.cmd`. This is the optimized
+production project: five A1 visits, no coupons, no polarity key, and every
+final assembly object exactly once.
+
+The project deliberately includes the current
+`TEST_FIRST\04_Desktop_Feet_Set.stl`. The foot-to-stack peg and magnet geometry
+changed, so feet from the older test plate are obsolete. No other test-only
+artifact is required. The revised vent and both rear spines are already
+included as final production objects.
+
+| Plate | Objects |
+| --- | --- |
+| 1 | UCG-Ultra module; rear spine A |
+| 2 | left USW-Ultra module; rear spine B |
+| 3 | dual-Pi chassis; final rail-guided vent cartridge |
+| 4 | right USW-Ultra module; Pi drawer 2 |
+| 5 | UK-Ultra top; Pi drawer 1; revised desktop feet set |
+
+The pinned native-Bambu estimate is **516.70 g**, **173.23944 m**,
+**416.68971 cm³**, and **23h06m56s** serial printing time. Five plates are the
+geometric lower bound: the four chassis and the UK-Ultra top each have an
+axis-aligned footprint wider than 241 mm and deeper than 150 mm, so no two fit
+on one 256 × 256 mm A1 plate without overlap. Smaller parts occupy otherwise
+unused bed regions around those five unavoidable footprints.
+
+### Have not printed a test plate
 
 Use the numbered files exactly as tracked. Do not use old aliases from previous
 design revisions.
@@ -34,24 +65,28 @@ design revisions.
 
 2. Break off and mate the stack tiles, then confirm the magnet pockets,
    keystone opening, Pi bay, seam towers, and rack-ear slots fit your hardware.
-3. If the test plate succeeds, open
+3. If the test plate succeeds, open the original test-first project,
    [`PRINT_THESE\homelab-rack-Bambu-Studio-6-plates.3mf`](PRINT_THESE/homelab-rack-Bambu-Studio-6-plates.3mf)
    or double-click `PRINT_THESE\OPEN_IN_BAMBU_STUDIO.cmd`.
 4. Keep the rear spines flat on their broad faces. All tracked STLs are already
    exported in their intended print orientation.
 
-The six-plate project uses a Bambu Lab A1 with a 0.4 mm nozzle, 0.20 mm layers,
+Both projects use a Bambu Lab A1 with a 0.4 mm nozzle, 0.20 mm layers,
 four walls, five top layers, four bottom layers, 20% gyroid, no supports, no
-brim, and no skirt. The current magnetic-direction candidate estimate is
+brim, and no skirt. The original six-plate magnetic-direction estimate is
 **547.11 g**, **183.43948 m**, **441.22368 cm³**, and **24h43m51s** serial
 printing time. Loose-magnet attraction to all four assembled Pi/HAT screw
 heads has passed physical testing.
 
-Bambu Studio reports a conservative “floating cantilever” warning on the four
+Bambu Studio reports a conservative “floating cantilever/regions” warning on the four
 full-height chassis. Their maximum measured bridge is 17.52 mm. Print plate 1
 first; if both seam-tower coupons are clean, keep automatic supports disabled
 for the production chassis because generated supports obstruct functional
 pockets and fill large open areas.
+
+The five-plate no-test project was sliced natively with the same pinned profile.
+Its maximum classified bridge is 18.84 mm, all objects remain inside the A1
+volume, and the only warnings are the same four explained chassis warnings.
 
 ## Production STLs
 
@@ -253,6 +288,12 @@ python .\slicer\render_beds.py `
   .\slicer\production\desktop-strong\desktop-strong.gcode.3mf `
   .\renders\beds
 ```
+
+The separated five-plate evidence is tracked in:
+
+- `slicer\release\no-test-estimate.json`
+- `slicer\release\no-test-bridge-audit.json`
+- `renders\beds-no-test`
 
 ## Viewer
 

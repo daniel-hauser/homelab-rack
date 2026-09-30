@@ -1,0 +1,230 @@
+{
+  "tool": "Bambu Studio CLI",
+  "version": "02.08.02.61",
+  "profile": "Bambu Studio 02.08.02.61 / A1 0.4 / 0.20 Standard / existing pinned filament profile / 4 walls / 5 top / 4 bottom / 20% gyroid / no support / no brim or skirt",
+  "project": "homelab-rack-Bambu-Studio-5-plates-NO-TEST.3mf",
+  "project_sha256": "59feb5793422088235ab3468d249bf7b7320294cbca494943d49c77d45fe89d5",
+  "hard_gate": {
+    "plates": 5,
+    "objects": 11,
+    "duplicates": 0,
+    "omissions": 0,
+    "supports": false,
+    "crc_valid": true,
+    "embedded_gcodes": 5,
+    "embedded_gcode_md5_valid": true,
+    "maximum_allowed_bridge_mm": 20.0,
+    "maximum_observed_bridge_mm": 18.84,
+    "unexpected_warnings": 0
+  },
+  "theoretical_minimum": "Five plates: the four chassis and UK-Ultra top each exceed 241 mm x 150 mm in their validated axis-aligned bed footprint, so no pair fits within 256 mm x 256 mm.",
+  "test_artifact_review": "Only the revised desktop feet are required from TEST_FIRST because their stack peg/magnet geometry changed. The final changed vent and both rear spines are included as production objects; coupons and polarity key are not assembly parts.",
+  "plates": [
+    {
+      "plate": 1,
+      "objects": [
+        "09_Rear_Spine_A.stl",
+        "01_UCG_Ultra.stl"
+      ],
+      "bbox_objects": [
+        {
+          "area": 849.8400268554688,
+          "bbox": [
+            39.474990000000005,
+            10.99999,
+            216.52499000000003,
+            24.99999
+          ],
+          "id": 156,
+          "layer_height": 0.20000000298023224,
+          "name": "09_Rear_Spine_A.stl"
+        },
+        {
+          "area": 18647.646484375,
+          "bbox": [
+            5.74999,
+            51.999990000000004,
+            247.04999,
+            203.99999000000003
+          ],
+          "id": 157,
+          "layer_height": 0.20000000298023224,
+          "name": "01_UCG_Ultra.stl"
+        }
+      ],
+      "grams": 115.06,
+      "time": "4h 48m 25s",
+      "warning_message": "It seems object 01_UCG_Ultra.stl has floating cantilever. Please re-orient the object or enable support generation.",
+      "maximum_bridge_mm": 17.51
+    },
+    {
+      "plate": 2,
+      "objects": [
+        "10_Rear_Spine_B.stl",
+        "02_USW_Ultra_Left.stl"
+      ],
+      "bbox_objects": [
+        {
+          "area": 849.8400268554688,
+          "bbox": [
+            39.475,
+            10.99999,
+            216.525,
+            24.99999
+          ],
+          "id": 158,
+          "layer_height": 0.20000000298023224,
+          "name": "10_Rear_Spine_B.stl"
+        },
+        {
+          "area": 18647.646484375,
+          "bbox": [
+            5.750000000000001,
+            51.999990000000004,
+            247.05,
+            203.99999000000003
+          ],
+          "id": 159,
+          "layer_height": 0.20000000298023224,
+          "name": "02_USW_Ultra_Left.stl"
+        }
+      ],
+      "grams": 103.87,
+      "time": "4h 28m 17s",
+      "warning_message": "It seems object 02_USW_Ultra_Left.stl has floating regions. Please re-orient the object or enable support generation.",
+      "maximum_bridge_mm": 17.51
+    },
+    {
+      "plate": 3,
+      "objects": [
+        "07_Vent_Insert.stl",
+        "04_Dual_Pi_Chassis.stl"
+      ],
+      "bbox_objects": [
+        {
+          "area": 1484.1199951171875,
+          "bbox": [
+            95.75000000000001,
+            2.4999900000000004,
+            160.25,
+            32.499990000000004
+          ],
+          "id": 160,
+          "layer_height": 0.20000000298023224,
+          "name": "07_Vent_Insert.stl"
+        },
+        {
+          "area": 18647.64453125,
+          "bbox": [
+            5.750000000000001,
+            51.999990000000004,
+            247.05,
+            203.99999000000003
+          ],
+          "id": 161,
+          "layer_height": 0.20000000298023224,
+          "name": "04_Dual_Pi_Chassis.stl"
+        }
+      ],
+      "grams": 119.17,
+      "time": "5h 34m 26s",
+      "warning_message": "It seems object 04_Dual_Pi_Chassis.stl has floating cantilever. Please re-orient the object or enable support generation.",
+      "maximum_bridge_mm": 17.51
+    },
+    {
+      "plate": 4,
+      "objects": [
+        "03_USW_Ultra_Right.stl",
+        "06_Pi_Drawer_2.stl"
+      ],
+      "bbox_objects": [
+        {
+          "area": 18810.091796875,
+          "bbox": [
+            7.357240000000001,
+            84.61265,
+            248.65724000000003,
+            236.61265000000003
+          ],
+          "id": 162,
+          "layer_height": 0.20000000298023224,
+          "name": "03_USW_Ultra_Right.stl"
+        },
+        {
+          "area": 4925.5693359375,
+          "bbox": [
+            70.00646,
+            19.61306,
+            184.40646,
+            81.91306
+          ],
+          "id": 163,
+          "layer_height": 0.20000000298023224,
+          "name": "06_Pi_Drawer_2.stl"
+        }
+      ],
+      "grams": 110.65,
+      "time": "5h 3m 1s",
+      "warning_message": "It seems object 03_USW_Ultra_Right.stl has floating regions. Please re-orient the object or enable support generation.",
+      "maximum_bridge_mm": 17.52
+    },
+    {
+      "plate": 5,
+      "objects": [
+        "04_Desktop_Feet_Set.stl",
+        "08_UK_Ultra_Top.stl",
+        "05_Pi_Drawer_1.stl"
+      ],
+      "bbox_objects": [
+        {
+          "area": 1390.8104248046875,
+          "bbox": [
+            185.00001,
+            13.000000000000002,
+            235.00001000000003,
+            67.0
+          ],
+          "id": 164,
+          "layer_height": 0.20000000298023224,
+          "name": "04_Desktop_Feet_Set.stl"
+        },
+        {
+          "area": 15648.9990234375,
+          "bbox": [
+            12.700000000000001,
+            86.25,
+            254.00000000000003,
+            236.25000000000003
+          ],
+          "id": 165,
+          "layer_height": 0.20000000298023224,
+          "name": "08_UK_Ultra_Top.stl"
+        },
+        {
+          "area": 4925.5693359375,
+          "bbox": [
+            2.00001,
+            20.85,
+            116.40001000000001,
+            83.15
+          ],
+          "id": 166,
+          "layer_height": 0.20000000298023224,
+          "name": "05_Pi_Drawer_1.stl"
+        }
+      ],
+      "grams": 67.95,
+      "time": "3h 12m 47s",
+      "warning_message": "",
+      "maximum_bridge_mm": 18.84
+    }
+  ],
+  "totals": {
+    "beds": 5,
+    "grams": 516.7,
+    "length_m": 173.23944,
+    "volume_cm3": 416.68971,
+    "serial_seconds": 83216,
+    "serial_time": "23h06m56s"
+  }
+}
