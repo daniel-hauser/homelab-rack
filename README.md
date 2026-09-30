@@ -42,8 +42,8 @@ design revisions.
 
 The six-plate project uses a Bambu Lab A1 with a 0.4 mm nozzle, 0.20 mm layers,
 four walls, five top layers, four bottom layers, 20% gyroid, no supports, no
-brim, and no skirt. The validated estimate is **529.01 g**, **177.37239 m**,
-**426.63059 cm³**, and **23h03m11s** serial printing time.
+brim, and no skirt. The validated estimate is **528.99 g**, **177.36286 m**,
+**426.60769 cm³**, and **23h04m41s** serial printing time.
 
 Bambu Studio reports a conservative “floating cantilever” warning on the four
 full-height chassis. Their maximum measured bridge is 13.79 mm. Print plate 1
@@ -79,10 +79,13 @@ feet are on the test-first plate.
 - Universal magnets: 6 × 2 mm discs.
 - Vertical registration: printed pegs plus magnets.
 - Side joining: tapered diamond keys in reinforced seam towers.
+- Paired seam: 0.0 mm designed face gap with 1.5 mm socket-depth reserve.
 - Desktop stabilization: two removable rear spines and four removable feet.
 - Pi mounting: split printed snap posts for official 2.7 mm mounting holes.
 - Exposed chassis/top corners: 1.5 mm support-free chamfers.
 - Pi and vent faceplates: 1.2 mm chamfers.
+- Pi bay receiving lead-in: 1.2 mm deep at 45°, opening to 64.4 × 32.4 mm at
+  the front while retaining the 62 × 30 mm friction opening behind it.
 
 Magnets retain joints but are not structural. Printed pegs and keys carry
 lateral loads. A 19-inch installation still requires normal rack screws and

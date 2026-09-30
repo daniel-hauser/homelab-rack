@@ -137,12 +137,12 @@
         "z": 0.0
       },
       "triangle_count": 8534,
-      "model_time_seconds": 13919.126,
-      "total_time_seconds": 14320.879,
-      "filament_grams": 91.639,
+      "model_time_seconds": 13982.115,
+      "total_time_seconds": 14383.868,
+      "filament_grams": 91.965,
       "bridge": {
-        "bridge_segments": 1638,
-        "bridge_layers": 21,
+        "bridge_segments": 1706,
+        "bridge_layers": 23,
         "max_bridge_segment_mm": 13.79,
         "longest_bridge": {
           "layer": 205,
@@ -187,12 +187,12 @@
         "y": 52.0000114440918,
         "z": 0.0
       },
-      "triangle_count": 9120,
-      "model_time_seconds": 15473.534,
-      "total_time_seconds": 15875.397,
-      "filament_grams": 105.446,
+      "triangle_count": 9144,
+      "model_time_seconds": 15493.322,
+      "total_time_seconds": 15895.187,
+      "filament_grams": 105.014,
       "bridge": {
-        "bridge_segments": 1671,
+        "bridge_segments": 1672,
         "bridge_layers": 18,
         "max_bridge_segment_mm": 13.79,
         "longest_bridge": {
@@ -544,10 +544,10 @@
         "y": 109.00000762939453,
         "z": 0.0
       },
-      "triangle_count": 32,
-      "model_time_seconds": 799.344,
-      "total_time_seconds": 1201.519,
-      "filament_grams": 7.078,
+      "triangle_count": 40,
+      "model_time_seconds": 801.388,
+      "total_time_seconds": 1203.57,
+      "filament_grams": 7.018,
       "bridge": {
         "bridge_segments": 0,
         "bridge_layers": 0,
@@ -980,24 +980,24 @@
         "z": 0.0
       },
       "triangle_count": 252,
-      "model_time_seconds": 1210.826,
-      "total_time_seconds": 1612.956,
-      "filament_grams": 4.896,
+      "model_time_seconds": 1244.94,
+      "total_time_seconds": 1647.07,
+      "filament_grams": 5.057,
       "bridge": {
-        "bridge_segments": 73,
-        "bridge_layers": 4,
-        "max_bridge_segment_mm": 7.1,
+        "bridge_segments": 110,
+        "bridge_layers": 7,
+        "max_bridge_segment_mm": 7.88,
         "longest_bridge": {
-          "layer": 91,
+          "layer": 35,
           "object": "unknown",
-          "length_mm": 7.097520130299046,
+          "length_mm": 7.878821802782447,
           "start_mm": [
-            125.227,
-            123.268
+            120.773,
+            128.84
           ],
           "end_mm": [
-            120.773,
-            128.794
+            126.065,
+            123.003
           ]
         }
       },

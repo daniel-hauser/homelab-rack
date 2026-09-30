@@ -51,6 +51,7 @@ side_magnet_h = 2;
 side_key_root = 7.2;
 side_key_tip = 5.6;
 side_key_length = 3.2;
+side_key_socket_extra = 1.7;
 side_join_y = [46, module_depth - 16];
 side_join_tower_w = 8;
 side_join_tower_d = 14;
@@ -98,6 +99,25 @@ module rack_slot(x, z, length = 10.0, diameter = 7.0) {
 module face_cutout(x, z, width, height) {
     translate([x, -0.2, z])
         cube([width, face_clearance_depth + 0.4, height]);
+}
+
+module bay_face_cutout(x, z) {
+    face_cutout(x, z, bay_width, bay_opening_h);
+
+    hull() {
+        translate([
+            x - faceplate_chamfer,
+            -0.2,
+            z - faceplate_chamfer
+        ])
+            cube([
+                bay_width + 2 * faceplate_chamfer,
+                0.01,
+                bay_opening_h + 2 * faceplate_chamfer
+            ]);
+        translate([x, faceplate_chamfer, z])
+            cube([bay_width, 0.01, bay_opening_h]);
+    }
 }
 
 module keystone_cutout_at(x, z = 13.7) {
@@ -446,7 +466,9 @@ module side_join_cuts(hand) {
         for (y = side_join_y)
             for (z = [11, 33])
                 translate([-0.2, y, z])
-                    side_key_socket(side_key_length + 0.7);
+                    side_key_socket(
+                        side_key_length + side_key_socket_extra
+                    );
 }
 
 module rear_brace_cuts() {
@@ -682,11 +704,9 @@ module dual_pi_module(hand = "left") {
 
         common_cuts(hand);
         for (index = [0 : bay_count - 1])
-            face_cutout(
+            bay_face_cutout(
                 bay_x(index),
-                bay_opening_z,
-                bay_width,
-                bay_opening_h
+                bay_opening_z
             );
     }
 }
@@ -1088,12 +1108,7 @@ module bay_fit_test() {
             8,
             bay_opening_h + 8
         ]);
-        translate([4, -0.2, 4])
-            cube([
-                bay_width,
-                8.4,
-                bay_opening_h
-            ]);
+        bay_face_cutout(4, 4);
     }
 }
 
@@ -1125,7 +1140,9 @@ module side_key_socket_test() {
     difference() {
         cube([8, 16, 12]);
         translate([-0.2, 8, 6])
-            side_key_socket(side_key_length + 0.7);
+            side_key_socket(
+                side_key_length + side_key_socket_extra
+            );
     }
 }
 

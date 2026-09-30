@@ -16,8 +16,8 @@ Fastest way to load everything:
 The project was prepared with an A1 0.4 mm nozzle, 0.20 mm layers, 4 walls,
 5 top layers, 4 bottom layers, 20% gyroid, no supports, no brim, and no skirt.
 
-Expected total: 529.01 g PLA and 23h03m11s across six plates. Plate 1 is
-63.20 g / 2h44m28s and includes both rear spines, the vent, all four feet,
+Expected total: 528.99 g PLA and 23h04m41s across six plates. Plate 1 is
+63.30 g / 2h45m11s and includes both rear spines, the vent, all four feet,
 the polarity key, and the required fit coupons.
 
 Exposed chassis and UK-Ultra cap corners use restrained 1.5 mm support-free
@@ -26,8 +26,14 @@ stacking, seam, rack, bay, magnet, and rear-spine interfaces are unchanged.
 
 This revision uses reinforced 8 x 14 mm seam towers with 45-degree floor
 buttresses. The reinforcement adds 17.75 g across the complete rack.
+Physical coupon testing confirmed clean seam-tower prints and easy engagement.
+The paired modules have a 0.0 mm designed face gap and 1.5 mm of axial socket
+reserve so the tower faces can close without the keys bottoming out.
 
 The two rear-spine STL files are intentionally identical: print one of each.
+
+The rack-ear profile visually matches existing rack hardware and retains the
+validated 482.60 mm outer width and 465.10 mm mounting centers.
 
 All magnet pockets now use the same 6 x 2 mm disc magnets. A fully populated,
 reorderable desktop build uses 52 magnets: 36 for module/cap stacking and
