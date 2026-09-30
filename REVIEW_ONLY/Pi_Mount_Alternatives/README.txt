@@ -2,9 +2,9 @@ PI MOUNT ALTERNATIVES - REVIEW ONLY
 ===================================
 
 These files document the selected magnetic Raspberry Pi 5 mounting direction
-and its through-floor fallback. The magnetic direction remains physically
-gated and is not final until all four screw heads pass the attraction test and
-the installed screw-head height is measured.
+and its through-floor fallback. Loose-magnet attraction has passed on all four
+assembled screw heads. Exact installed holder gap and retention remain a
+production Drawer 1 first-article check.
 
 A_Magnetic_Cradle_Review.stl - selected direction, physically gated
   Four 6 x 2 mm magnet glue pockets align to the accessible lower screw heads
@@ -23,8 +23,8 @@ A_Magnetic_Cradle_Review.stl - selected direction, physically gated
   Install each magnet from the drawer underside, hold it against the printed
   roof while epoxy cures, and optionally fill the remaining access recess
   flush. Polarity does not affect attraction to steel; install all four with
-  the same pole facing the PCB for consistency. Do not use this option until
-  all four screw heads show strong attraction to a loose 6 x 2 mm magnet.
+  the same pole facing the PCB for consistency. Attraction to all four screw
+  heads has passed; validate the installed gap on production Drawer 1.
 
 B_Through_Floor_M2.5_Review.stl - review fallback only
   Four M2.5 clearance holes and recessed head counterbores align to the same
@@ -40,8 +40,8 @@ B_Through_Floor_M2.5_Review.stl - review fallback only
 
 Required user measurements and checks
 -------------------------------------
-1. Confirm a loose 6 x 2 mm magnet strongly attracts each of the four exposed
-   lower screw heads individually.
+1. Passed: a loose 6 x 2 mm magnet attracts each of the four exposed lower
+   screw heads individually.
 2. Measure each screw head's protrusion below the PCB; report the minimum and
    maximum, in mm.
 3. Measure screw-head diameter and height, in mm.

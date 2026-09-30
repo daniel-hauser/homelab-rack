@@ -44,7 +44,8 @@ The six-plate project uses a Bambu Lab A1 with a 0.4 mm nozzle, 0.20 mm layers,
 four walls, five top layers, four bottom layers, 20% gyroid, no supports, no
 brim, and no skirt. The current magnetic-direction candidate estimate is
 **547.11 g**, **183.43948 m**, **441.22368 cm³**, and **24h43m51s** serial
-printing time. Physical magnetic attraction remains a release gate.
+printing time. Loose-magnet attraction to all four assembled Pi/HAT screw
+heads has passed physical testing.
 
 Bambu Studio reports a conservative “floating cantilever” warning on the four
 full-height chassis. Their maximum measured bridge is 17.52 mm. Print plate 1
@@ -92,20 +93,20 @@ feet are on the test-first plate.
 - Vent cartridge: 111 mm L-section side runners with 77 mm of guide-lip
   engagement and a light rear chevron that prevents racking.
 
-The magnetic direction remains release-gated until a loose 6 × 2 mm magnet
-strongly attracts all four lower screw heads. Its current physical assumptions
-are a 1.60 mm screw-head protrusion, 0.35 mm working gap, and 0.30 mm printed
-insulating skin; measure the installed stack before final release. The
-through-floor concept remains review-only because it requires replacement
-screws. Review CAD and the full measurement list are in
+Loose 6 × 2 mm magnets physically attract all four intended lower screw heads,
+so screw ferromagnetism is accepted. The current CAD assumptions remain a
+1.60 mm screw-head protrusion, 0.35 mm working gap, and 0.30 mm printed
+insulating skin. Validate the actual installed gap and retention on the first
+production drawer before printing the second. The through-floor concept
+remains review-only because it requires replacement screws. Review CAD and the
+full measurement list are in
 [`REVIEW_ONLY\Pi_Mount_Alternatives`](REVIEW_ONLY/Pi_Mount_Alternatives).
 
-The only remaining production gate is one consolidated hardware acceptance
-using the existing test-first plate: break off and mate its stack tiles, test
-the full-depth vent and detents in the bay coupon, and test all four assembled
-Pi/HAT screw heads with a loose magnet while checking the 1.60 mm protrusion
-assumption. The earlier fixed peg/socket gauges did not mate and are not a
-physical stack-interface pass. No second full test plate is planned.
+Do not print another test coupon for the Pi mount. Print only
+`PRINT_THESE\STLs\05_Pi_Drawer_1.stl` first with the pinned production profile,
+install four magnets, seat the actual Pi/HAT assembly, and verify vertical
+retention, locator engagement, drawer insertion, and the installed holder gap.
+Print Drawer 2 only after that first article passes.
 
 The vent is a proper track-guided cartridge rather than a shallow friction
 plate. Its proven 64.5 × 30 mm face is unchanged. Two long L-section runners

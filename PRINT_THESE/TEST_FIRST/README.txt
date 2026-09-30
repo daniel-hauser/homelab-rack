@@ -54,15 +54,14 @@ functional features are carried by local bosses on a thin connected base, and
 the polarity key uses a local magnet boss, avoiding broad unsupported top
 skins.
 
-Complete one consolidated physical acceptance before printing plates 2-6:
+The stack and bay checks remain available on this plate:
 
 1. Break off and mate the two stack tiles. Confirm easy peg/socket engagement,
    face closure, lateral registration, and magnet clamping without rocking.
 2. Insert the vent through the coupon. Confirm the runners do not bind, both
    detents click, the face seats flush, and an even pull releases it.
-3. On the assembled Pi/HAT, confirm a loose 6 x 2 mm magnet strongly attracts
-   all four intended underside screw heads and verify the installed head
-   protrusion against the documented 1.60 mm assumption.
 
-This is the single unavoidable user acceptance session; no second full test
-plate is planned. Do not continue if any stack, bay, or Pi check fails.
+Loose-magnet attraction to all four assembled Pi/HAT screw heads has passed.
+Do not print another coupon for the Pi mount. Use production Drawer 1 as the
+first article, install its four magnets, seat the actual assembly, and verify
+retention, insertion, locator engagement, and holder gap before Drawer 2.

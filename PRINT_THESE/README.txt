@@ -16,12 +16,17 @@ Fastest way to load everything:
 The project was prepared with an A1 0.4 mm nozzle, 0.20 mm layers, 4 walls,
 5 top layers, 4 bottom layers, 20% gyroid, no supports, no brim, and no skirt.
 
-Before plates 2-6, complete the single consolidated acceptance session on the
-existing test-first plate: break off and mate the stack tiles, test the vent
-tracks/chamfer/detents, and verify strong attraction at all four Pi screw heads
-plus the documented 1.60 mm head-protrusion assumption. The earlier fixed
-peg/socket gauges did not mate and do not count as a stack-interface pass. No
-second full test plate is planned.
+Loose magnets physically attract all four intended assembled Pi/HAT screw
+heads, so screw ferromagnetism is accepted. Do not print another test coupon
+for the Pi mount. Print only STLs\05_Pi_Drawer_1.stl first with the pinned
+profile, install four magnets, seat the actual Pi/HAT assembly, and verify
+retention, locator engagement, drawer insertion, and the installed holder gap.
+Print Drawer 2 only after this first article passes.
+
+After Drawer 1 passes, print the tracked project in this order: plate 2 UCG,
+plate 3 left USW, plate 4 dual-Pi chassis, plate 5 right USW plus Drawer 2,
+then plate 6 UK-Ultra top with its already-printed Drawer 1 object disabled.
+Plate 1 is the existing test-first plate and does not need to be reprinted.
 
 Candidate total: 547.11 g PLA and 24h43m51s across six plates. Plate 1 is
 67.80 g / 3h29m28s and includes both rear spines, the vent, all four feet,
@@ -44,11 +49,11 @@ The rack-ear profile visually matches existing rack hardware and retains the
 validated 482.60 mm outer width and 465.10 mm mounting centers.
 
 The Pi drawers use four 6 x 2 mm magnet pockets beneath the existing lower
-screw heads, with printed side/corner locators carrying shear. Do not release
-or install this direction until a loose magnet strongly attracts all four
-screw heads and the installed screw-head protrusion is measured. The current
-CAD assumes 1.60 mm protrusion, a 0.35 mm working gap, and a 0.30 mm insulating
-skin. The through-floor alternative remains review-only.
+screw heads, with printed side/corner locators carrying shear. Loose-magnet
+attraction has passed on all four assembled screw heads. The current CAD
+assumes 1.60 mm protrusion, a 0.35 mm working gap, and a 0.30 mm insulating
+skin; the exact installed gap remains a Drawer 1 first-article check. The
+through-floor alternative remains review-only.
 
 The vent is now a lightweight full-depth cartridge rather than a shallow
 friction plate. Its proven 64.5 x 30 mm face is unchanged. Two 111 mm

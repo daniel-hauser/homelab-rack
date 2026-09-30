@@ -187,7 +187,7 @@ print(
     f"existing under-head length + {PI_REPLACEMENT_SCREW_DELTA_MM:.1f} mm"
 )
 print(
-    "Pi magnetic direction (physical gate pending): "
+    "Pi magnetic direction (attraction passed; first-article gap pending): "
     f"{PI_MAGNETIC_HEAD_PROTRUSION_MM:.2f} mm assumed head protrusion, "
     f"{PI_MAGNETIC_GAP_MM:.2f} mm target gap, "
     f"{PI_MAGNETIC_SKIN_MM:.2f} mm insulating skin"
