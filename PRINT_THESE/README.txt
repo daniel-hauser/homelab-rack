@@ -16,13 +16,14 @@ Fastest way to load everything:
 The project was prepared with an A1 0.4 mm nozzle, 0.20 mm layers, 4 walls,
 5 top layers, 4 bottom layers, 20% gyroid, no supports, no brim, and no skirt.
 
-Candidate total: 529.89 g PLA and 23h47m24s across six plates. Plate 1 is
-66.80 g / 3h26m46s and includes both rear spines, the vent, all four feet,
+Candidate total: 546.94 g PLA and 24h43m44s across six plates. Plate 1 is
+67.62 g / 3h28m23s and includes both rear spines, the vent, all four feet,
 the polarity key, and the required fit coupons.
 
 Exposed chassis and UK-Ultra cap corners use restrained 1.5 mm support-free
 chamfers. The removable Pi and vent faceplates use 1.2 mm chamfers. Functional
-stacking, seam, rack, bay, magnet, and rear-spine interfaces are unchanged.
+seam, rack, bay, and rear-spine dimensions are unchanged. The two front
+stacking pairs were relocated rearward to clear the full-depth rack slots.
 
 This revision uses reinforced 8 x 14 mm seam towers with 45-degree floor
 buttresses. The reinforcement adds 17.75 g across the complete rack.
@@ -57,11 +58,24 @@ faceplate edges and pulling evenly; rear ramps cam the spring arms inward. The
 validated 62 x 30 mm opening is unchanged, and its 1.2 mm receiving chamfer
 seats the faceplate flush.
 
-All magnet pockets now use the same 6 x 2 mm disc magnets. A fully populated,
-reorderable desktop build with both Pi drawers uses 60 magnets: 36 for
-module/cap stacking, 16 for the two rear spines and their module-side mating
-pockets, and 8 for Pi retention. Side-seam magnets are only needed later when
+Every vertical module/cap joint has four magnet pairs and four independent
+peg/socket pairs. The front pairs are relocated behind the rack-slot cut depth;
+handed rack ears therefore cannot open a pocket or create a magnet-to-empty
+pair. Four additional pairs clamp the removable feet to the bottom module.
+
+The two rear spines add two horizontal magnet/peg pairs per module. They align
+and brace the rear of the four-module desktop stack against racking, but they
+do not replace the four vertical corner clamps at each stack joint.
+
+All pockets use the same 6 x 2 mm discs. A fully populated desktop build uses
+64 magnets: 40 in 20 vertical stack/foot pairs, 16 in 8 rear-spine pairs, and
+8 beneath the Pi screw heads. Side-seam magnets are only needed later when
 pairing halves in a 19-inch rack.
+
+Polarity is globally consistent: marked face up (+Z) for stack/foot magnets,
+toward the rear (+Y) for module/spine pairs, and toward rack right (+X) for
+future side-seam pairs. Pi polarity is not functional against steel, but
+marked-face-up installation is preferred for consistency.
 
 The six-plate project was validated and sliced natively with Bambu Studio
 02.08.02.61. Its skeleton and skin line widths are explicit millimetre values,
@@ -70,7 +84,7 @@ which avoids the "Line width too large" / "100.000000" import error.
 Bambu Studio may warn that the four full-height chassis have a "floating
 cantilever." Its conservative overhang detector sees the short 45-degree seam
 keys, socket roofs, and hollow tower caps. The UCG, both USW modules, and
-dual-Pi chassis have no slicer-classified bridge longer than 13.79 mm.
+dual-Pi chassis have no slicer-classified bridge longer than 17.52 mm.
 Automatic supports fill large empty areas to reach those small surfaces, add
 substantial print time, and obstruct the pockets. Print plate 1 first, then
 keep supports disabled for the full-height production chassis if its
@@ -78,14 +92,14 @@ seam-tower coupons print cleanly.
 
 The redesigned Pi drawers, vent insert, and UK-Ultra top slice without
 warnings. Their independently measured maximum bridge spans are 6.39 mm,
-12.39 mm, and 16.76 mm respectively.
+12.40 mm, and 16.74 mm respectively.
 
 Plate 1 is explicitly axis-aligned rather than automatically rotated. Its
-maximum bridge is 18.70 mm, with 8.44 mm on the fit coupon, no bridge paths on
+maximum bridge is 18.84 mm, with 8.44 mm on the fit coupon, no bridge paths on
 the polarity key, and 12.23 mm on each rear spine.
 
 All 20 packaged STLs were also sliced independently with native Bambu Studio:
-20 pass, no unexpected warnings, and no bridge over 18.70 mm. The unchanged
+20 pass, no unexpected warnings, and no bridge over 18.84 mm. The unchanged
 chassis warning is matched by exact male/female seam-tower coupons generated
 from the same OpenSCAD modules; those coupons slice without warnings at
 4.66 mm and 7.10 mm maximum bridge.

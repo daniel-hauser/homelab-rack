@@ -46,6 +46,20 @@ faceplate_chamfer = 1.2;
 // User-available magnets
 stack_magnet_d = 6;
 stack_magnet_h = 2;
+stack_feature_boss_d = 9;
+stack_feature_tower_wall = 2.4;
+stack_peg_positions = [
+    [13, 25],
+    [half_width - 13, 25],
+    [13, module_depth - 13],
+    [half_width - 13, module_depth - 13]
+];
+stack_magnet_positions = [
+    [8, 20],
+    [half_width - 8, 20],
+    [8, module_depth - 8],
+    [half_width - 8, module_depth - 8]
+];
 side_magnet_d = 6;
 side_magnet_h = 2;
 side_key_root = 7.2;
@@ -442,36 +456,72 @@ module corner_posts() {
             }
 }
 
+module front_stack_feature_supports(height = panel_height) {
+    for (index = [0, 1]) {
+        magnet = stack_magnet_positions[index];
+        peg = stack_peg_positions[index];
+
+        // A narrow vertical web joins each relocated front pair to the
+        // original corner post without entering the device envelope.
+        hull() {
+            translate([
+                magnet[0] - stack_feature_tower_wall / 2,
+                corner_size - 0.2,
+                0
+            ])
+                cube([
+                    stack_feature_tower_wall,
+                    stack_feature_tower_wall,
+                    height
+                ]);
+            translate([
+                magnet[0] - stack_feature_tower_wall / 2,
+                magnet[1] - stack_feature_tower_wall / 2,
+                0
+            ])
+                cube([
+                    stack_feature_tower_wall,
+                    stack_feature_tower_wall,
+                    height
+                ]);
+        }
+        hull() {
+            for (p = [magnet, peg])
+                translate([
+                    p[0] - stack_feature_tower_wall / 2,
+                    p[1] - stack_feature_tower_wall / 2,
+                    0
+                ])
+                    cube([
+                        stack_feature_tower_wall,
+                        stack_feature_tower_wall,
+                        height
+                    ]);
+        }
+
+        for (z = [0, height - 3])
+            hull()
+                for (p = [magnet, peg])
+                    translate([p[0], p[1], z])
+                        cylinder(d = stack_feature_boss_d, h = 3);
+    }
+}
+
 module stack_features_positive() {
     // Printed registration pegs carry shear; magnets only provide retention.
-    for (p = [
-        [13, 13],
-        [half_width - 13, 13],
-        [13, module_depth - 13],
-        [half_width - 13, module_depth - 13]
-    ])
+    for (p = stack_peg_positions)
         translate([p[0], p[1], panel_height])
             cylinder(d1 = 5.0, d2 = 4.6, h = 3.0);
 }
 
 module stack_feature_cuts() {
     // Bottom sockets.
-    for (p = [
-        [13, 13],
-        [half_width - 13, 13],
-        [13, module_depth - 13],
-        [half_width - 13, module_depth - 13]
-    ])
+    for (p = stack_peg_positions)
         translate([p[0], p[1], -0.2])
             cylinder(d = 5.0 + peg_clearance, h = 3.6);
 
     // 6x2 magnet pockets in the top and bottom of the corner posts.
-    for (p = [
-        [corner_size / 2, corner_size / 2],
-        [half_width - corner_size / 2, corner_size / 2],
-        [corner_size / 2, module_depth - corner_size / 2],
-        [half_width - corner_size / 2, module_depth - corner_size / 2]
-    ]) {
+    for (p = stack_magnet_positions) {
         translate([p[0], p[1], -0.2])
             cylinder(
                 d = stack_magnet_d + magnet_clearance,
@@ -653,6 +703,7 @@ module common_positive(hand) {
     translate([0, module_depth - rear_thickness, 0])
         cube([half_width, rear_thickness, 8]);
     corner_posts();
+    front_stack_feature_supports();
     side_join_blocks(hand);
     stack_features_positive();
     side_join_positive(hand);
@@ -1274,6 +1325,19 @@ module uk_ultra_top() {
                     translate([x, y, 0])
                         cube([corner_size, corner_size, cap_t]);
 
+            // The front stack pairs sit behind the rack-slot cut depth.
+            for (index = [0, 1])
+                hull()
+                    for (p = [
+                        stack_magnet_positions[index],
+                        stack_peg_positions[index]
+                    ])
+                        translate([p[0], p[1], 0])
+                            cylinder(
+                                d = stack_feature_boss_d,
+                                h = cap_t
+                            );
+
             // Continuous support rails tie both cradle walls into the plate,
             // even where the ventilation slots pass beneath them.
             for (x = [device_x - 2.2, device_x + device_w])
@@ -1311,21 +1375,11 @@ module uk_ultra_top() {
         }
 
         // Receive the four pegs and 6x2 magnets from the top rack module.
-        for (p = [
-            [13, 13],
-            [half_width - 13, 13],
-            [13, module_depth - 13],
-            [half_width - 13, module_depth - 13]
-        ])
+        for (p = stack_peg_positions)
             translate([p[0], p[1], -0.2])
                 cylinder(d = 5.0 + peg_clearance, h = 3.6);
 
-        for (p = [
-            [corner_size / 2, corner_size / 2],
-            [half_width - corner_size / 2, corner_size / 2],
-            [corner_size / 2, module_depth - corner_size / 2],
-            [half_width - corner_size / 2, module_depth - corner_size / 2]
-        ])
+        for (p = stack_magnet_positions)
             translate([p[0], p[1], -0.2])
                 cylinder(
                     d = stack_magnet_d + magnet_clearance,
@@ -1387,14 +1441,18 @@ module fit_test_coupon() {
             // without creating a broad top skin over sparse infill.
             cube([70, 32, 1.8]);
 
-            for (p = [
-                [10, 10],
-                [24, 10],
-                [59, 10],
-                [59, 24]
-            ])
+            for (p = [[10, 10], [24, 10]])
                 translate([p[0], p[1], 0])
                     cylinder(d = 12, h = 6);
+
+            for (pair = [
+                [[59, 10], [54, 5]],
+                [[59, 24], [54, 19]]
+            ])
+                hull()
+                    for (p = pair)
+                        translate([p[0], p[1], 0])
+                            cylinder(d = 10, h = 6);
 
             translate([33, 4, 0])
                 cube([
@@ -1409,6 +1467,12 @@ module fit_test_coupon() {
             cylinder(d = 6 + magnet_clearance, h = 2.4);
         translate([24, 10, 3.8])
             cylinder(d = 6 + 0.10, h = 2.4);
+        // Bottom-face stack gauge: socket plus its matching magnet pocket.
+        translate([54, 5, -0.2])
+            cylinder(
+                d = stack_magnet_d + magnet_clearance,
+                h = stack_magnet_h + 0.25
+            );
         translate([36, 7, -0.2])
             cube([
                 keystone_cutout[0],
@@ -1417,6 +1481,12 @@ module fit_test_coupon() {
             ]);
         translate([59, 10, -0.2])
             cylinder(d = 5 + peg_clearance, h = 6.4);
+        // Top-face stack gauge: peg plus its matching magnet pocket.
+        translate([54, 19, 3.8])
+            cylinder(
+                d = stack_magnet_d + magnet_clearance,
+                h = stack_magnet_h + 0.4
+            );
     }
 
     translate([59, 24, 6])
@@ -1549,16 +1619,21 @@ module rounded_prism(width, depth, height, radius) {
                     cylinder(r = radius, h = height);
 }
 
-module desktop_foot(magnet_xy, peg_xy) {
+module desktop_foot(size, magnet_xy, peg_xy) {
     difference() {
         hull() {
-            rounded_prism(22, 22, 2.4, 3);
+            rounded_prism(size[0], size[1], 2.4, 3);
             translate([2, 2, 2.4])
-                rounded_prism(18, 18, 3.6, 2.5);
+                rounded_prism(
+                    size[0] - 4,
+                    size[1] - 4,
+                    3.6,
+                    2.5
+                );
         }
 
         // Optional recess for a common adhesive felt/rubber pad.
-        translate([11, 11, -0.2])
+        translate([size[0] / 2, size[1] / 2, -0.2])
             cylinder(d = 16, h = 1.0);
 
         translate([magnet_xy[0], magnet_xy[1], 3.75])
@@ -1601,38 +1676,38 @@ module magnet_polarity_key() {
 
 module desktop_feet_set() {
     translate([0, 0, 0])
-        desktop_foot([8, 8], [13, 13]);
+        desktop_foot([22, 28], [8, 20], [13, 25]);
     translate([28, 0, 0])
-        desktop_foot([14, 8], [9, 13]);
-    translate([0, 28, 0])
-        desktop_foot([8, 14], [13, 9]);
-    translate([28, 28, 0])
-        desktop_foot([14, 14], [9, 9]);
+        desktop_foot([22, 28], [14, 20], [9, 25]);
+    translate([0, 32, 0])
+        desktop_foot([22, 22], [8, 14], [13, 9]);
+    translate([28, 32, 0])
+        desktop_foot([22, 22], [14, 14], [9, 9]);
 
     // Peel-away sprues keep the four corner-specific feet together.
-    translate([10, 21, 0])
-        cube([30, 1.2, 1.0]);
+    translate([22, 13, 0])
+        cube([6, 1.2, 1.0]);
+    translate([22, 43, 0])
+        cube([6, 1.2, 1.0]);
     translate([10, 28, 0])
-        cube([30, 1.2, 1.0]);
-    translate([21, 10, 0])
-        cube([1.2, 30, 1.0]);
-    translate([28, 10, 0])
-        cube([1.2, 30, 1.0]);
+        cube([1.2, 4, 1.0]);
+    translate([38, 28, 0])
+        cube([1.2, 4, 1.0]);
 }
 
 module installed_desktop_feet() {
     translate([0, 0, -5.8])
-        desktop_foot([8, 8], [13, 13]);
+        desktop_foot([22, 28], [8, 20], [13, 25]);
     translate([half_width - 22, 0, -5.8])
-        desktop_foot([14, 8], [9, 13]);
+        desktop_foot([22, 28], [14, 20], [9, 25]);
     translate([0, module_depth - 22, -5.8])
-        desktop_foot([8, 14], [13, 9]);
+        desktop_foot([22, 22], [8, 14], [13, 9]);
     translate([
         half_width - 22,
         module_depth - 22,
         -5.8
     ])
-        desktop_foot([14, 14], [9, 9]);
+        desktop_foot([22, 22], [14, 14], [9, 9]);
 }
 
 module production_test_plate() {
@@ -1657,13 +1732,13 @@ module production_test_plate() {
 
     // Four removable feet match every possible bottom-module corner.
     translate([90, 65, 0])
-        desktop_foot([8, 8], [13, 13]);
+        desktop_foot([22, 28], [8, 20], [13, 25]);
     translate([118, 65, 0])
-        desktop_foot([14, 8], [9, 13]);
+        desktop_foot([22, 28], [14, 20], [9, 25]);
     translate([90, 95, 0])
-        desktop_foot([8, 14], [13, 9]);
+        desktop_foot([22, 22], [8, 14], [13, 9]);
     translate([118, 95, 0])
-        desktop_foot([14, 14], [9, 9]);
+        desktop_foot([22, 22], [14, 14], [9, 9]);
     translate([90, 130, 0])
         magnet_polarity_key();
 

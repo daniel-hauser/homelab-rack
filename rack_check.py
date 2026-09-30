@@ -44,6 +44,47 @@ VENT_REAR_STOP_CLEARANCE_MM = 2.0
 VENT_RUNNER_SIDE_CLEARANCE_MM = 0.15
 BAY_FIT_COUPON_DEPTH_MM = 50.0
 BAY_FIT_COUPON_GUIDE_LENGTH_MM = BAY_FIT_COUPON_DEPTH_MM - 34.0
+STACK_MAGNET_POSITIONS_MM = (
+    (8.0, 20.0),
+    (HALF_WIDTH_MM - 8.0, 20.0),
+    (8.0, 142.0),
+    (HALF_WIDTH_MM - 8.0, 142.0),
+)
+STACK_PEG_POSITIONS_MM = (
+    (13.0, 25.0),
+    (HALF_WIDTH_MM - 13.0, 25.0),
+    (13.0, 137.0),
+    (HALF_WIDTH_MM - 13.0, 137.0),
+)
+RACK_SLOT_REAR_Y_MM = 16.2
+STACK_MAGNET_RADIUS_MM = (6.0 + 0.25) / 2
+STACK_SOCKET_RADIUS_MM = (5.0 + 0.30) / 2
+FRONT_MAGNET_TO_SLOT_CLEARANCE_MM = (
+    STACK_MAGNET_POSITIONS_MM[0][1]
+    - STACK_MAGNET_RADIUS_MM
+    - RACK_SLOT_REAR_Y_MM
+)
+FRONT_SOCKET_TO_SLOT_CLEARANCE_MM = (
+    STACK_PEG_POSITIONS_MM[0][1]
+    - STACK_SOCKET_RADIUS_MM
+    - RACK_SLOT_REAR_Y_MM
+)
+MODULE_STACK_INTERFACES = 4
+STACK_PAIRS_PER_INTERFACE = 4
+FOOT_STACK_PAIRS = 4
+REAR_SPINE_PAIRS_PER_MODULE = 2
+DESKTOP_MODULE_COUNT = 4
+VERTICAL_STACK_PAIRS = (
+    MODULE_STACK_INTERFACES * STACK_PAIRS_PER_INTERFACE
+    + FOOT_STACK_PAIRS
+)
+REAR_SPINE_PAIRS = REAR_SPINE_PAIRS_PER_MODULE * DESKTOP_MODULE_COUNT
+PI_RETENTION_MAGNETS = 8
+DESKTOP_MAGNET_TOTAL = (
+    2 * VERTICAL_STACK_PAIRS
+    + 2 * REAR_SPINE_PAIRS
+    + PI_RETENTION_MAGNETS
+)
 
 left_center = OUTER_HOLE_CENTER_MM
 right_center = HALF_WIDTH_MM + (
@@ -82,6 +123,13 @@ assert isclose(VENT_REAR_STOP_CLEARANCE_MM, 2.0, abs_tol=1e-9)
 assert isclose(VENT_RUNNER_SIDE_CLEARANCE_MM, 0.15, abs_tol=1e-9)
 assert isclose(CARTRIDGE_DETENT_DEPTH_RELIEF_MM, 0.20, abs_tol=1e-9)
 assert isclose(BAY_FIT_COUPON_GUIDE_LENGTH_MM, 16.0, abs_tol=1e-9)
+assert len(STACK_MAGNET_POSITIONS_MM) == STACK_PAIRS_PER_INTERFACE
+assert len(STACK_PEG_POSITIONS_MM) == STACK_PAIRS_PER_INTERFACE
+assert FRONT_MAGNET_TO_SLOT_CLEARANCE_MM > 0.5
+assert FRONT_SOCKET_TO_SLOT_CLEARANCE_MM > 5.0
+assert VERTICAL_STACK_PAIRS == 20
+assert REAR_SPINE_PAIRS == 8
+assert DESKTOP_MAGNET_TOTAL == 64
 
 print(f"Paired width: {RACK_WIDTH_MM:.2f} mm")
 print(f"Half width: {HALF_WIDTH_MM:.2f} mm")
@@ -137,4 +185,25 @@ print(
     "Bay fit coupon: "
     f"{BAY_FIT_COUPON_DEPTH_MM:.1f} mm deep with "
     f"{BAY_FIT_COUPON_GUIDE_LENGTH_MM:.1f} mm of common guide-lip geometry"
+)
+print(
+    "Vertical stack interfaces: "
+    f"{STACK_PAIRS_PER_INTERFACE} magnet pairs and "
+    f"{STACK_PAIRS_PER_INTERFACE} peg/socket pairs per module joint; "
+    f"{VERTICAL_STACK_PAIRS} magnet pairs including four feet"
+)
+print(
+    "Relocated front stack clearance behind rack slots: "
+    f"{FRONT_MAGNET_TO_SLOT_CLEARANCE_MM:.3f} mm at magnet pockets, "
+    f"{FRONT_SOCKET_TO_SLOT_CLEARANCE_MM:.3f} mm at peg sockets"
+)
+print(
+    "Rear spine retention: "
+    f"{REAR_SPINE_PAIRS_PER_MODULE} horizontal magnet/peg pairs per module, "
+    f"{REAR_SPINE_PAIRS} pairs across the four-module desktop stack"
+)
+print(
+    "Fully populated desktop magnet total: "
+    f"{DESKTOP_MAGNET_TOTAL} (40 vertical stack/feet, "
+    "16 rear-spine, 8 Pi retention)"
 )

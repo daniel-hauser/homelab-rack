@@ -15,12 +15,12 @@
         "09_Seam_Tower_Male_Test.stl",
         "10_Seam_Tower_Female_Test.stl"
       ],
-      "model_time": "3h 20m 29s",
-      "total_time": "3h 26m 46s",
-      "seconds": 12406,
-      "g": 66.8,
-      "m": 22.396060000000002,
-      "cm3": 53.86884,
+      "model_time": "3h 22m 6s",
+      "total_time": "3h 28m 23s",
+      "seconds": 12503,
+      "g": 67.62,
+      "m": 22.67346,
+      "cm3": 54.53606,
       "warning_message": ""
     },
     {
@@ -28,12 +28,12 @@
       "objects": [
         "01_UCG_Ultra.stl"
       ],
-      "model_time": "4h 8m 50s",
-      "total_time": "4h 15m 7s",
-      "seconds": 15307,
-      "g": 101.69,
-      "m": 34.094080000000005,
-      "cm3": 82.00588,
+      "model_time": "4h 24m 26s",
+      "total_time": "4h 30m 43s",
+      "seconds": 16243,
+      "g": 106.02,
+      "m": 35.54736,
+      "cm3": 85.50141,
       "warning_message": "It seems object 01_UCG_Ultra.stl has floating cantilever. Please re-orient the object or enable support generation."
     },
     {
@@ -41,25 +41,25 @@
       "objects": [
         "02_USW_Ultra_Left.stl"
       ],
-      "model_time": "3h 51m 40s",
-      "total_time": "3h 57m 57s",
-      "seconds": 14277,
-      "g": 91.24,
-      "m": 30.59135,
-      "cm3": 73.58082,
-      "warning_message": "It seems object 02_USW_Ultra_Left.stl has floating cantilever. Please re-orient the object or enable support generation."
+      "model_time": "4h 4m 21s",
+      "total_time": "4h 10m 38s",
+      "seconds": 15038,
+      "g": 94.83,
+      "m": 31.795090000000002,
+      "cm3": 76.47616000000001,
+      "warning_message": "It seems object 02_USW_Ultra_Left.stl has floating regions. Please re-orient the object or enable support generation."
     },
     {
       "plate": "plate_4",
       "objects": [
         "04_Dual_Pi_Chassis.stl"
       ],
-      "model_time": "4h 22m 38s",
-      "total_time": "4h 28m 55s",
-      "seconds": 16135,
-      "g": 105.01,
-      "m": 35.208349999999996,
-      "cm3": 84.68601,
+      "model_time": "4h 36m 31s",
+      "total_time": "4h 42m 48s",
+      "seconds": 16968,
+      "g": 109.34,
+      "m": 36.66071,
+      "cm3": 88.17935,
       "warning_message": "It seems object 04_Dual_Pi_Chassis.stl has floating cantilever. Please re-orient the object or enable support generation."
     },
     {
@@ -68,13 +68,13 @@
         "03_USW_Ultra_Right.stl",
         "06_Pi_Drawer_2.stl"
       ],
-      "model_time": "4h 46m 8s",
-      "total_time": "4h 52m 25s",
-      "seconds": 17545,
-      "g": 107.09,
-      "m": 35.90521,
-      "cm3": 86.36215,
-      "warning_message": "It seems object 03_USW_Ultra_Right.stl has floating cantilever. Please re-orient the object or enable support generation."
+      "model_time": "4h 57m 39s",
+      "total_time": "5h 3m 56s",
+      "seconds": 18236,
+      "g": 110.66,
+      "m": 37.10411,
+      "cm3": 89.24583,
+      "warning_message": "It seems object 03_USW_Ultra_Right.stl has floating regions. Please re-orient the object or enable support generation."
     },
     {
       "plate": "plate_6",
@@ -82,12 +82,12 @@
         "08_UK_Ultra_Top.stl",
         "05_Pi_Drawer_1.stl"
       ],
-      "model_time": "2h 39m 57s",
-      "total_time": "2h 46m 14s",
-      "seconds": 9974,
-      "g": 58.06,
-      "m": 19.46759,
-      "cm3": 46.82504,
+      "model_time": "2h 40m 59s",
+      "total_time": "2h 47m 16s",
+      "seconds": 10036,
+      "g": 58.47,
+      "m": 19.60516,
+      "cm3": 47.15595,
       "warning_message": ""
     }
   ],
@@ -95,11 +95,11 @@
     "beds": 6,
     "test_beds": 1,
     "production_beds": 5,
-    "grams": 529.89,
-    "production_grams": 463.09,
-    "length_m": 177.66264,
-    "volume_cm3": 427.32874,
-    "serial_seconds": 85644,
-    "serial_time": "23h47m24s"
+    "grams": 546.94,
+    "production_grams": 479.32,
+    "length_m": 183.38589,
+    "volume_cm3": 441.09476,
+    "serial_seconds": 89024,
+    "serial_time": "24h43m44s"
   }
 }

@@ -43,11 +43,11 @@ design revisions.
 The six-plate project uses a Bambu Lab A1 with a 0.4 mm nozzle, 0.20 mm layers,
 four walls, five top layers, four bottom layers, 20% gyroid, no supports, no
 brim, and no skirt. The current magnetic-direction candidate estimate is
-**529.89 g**, **177.66264 m**, **427.32874 cm³**, and **23h47m24s** serial
+**546.94 g**, **183.38589 m**, **441.09476 cm³**, and **24h43m44s** serial
 printing time. Physical magnetic attraction remains a release gate.
 
 Bambu Studio reports a conservative “floating cantilever” warning on the four
-full-height chassis. Their maximum measured bridge is 13.79 mm. Print plate 1
+full-height chassis. Their maximum measured bridge is 17.52 mm. Print plate 1
 first; if both seam-tower coupons are clean, keep automatic supports disabled
 for the production chassis because generated supports obstruct functional
 pockets and fill large open areas.
@@ -78,7 +78,8 @@ feet are on the test-first plate.
 - Paired width: 482.60 mm, with 465.10 mm rack mounting centers.
 - Rack pitch: 44.45 mm; vertical hole centers: 6.350, 22.225, 38.100 mm.
 - Universal magnets: 6 × 2 mm discs.
-- Vertical registration: printed pegs plus magnets.
+- Vertical registration: four printed peg/socket pairs plus four magnet pairs
+  at every module-to-module or module-to-cap interface.
 - Side joining: tapered diamond keys in reinforced seam towers.
 - Paired seam: 0.0 mm designed face gap with 1.5 mm socket-depth reserve.
 - Desktop stabilization: two removable rear spines and four removable feet.
@@ -122,6 +123,29 @@ loads. The Pi magnets provide vertical retention only; their printed locators
 carry shear. A 19-inch installation still requires normal rack screws and cage
 nuts. The UK-Ultra carrier assumes the OEM keyed backplate/cradle remains
 attached.
+
+Each vertical module interface has magnet centers at `(8,20)`, `(233.3,20)`,
+`(8,142)`, and `(233.3,142)` mm, with independent peg/socket centers at
+`(13,25)`, `(228.3,25)`, `(13,137)`, and `(228.3,137)` mm. The front pairs sit
+behind the rack-slot cut depth; the closest magnet pocket retains 0.675 mm of
+clearance and the closest socket retains 6.15 mm. The pattern is identical on
+all full modules and the cap, so handed rack ears cannot create
+magnet-to-empty-pocket pairs.
+
+The desktop stack has 20 vertical magnet pairs: four at each of the four
+module/cap joints plus four foot-to-bottom-module pairs. Two rear spines add
+eight horizontal pairs, two per module. They align and brace the rear of the
+four-module stack against racking but do not replace vertical corner
+clamping. With eight Pi-retention magnets, the fully populated desktop build
+uses 64 magnets.
+
+Use one marked pole consistently by global axis:
+
+- Stack and foot magnets: marked face points globally up (`+Z`).
+- Module/spine rear magnets: marked face points toward the rack rear (`+Y`).
+- Future side-seam magnets: marked face points toward rack right (`+X`).
+- Pi magnets attract steel screw heads, so polarity is not functional; use the
+  marked face upward for installation consistency.
 
 Run the analytical checks before changing structural parameters:
 
