@@ -37,10 +37,10 @@ TEST_FIRST = [
     "10_Seam_Tower_Female_Test.stl",
 ]
 EXPECTED_TOTALS = {
-    "grams": 529.43,
-    "length_m": 177.51173,
-    "volume_cm3": 426.96577,
-    "serial_seconds": 83089,
+    "grams": 547.11,
+    "length_m": 183.43948,
+    "volume_cm3": 441.22368,
+    "serial_seconds": 89031,
 }
 
 

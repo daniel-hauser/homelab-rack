@@ -32,8 +32,8 @@ design revisions.
    - `PRINT_THESE\TEST_FIRST\09_Seam_Tower_Male_Test.stl`
    - `PRINT_THESE\TEST_FIRST\10_Seam_Tower_Female_Test.stl`
 
-2. Confirm the magnet pockets, stack peg/socket, keystone opening, Pi bay,
-   seam towers, rack-ear slots, and snap post fit your hardware.
+2. Break off and mate the stack tiles, then confirm the magnet pockets,
+   keystone opening, Pi bay, seam towers, and rack-ear slots fit your hardware.
 3. If the test plate succeeds, open
    [`PRINT_THESE\homelab-rack-Bambu-Studio-6-plates.3mf`](PRINT_THESE/homelab-rack-Bambu-Studio-6-plates.3mf)
    or double-click `PRINT_THESE\OPEN_IN_BAMBU_STUDIO.cmd`.
@@ -42,11 +42,13 @@ design revisions.
 
 The six-plate project uses a Bambu Lab A1 with a 0.4 mm nozzle, 0.20 mm layers,
 four walls, five top layers, four bottom layers, 20% gyroid, no supports, no
-brim, and no skirt. The validated estimate is **529.43 g**, **177.51173 m**,
-**426.96577 cm³**, and **23h04m49s** serial printing time.
+brim, and no skirt. The current magnetic-direction candidate estimate is
+**547.11 g**, **183.43948 m**, **441.22368 cm³**, and **24h43m51s** serial
+printing time. Loose-magnet attraction to all four assembled Pi/HAT screw
+heads has passed physical testing.
 
 Bambu Studio reports a conservative “floating cantilever” warning on the four
-full-height chassis. Their maximum measured bridge is 13.79 mm. Print plate 1
+full-height chassis. Their maximum measured bridge is 17.52 mm. Print plate 1
 first; if both seam-tower coupons are clean, keep automatic supports disabled
 for the production chassis because generated supports obstruct functional
 pockets and fill large open areas.
@@ -77,17 +79,81 @@ feet are on the test-first plate.
 - Paired width: 482.60 mm, with 465.10 mm rack mounting centers.
 - Rack pitch: 44.45 mm; vertical hole centers: 6.350, 22.225, 38.100 mm.
 - Universal magnets: 6 × 2 mm discs.
-- Vertical registration: printed pegs plus magnets.
+- Vertical registration: four printed peg/socket pairs plus four magnet pairs
+  at every module-to-module or module-to-cap interface.
 - Side joining: tapered diamond keys in reinforced seam towers.
+- Paired seam: 0.0 mm designed face gap with 1.5 mm socket-depth reserve.
 - Desktop stabilization: two removable rear spines and four removable feet.
-- Pi mounting: split printed snap posts for official 2.7 mm mounting holes.
+- Pi mounting direction: four 6 × 2 mm magnets beneath the existing exposed
+  lower screw heads, with printed side/corner locators carrying shear.
 - Exposed chassis/top corners: 1.5 mm support-free chamfers.
 - Pi and vent faceplates: 1.2 mm chamfers.
+- Pi bay receiving lead-in: 1.2 mm deep at 45°, opening to 64.4 × 32.4 mm at
+  the front while retaining the 62 × 30 mm friction opening behind it.
+- Vent cartridge: 111 mm L-section side runners with 77 mm of guide-lip
+  engagement and a light rear chevron that prevents racking.
 
-Magnets retain joints but are not structural. Printed pegs and keys carry
-lateral loads. A 19-inch installation still requires normal rack screws and
-cage nuts. The UK-Ultra carrier assumes the OEM keyed backplate/cradle remains
+Loose 6 × 2 mm magnets physically attract all four intended lower screw heads,
+so screw ferromagnetism is accepted. The current CAD assumptions remain a
+1.60 mm screw-head protrusion, 0.35 mm working gap, and 0.30 mm printed
+insulating skin. Validate the actual installed gap and retention on the first
+production drawer before printing the second. The through-floor concept
+remains review-only because it requires replacement screws. Review CAD and the
+full measurement list are in
+[`REVIEW_ONLY\Pi_Mount_Alternatives`](REVIEW_ONLY/Pi_Mount_Alternatives).
+
+Do not print another test coupon for the Pi mount. Print only
+`PRINT_THESE\STLs\05_Pi_Drawer_1.stl` first with the pinned production profile,
+install four magnets, seat the actual Pi/HAT assembly, and verify vertical
+retention, locator engagement, drawer insertion, and the installed holder gap.
+Print Drawer 2 only after that first article passes.
+
+The vent is a proper track-guided cartridge rather than a shallow friction
+plate. Its proven 64.5 × 30 mm face is unchanged. Two long L-section runners
+engage the same floor tracks and guide lips as the Pi drawers, with 0.15 mm
+side clearance and 2.0 mm reserve before the chassis rear stop. Two
+inward-rising rear chevron legs prevent racking while leaving the airflow path
+open. The cartridge prints face-down; each chevron leg grows from a supported
+runner and keeps the maximum slicer-classified bridge below 20 mm.
+
+The vent and both Pi cartridges share paired cam-release spring detents. The
+detent pockets have 0.20 mm more depth than the 0.45 mm engagement, so they
+provide pull-out retention without defining lateral alignment or
+overconstraining the guide tracks. Push straight in until both sides click and
+the receiving chamfer seats the faceplate flush. Remove by gripping the
+projecting faceplate edges and pulling evenly; the rear ramps flex both
+detents inward without tools.
+
+![Vent cartridge insertion and removal cutaway](renders/vent_cartridge_cutaway.png)
+
+Rack-stack magnets retain joints while printed pegs and keys carry lateral
+loads. The Pi magnets provide vertical retention only; their printed locators
+carry shear. A 19-inch installation still requires normal rack screws and cage
+nuts. The UK-Ultra carrier assumes the OEM keyed backplate/cradle remains
 attached.
+
+Each vertical module interface has magnet centers at `(8,20)`, `(233.3,20)`,
+`(8,142)`, and `(233.3,142)` mm, with independent peg/socket centers at
+`(13,25)`, `(228.3,25)`, `(13,137)`, and `(228.3,137)` mm. The front pairs sit
+behind the rack-slot cut depth; the closest magnet pocket retains 0.675 mm of
+clearance and the closest socket retains 6.15 mm. The pattern is identical on
+all full modules and the cap, so handed rack ears cannot create
+magnet-to-empty-pocket pairs.
+
+The desktop stack has 20 vertical magnet pairs: four at each of the four
+module/cap joints plus four foot-to-bottom-module pairs. Two rear spines add
+eight horizontal pairs, two per module. They align and brace the rear of the
+four-module stack against racking but do not replace vertical corner
+clamping. With eight Pi-retention magnets, the fully populated desktop build
+uses 64 magnets.
+
+Use one marked pole consistently by global axis:
+
+- Stack and foot magnets: marked face points globally up (`+Z`).
+- Module/spine rear magnets: marked face points toward the rack rear (`+Y`).
+- Future side-seam magnets: marked face points toward rack right (`+X`).
+- Pi magnets attract steel screw heads, so polarity is not functional; use the
+  marked face upward for installation consistency.
 
 Run the analytical checks before changing structural parameters:
 
@@ -126,7 +192,7 @@ Use one workflow for all OpenSCAD-derived release assets:
 .\export.ps1 -Mode Verify
 
 # Deliberately replace the 20 numbered STLs, 11 viewer meshes,
-# four canonical renders, and viewer estimate copy.
+# five canonical renders, and viewer estimate copy.
 .\export.ps1 -Mode Generate
 ```
 
@@ -136,7 +202,8 @@ Use one workflow for all OpenSCAD-derived release assets:
 - all ten `PRINT_THESE\TEST_FIRST` files using order-independent mesh hashes;
 - ten viewer production copies plus the viewer-only installed-feet model using
   the same geometry check;
-- the four canonical CAD renders byte-for-byte; and
+- the five canonical CAD renders pixel-for-pixel, ignoring harmless PNG
+  compression differences; and
 - `viewer\public\estimate.json` against `slicer\release\estimate.json`.
 
 The mesh hash ignores harmless STL facet ordering differences between
@@ -161,6 +228,10 @@ python .\slicer\replace_3mf_meshes.py `
   .\out\plate_1-arranged-unsliced.3mf `
   .\PRINT_THESE\STLs .\PRINT_THESE\TEST_FIRST
 ```
+
+When only a subset changed, pass `--skip-missing` with a directory containing
+only those STLs. This preserves the validated triangulation and arrangement of
+every unaffected project mesh while still removing stale embedded G-code.
 
 Open those copies in **Bambu Studio 02.08.02.61**, confirm the pinned A1
 profile, slice every plate, inspect warnings, and save the final projects over

@@ -34,7 +34,7 @@ def stl_index(roots: list[Path]) -> dict[str, Path]:
     return indexed
 
 
-def mesh_xml(path: Path) -> tuple[str, int]:
+def mesh_xml(path: Path, minimum_z: float) -> tuple[str, int]:
     loaded = trimesh.load_mesh(path, process=False)
     if isinstance(loaded, trimesh.Scene):
         mesh = loaded.to_geometry()
@@ -50,6 +50,7 @@ def mesh_xml(path: Path) -> tuple[str, int]:
 
     center = (mesh.bounds[0] + mesh.bounds[1]) / 2
     vertices = mesh.vertices - center
+    vertices[:, 2] += minimum_z - vertices[:, 2].min()
     vertex_lines = "\n".join(
         f'     <vertex x="{x:.9g}" y="{y:.9g}" z="{z:.9g}"/>'
         for x, y, z in vertices
@@ -75,6 +76,7 @@ def replace_project(
     source: Path,
     output: Path,
     stls: dict[str, Path],
+    skip_missing: bool = False,
 ) -> None:
     with zipfile.ZipFile(source) as archive:
         entries = {name: archive.read(name) for name in archive.namelist()}
@@ -112,11 +114,17 @@ def replace_project(
         name = name_node.attrib["value"]
         stl = stls.get(name)
         if stl is None:
+            if skip_missing:
+                continue
             raise FileNotFoundError(f"No replacement STL found for {name}")
 
         model_path = object_paths[obj.attrib["id"]]
-        mesh_markup, face_count = mesh_xml(stl)
         text = entries[model_path].decode("utf-8")
+        minimum_z = min(
+            float(value)
+            for value in re.findall(r'<vertex [^>]*z="([^"]+)"', text)
+        )
+        mesh_markup, face_count = mesh_xml(stl, minimum_z)
         text, count = re.subn(
             r"   <mesh>.*?   </mesh>",
             mesh_markup,
@@ -174,12 +182,18 @@ def main() -> None:
     parser.add_argument("source", type=Path)
     parser.add_argument("output", type=Path)
     parser.add_argument("stl_roots", nargs="+", type=Path)
+    parser.add_argument(
+        "--skip-missing",
+        action="store_true",
+        help="Leave project meshes without a matching STL unchanged.",
+    )
     args = parser.parse_args()
 
     replace_project(
         args.source,
         args.output,
         stl_index(args.stl_roots),
+        args.skip_missing,
     )
 
 

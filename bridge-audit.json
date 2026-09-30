@@ -1,31 +1,36 @@
 {
   "maximum_allowed_span_mm": 20.0,
-  "maximum_observed_span_mm": 18.7,
+  "maximum_observed_span_mm": 18.84,
   "plates": [
     {
       "file": "plate_1.gcode",
-      "bridge_segments": 5899,
-      "bridge_layers": 12,
-      "bridge_path_mm": 24684.42,
-      "max_bridge_segment_mm": 18.7,
+      "bridge_segments": 5813,
+      "bridge_layers": 14,
+      "bridge_path_mm": 24785.76,
+      "max_bridge_segment_mm": 18.84,
       "longest_segment": {
         "layer": 5,
         "object": "04_Desktop_Feet_Set.stl",
-        "length_mm": 18.698,
+        "length_mm": 18.842999999999996,
         "start_mm": [
-          57.969,
-          6.751
+          55.847,
+          26.423
         ],
         "end_mm": [
-          57.969,
-          25.449
+          55.847,
+          7.58
         ]
       },
       "objects": {
         "04_Desktop_Feet_Set.stl": {
-          "bridge_segments": 1244,
-          "bridge_path_mm": 5408.13,
-          "max_bridge_segment_mm": 18.7
+          "bridge_segments": 1279,
+          "bridge_path_mm": 5801.5,
+          "max_bridge_segment_mm": 18.84
+        },
+        "05_Magnet_Keystone_Peg_Test.stl": {
+          "bridge_segments": 307,
+          "bridge_path_mm": 684.93,
+          "max_bridge_segment_mm": 12.58
         },
         "02_Rear_Spine_A.stl": {
           "bridge_segments": 1745,
@@ -38,14 +43,9 @@
           "max_bridge_segment_mm": 12.23
         },
         "06_Vent_Insert.stl": {
-          "bridge_segments": 581,
-          "bridge_path_mm": 1461.4,
-          "max_bridge_segment_mm": 12.89
-        },
-        "05_Magnet_Keystone_Peg_Test.stl": {
-          "bridge_segments": 240,
-          "bridge_path_mm": 545.77,
-          "max_bridge_segment_mm": 9.23
+          "bridge_segments": 356,
+          "bridge_path_mm": 937.76,
+          "max_bridge_segment_mm": 12.4
         },
         "08_Rack_Ear_Test.stl": {
           "bridge_segments": 225,
@@ -53,159 +53,164 @@
           "max_bridge_segment_mm": 10.17
         },
         "10_Seam_Tower_Female_Test.stl": {
-          "bridge_segments": 74,
-          "bridge_path_mm": 186.62,
-          "max_bridge_segment_mm": 7.1
+          "bridge_segments": 109,
+          "bridge_path_mm": 279.06,
+          "max_bridge_segment_mm": 7.88
         },
         "09_Seam_Tower_Male_Test.stl": {
-          "bridge_segments": 44,
+          "bridge_segments": 45,
           "bridge_path_mm": 108.25,
           "max_bridge_segment_mm": 4.66
+        },
+        "01_Bay_Fit_Test.stl": {
+          "bridge_segments": 1,
+          "bridge_path_mm": 0.0,
+          "max_bridge_segment_mm": 0.0
         }
       }
     },
     {
       "file": "plate_2.gcode",
-      "bridge_segments": 1655,
+      "bridge_segments": 1893,
       "bridge_layers": 18,
-      "bridge_path_mm": 3969.2,
-      "max_bridge_segment_mm": 13.79,
+      "bridge_path_mm": 5025.61,
+      "max_bridge_segment_mm": 17.52,
       "longest_segment": {
         "layer": 205,
         "object": "unknown",
-        "length_mm": 13.78570078015623,
+        "length_mm": 17.515212844838636,
         "start_mm": [
-          20.37,
-          67.18
+          246.246,
+          57.061
         ],
         "end_mm": [
-          20.509,
-          53.395
+          233.737,
+          69.321
         ]
       },
       "objects": {
         "unknown": {
-          "bridge_segments": 1655,
-          "bridge_path_mm": 3969.2,
-          "max_bridge_segment_mm": 13.79
+          "bridge_segments": 1893,
+          "bridge_path_mm": 5025.61,
+          "max_bridge_segment_mm": 17.52
         }
       }
     },
     {
       "file": "plate_3.gcode",
-      "bridge_segments": 1709,
+      "bridge_segments": 1928,
       "bridge_layers": 19,
-      "bridge_path_mm": 4084.38,
-      "max_bridge_segment_mm": 13.79,
+      "bridge_path_mm": 5117.54,
+      "max_bridge_segment_mm": 17.52,
       "longest_segment": {
         "layer": 205,
         "object": "unknown",
-        "length_mm": 13.78570078015623,
+        "length_mm": 17.515212844838636,
         "start_mm": [
-          20.37,
-          67.18
+          246.246,
+          57.061
         ],
         "end_mm": [
-          20.509,
-          53.395
+          233.737,
+          69.321
         ]
       },
       "objects": {
         "unknown": {
-          "bridge_segments": 1709,
-          "bridge_path_mm": 4084.38,
-          "max_bridge_segment_mm": 13.79
+          "bridge_segments": 1928,
+          "bridge_path_mm": 5117.54,
+          "max_bridge_segment_mm": 17.52
         }
       }
     },
     {
       "file": "plate_4.gcode",
-      "bridge_segments": 1731,
-      "bridge_layers": 21,
-      "bridge_path_mm": 4072.84,
-      "max_bridge_segment_mm": 13.79,
+      "bridge_segments": 1980,
+      "bridge_layers": 20,
+      "bridge_path_mm": 5130.3,
+      "max_bridge_segment_mm": 17.52,
       "longest_segment": {
         "layer": 205,
         "object": "unknown",
-        "length_mm": 13.78570078015623,
+        "length_mm": 17.515212844838636,
         "start_mm": [
-          20.37,
-          67.18
+          246.246,
+          57.061
         ],
         "end_mm": [
-          20.509,
-          53.395
+          233.737,
+          69.321
         ]
       },
       "objects": {
         "unknown": {
-          "bridge_segments": 1731,
-          "bridge_path_mm": 4072.84,
-          "max_bridge_segment_mm": 13.79
+          "bridge_segments": 1980,
+          "bridge_path_mm": 5130.3,
+          "max_bridge_segment_mm": 17.52
         }
       }
     },
     {
       "file": "plate_5.gcode",
-      "bridge_segments": 2049,
-      "bridge_layers": 21,
-      "bridge_path_mm": 5176.91,
-      "max_bridge_segment_mm": 13.79,
+      "bridge_segments": 2408,
+      "bridge_layers": 24,
+      "bridge_path_mm": 6343.72,
+      "max_bridge_segment_mm": 17.52,
       "longest_segment": {
         "layer": 205,
         "object": "03_USW_Ultra_Right.stl",
-        "length_mm": 13.785355490519636,
+        "length_mm": 17.515034969990776,
         "start_mm": [
-          21.676,
-          234.738
+          9.108,
+          88.477
         ],
         "end_mm": [
-          21.577,
-          220.953
+          21.493,
+          100.862
         ]
       },
       "objects": {
         "03_USW_Ultra_Right.stl": {
-          "bridge_segments": 1636,
-          "bridge_path_mm": 3964.92,
-          "max_bridge_segment_mm": 13.79
+          "bridge_segments": 1963,
+          "bridge_path_mm": 5297.36,
+          "max_bridge_segment_mm": 17.52
         },
         "06_Pi_Drawer_2.stl": {
-          "bridge_segments": 413,
-          "bridge_path_mm": 1211.99,
-          "max_bridge_segment_mm": 6.82
+          "bridge_segments": 445,
+          "bridge_path_mm": 1046.36,
+          "max_bridge_segment_mm": 6.33
         }
       }
     },
     {
       "file": "plate_6.gcode",
-      "bridge_segments": 1102,
+      "bridge_segments": 1244,
       "bridge_layers": 5,
-      "bridge_path_mm": 3398.45,
-      "max_bridge_segment_mm": 16.76,
+      "bridge_path_mm": 3410.78,
+      "max_bridge_segment_mm": 16.74,
       "longest_segment": {
         "layer": 16,
         "object": "08_UK_Ultra_Top.stl",
-        "length_mm": 16.760094629804456,
+        "length_mm": 16.743374719571918,
         "start_mm": [
           26.927,
-          88.954
+          88.81
         ],
         "end_mm": [
           14.473,
-          100.17
+          100.001
         ]
       },
       "objects": {
         "08_UK_Ultra_Top.stl": {
-          "bridge_segments": 690,
-          "bridge_path_mm": 2186.62,
-          "max_bridge_segment_mm": 16.76
+          "bridge_segments": 800,
+          "bridge_path_mm": 2364.5,
+          "max_bridge_segment_mm": 16.74
         },
         "05_Pi_Drawer_1.stl": {
-          "bridge_segments": 412,
-          "bridge_path_mm": 1211.83,
-          "max_bridge_segment_mm": 6.82
+          "bridge_segments": 444,
+          "bridge_path_mm": 1046.28,
+          "max_bridge_segment_mm": 6.33
         }
       }
     }

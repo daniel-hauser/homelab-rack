@@ -7,7 +7,7 @@
     "files_expected": 20,
     "files_audited": 20,
     "files_passed": 20,
-    "maximum_observed_bridge_mm": 18.7,
+    "maximum_observed_bridge_mm": 18.84,
     "unexpected_warnings": 0
   },
   "coupon_validation": {
@@ -34,25 +34,25 @@
         "y": 52.0000114440918,
         "z": 0.0
       },
-      "triangle_count": 8634,
-      "model_time_seconds": 14727.439,
-      "total_time_seconds": 15129.302,
-      "filament_grams": 101.819,
+      "triangle_count": 9418,
+      "model_time_seconds": 15626.616,
+      "total_time_seconds": 16028.479,
+      "filament_grams": 105.981,
       "bridge": {
-        "bridge_segments": 1602,
+        "bridge_segments": 1853,
         "bridge_layers": 16,
-        "max_bridge_segment_mm": 13.79,
+        "max_bridge_segment_mm": 17.52,
         "longest_bridge": {
           "layer": 205,
           "object": "unknown",
-          "length_mm": 13.785999999999994,
+          "length_mm": 17.515034969990793,
           "start_mm": [
-            19.536,
-            68.249
+            245.299,
+            55.864
           ],
           "end_mm": [
-            19.536,
-            54.463
+            232.914,
+            68.249
           ]
         }
       },
@@ -74,7 +74,7 @@
       "name": "02_USW_Ultra_Left.stl",
       "source": "PRINT_THESE\\STLs\\02_USW_Ultra_Left.stl",
       "bambu_return_code": 0,
-      "warning_message": "It seems object 02_USW_Ultra_Left.stl has floating cantilever. Please re-orient the object or enable support generation.",
+      "warning_message": "It seems object 02_USW_Ultra_Left.stl has floating regions. Please re-orient the object or enable support generation.",
       "warning_status": "EXPLAINED_MATCHED_COUPON",
       "warning_evidence": "Exact side_join_blocks/side_join_positive/side_join_cuts geometry is extracted by the male and female seam-tower coupons; both coupons slice without warnings and stay below 20 mm.",
       "bbox": {
@@ -85,25 +85,25 @@
         "y": 52.0000114440918,
         "z": 0.0
       },
-      "triangle_count": 8558,
-      "model_time_seconds": 13669.346,
-      "total_time_seconds": 14071.208,
-      "filament_grams": 91.283,
+      "triangle_count": 9346,
+      "model_time_seconds": 14419.316,
+      "total_time_seconds": 14821.18,
+      "filament_grams": 94.793,
       "bridge": {
-        "bridge_segments": 1656,
+        "bridge_segments": 1907,
         "bridge_layers": 17,
-        "max_bridge_segment_mm": 13.79,
+        "max_bridge_segment_mm": 17.52,
         "longest_bridge": {
           "layer": 205,
           "object": "unknown",
-          "length_mm": 13.785999999999994,
+          "length_mm": 17.515034969990793,
           "start_mm": [
-            19.536,
-            68.249
+            245.299,
+            55.864
           ],
           "end_mm": [
-            19.536,
-            54.463
+            232.914,
+            68.249
           ]
         }
       },
@@ -125,7 +125,7 @@
       "name": "03_USW_Ultra_Right.stl",
       "source": "PRINT_THESE\\STLs\\03_USW_Ultra_Right.stl",
       "bambu_return_code": 0,
-      "warning_message": "It seems object 03_USW_Ultra_Right.stl has floating cantilever. Please re-orient the object or enable support generation.",
+      "warning_message": "It seems object 03_USW_Ultra_Right.stl has floating regions. Please re-orient the object or enable support generation.",
       "warning_status": "EXPLAINED_MATCHED_COUPON",
       "warning_evidence": "Exact side_join_blocks/side_join_positive/side_join_cuts geometry is extracted by the male and female seam-tower coupons; both coupons slice without warnings and stay below 20 mm.",
       "bbox": {
@@ -136,25 +136,25 @@
         "y": 52.0000114440918,
         "z": 0.0
       },
-      "triangle_count": 8534,
-      "model_time_seconds": 13927.267,
-      "total_time_seconds": 14329.02,
-      "filament_grams": 91.709,
+      "triangle_count": 9306,
+      "model_time_seconds": 14665.733,
+      "total_time_seconds": 15067.486,
+      "filament_grams": 95.525,
       "bridge": {
-        "bridge_segments": 1637,
-        "bridge_layers": 21,
-        "max_bridge_segment_mm": 13.79,
+        "bridge_segments": 1961,
+        "bridge_layers": 22,
+        "max_bridge_segment_mm": 17.52,
         "longest_bridge": {
           "layer": 205,
           "object": "unknown",
-          "length_mm": 13.78600003626868,
+          "length_mm": 17.51503496999078,
           "start_mm": [
-            234.864,
-            54.646
+            9.101,
+            55.864
           ],
           "end_mm": [
-            234.865,
-            68.432
+            21.486,
+            68.249
           ]
         }
       },
@@ -187,25 +187,25 @@
         "y": 52.0000114440918,
         "z": 0.0
       },
-      "triangle_count": 9120,
-      "model_time_seconds": 15473.534,
-      "total_time_seconds": 15875.397,
-      "filament_grams": 105.446,
+      "triangle_count": 9948,
+      "model_time_seconds": 16328.717,
+      "total_time_seconds": 16730.58,
+      "filament_grams": 109.334,
       "bridge": {
-        "bridge_segments": 1671,
+        "bridge_segments": 1921,
         "bridge_layers": 18,
-        "max_bridge_segment_mm": 13.79,
+        "max_bridge_segment_mm": 17.52,
         "longest_bridge": {
           "layer": 205,
           "object": "unknown",
-          "length_mm": 13.785999999999994,
+          "length_mm": 17.515034969990793,
           "start_mm": [
-            19.536,
-            68.249
+            245.299,
+            55.864
           ],
           "end_mm": [
-            19.536,
-            54.463
+            232.914,
+            68.249
           ]
         }
       },
@@ -238,25 +238,25 @@
         "y": 70.80000305175781,
         "z": 0.0
       },
-      "triangle_count": 3180,
-      "model_time_seconds": 3219.039,
-      "total_time_seconds": 3620.767,
-      "filament_grams": 16.413,
+      "triangle_count": 3432,
+      "model_time_seconds": 3.234,
+      "total_time_seconds": 3.635,
+      "filament_grams": 15.122,
       "bridge": {
-        "bridge_segments": 370,
-        "bridge_layers": 1,
-        "max_bridge_segment_mm": 6.37,
+        "bridge_segments": 442,
+        "bridge_layers": 2,
+        "max_bridge_segment_mm": 6.39,
         "longest_bridge": {
           "layer": 13,
           "object": "unknown",
-          "length_mm": 6.370010361059094,
+          "length_mm": 6.389340889324968,
           "start_mm": [
-            128.008,
-            101.427
+            139.014,
+            159.427
           ],
           "end_mm": [
-            123.454,
-            96.973
+            134.433,
+            154.973
           ]
         }
       },
@@ -289,25 +289,25 @@
         "y": 70.80000305175781,
         "z": 0.0
       },
-      "triangle_count": 3180,
-      "model_time_seconds": 3214.504,
-      "total_time_seconds": 3616.232,
-      "filament_grams": 16.413,
+      "triangle_count": 3432,
+      "model_time_seconds": 3.228,
+      "total_time_seconds": 3.63,
+      "filament_grams": 15.122,
       "bridge": {
-        "bridge_segments": 370,
-        "bridge_layers": 1,
-        "max_bridge_segment_mm": 6.37,
+        "bridge_segments": 442,
+        "bridge_layers": 2,
+        "max_bridge_segment_mm": 6.39,
         "longest_bridge": {
           "layer": 13,
           "object": "unknown",
-          "length_mm": 6.370010361059094,
+          "length_mm": 6.389340889324968,
           "start_mm": [
-            123.454,
-            96.973
+            139.014,
+            159.427
           ],
           "end_mm": [
-            128.008,
-            101.427
+            134.433,
+            154.973
           ]
         }
       },
@@ -334,31 +334,31 @@
       "warning_evidence": "",
       "bbox": {
         "depth": 30.000001907348633,
-        "height": 6.0,
+        "height": 113.4000015258789,
         "width": 64.5,
         "x": 95.75,
         "y": 113.00000762939453,
         "z": 0.0
       },
-      "triangle_count": 460,
-      "model_time_seconds": 1229.426,
-      "total_time_seconds": 1631.292,
-      "filament_grams": 7.457,
+      "triangle_count": 452,
+      "model_time_seconds": 3554,
+      "total_time_seconds": 3931,
+      "filament_grams": 9.86,
       "bridge": {
-        "bridge_segments": 585,
-        "bridge_layers": 1,
-        "max_bridge_segment_mm": 12.89,
+        "bridge_segments": 355,
+        "bridge_layers": 2,
+        "max_bridge_segment_mm": 12.4,
         "longest_bridge": {
           "layer": 23,
           "object": "unknown",
-          "length_mm": 12.892671290310643,
+          "length_mm": 12.402187952131673,
           "start_mm": [
-            97.522,
-            130.521
+            156.827,
+            124.975
           ],
           "end_mm": [
-            104.704,
-            141.228
+            149.498,
+            114.97
           ]
         }
       },
@@ -368,7 +368,7 @@
         "size_mm": [
           64.5,
           30.0,
-          6.0
+          113.4
         ],
         "min_z_mm": 0.0,
         "a1_volume_ok": true
@@ -391,25 +391,25 @@
         "y": 53.0000114440918,
         "z": 0.0
       },
-      "triangle_count": 3800,
-      "model_time_seconds": 6245.649,
-      "total_time_seconds": 6647.576,
-      "filament_grams": 42.951,
+      "triangle_count": 4160,
+      "model_time_seconds": 6312.958,
+      "total_time_seconds": 6714.885,
+      "filament_grams": 43.363,
       "bridge": {
-        "bridge_segments": 688,
+        "bridge_segments": 807,
         "bridge_layers": 5,
-        "max_bridge_segment_mm": 16.76,
+        "max_bridge_segment_mm": 16.74,
         "longest_bridge": {
           "layer": 16,
           "object": "unknown",
-          "length_mm": 16.760094629804453,
+          "length_mm": 16.74337471957192,
           "start_mm": [
-            21.577,
-            55.704
+            9.123,
+            66.751
           ],
           "end_mm": [
-            9.123,
-            66.92
+            21.577,
+            55.56
           ]
         }
       },
@@ -538,16 +538,16 @@
       "warning_evidence": "",
       "bbox": {
         "depth": 38.000003814697266,
-        "height": 8.0,
+        "height": 50.0,
         "width": 70.0,
         "x": 93.0,
         "y": 109.00000762939453,
         "z": 0.0
       },
-      "triangle_count": 32,
-      "model_time_seconds": 799.344,
-      "total_time_seconds": 1201.519,
-      "filament_grams": 7.078,
+      "triangle_count": 172,
+      "model_time_seconds": 1964,
+      "total_time_seconds": 2342,
+      "filament_grams": 8.57,
       "bridge": {
         "bridge_segments": 0,
         "bridge_layers": 0,
@@ -560,7 +560,7 @@
         "size_mm": [
           70.0,
           38.0,
-          8.0
+          50.0
         ],
         "min_z_mm": 0.0,
         "a1_volume_ok": true
@@ -678,32 +678,32 @@
       "warning_status": "NONE",
       "warning_evidence": "",
       "bbox": {
-        "depth": 50.0,
+        "depth": 54.0,
         "height": 9.0,
         "width": 49.999996185302734,
         "x": 102.99999237060547,
-        "y": 103.0,
+        "y": 101.0,
         "z": 0.0
       },
-      "triangle_count": 4016,
-      "model_time_seconds": 1451.197,
-      "total_time_seconds": 1853.046,
-      "filament_grams": 8.584,
+      "triangle_count": 3944,
+      "model_time_seconds": 1572.92,
+      "total_time_seconds": 1974.774,
+      "filament_grams": 9.537,
       "bridge": {
-        "bridge_segments": 1264,
+        "bridge_segments": 1293,
         "bridge_layers": 5,
-        "max_bridge_segment_mm": 18.7,
+        "max_bridge_segment_mm": 18.84,
         "longest_bridge": {
           "layer": 5,
           "object": "unknown",
-          "length_mm": 18.697999999999993,
+          "length_mm": 18.843000000000004,
           "start_mm": [
-            113.892,
-            104.751
+            113.847,
+            124.423
           ],
           "end_mm": [
-            113.892,
-            123.449
+            113.847,
+            105.58
           ]
         }
       },
@@ -712,7 +712,7 @@
         "bodies": 1,
         "size_mm": [
           50.0,
-          50.0,
+          54.0,
           9.0
         ],
         "min_z_mm": 0.0,
@@ -730,31 +730,31 @@
       "warning_evidence": "",
       "bbox": {
         "depth": 32.000003814697266,
-        "height": 11.850000381469727,
+        "height": 9.0,
         "width": 70.0,
         "x": 93.0,
         "y": 112.00000762939453,
         "z": 0.0
       },
-      "triangle_count": 2304,
-      "model_time_seconds": 1263.385,
-      "total_time_seconds": 1665.254,
-      "filament_grams": 7.595,
+      "triangle_count": 2060,
+      "model_time_seconds": 1152.787,
+      "total_time_seconds": 1554.608,
+      "filament_grams": 7.052,
       "bridge": {
-        "bridge_segments": 241,
-        "bridge_layers": 3,
-        "max_bridge_segment_mm": 9.23,
+        "bridge_segments": 308,
+        "bridge_layers": 4,
+        "max_bridge_segment_mm": 12.58,
         "longest_bridge": {
-          "layer": 26,
+          "layer": 15,
           "object": "unknown",
-          "length_mm": 9.226039941383283,
+          "length_mm": 12.577756874737227,
           "start_mm": [
-            145.257,
-            136.283
+            149.174,
+            132.458
           ],
           "end_mm": [
-            153.45,
-            132.041
+            159.082,
+            140.206
           ]
         }
       },
@@ -764,7 +764,7 @@
         "size_mm": [
           70.0,
           32.0,
-          11.85
+          9.0
         ],
         "min_z_mm": 0.0,
         "a1_volume_ok": true
@@ -781,31 +781,31 @@
       "warning_evidence": "",
       "bbox": {
         "depth": 30.000001907348633,
-        "height": 6.0,
+        "height": 113.4000015258789,
         "width": 64.5,
         "x": 95.75,
         "y": 113.00000762939453,
         "z": 0.0
       },
-      "triangle_count": 460,
-      "model_time_seconds": 1229.426,
-      "total_time_seconds": 1631.292,
-      "filament_grams": 7.457,
+      "triangle_count": 452,
+      "model_time_seconds": 3530,
+      "total_time_seconds": 3907,
+      "filament_grams": 9.86,
       "bridge": {
-        "bridge_segments": 585,
-        "bridge_layers": 1,
-        "max_bridge_segment_mm": 12.89,
+        "bridge_segments": 355,
+        "bridge_layers": 2,
+        "max_bridge_segment_mm": 12.4,
         "longest_bridge": {
           "layer": 23,
           "object": "unknown",
-          "length_mm": 12.892671290310643,
+          "length_mm": 12.402187952131673,
           "start_mm": [
-            97.522,
-            130.521
+            156.827,
+            124.975
           ],
           "end_mm": [
-            104.704,
-            141.228
+            149.498,
+            114.97
           ]
         }
       },
@@ -815,7 +815,7 @@
         "size_mm": [
           64.5,
           30.0,
-          6.0
+          113.4
         ],
         "min_z_mm": 0.0,
         "a1_volume_ok": true
@@ -980,24 +980,24 @@
         "z": 0.0
       },
       "triangle_count": 252,
-      "model_time_seconds": 1210.826,
-      "total_time_seconds": 1612.956,
-      "filament_grams": 4.896,
+      "model_time_seconds": 1244.94,
+      "total_time_seconds": 1647.07,
+      "filament_grams": 5.057,
       "bridge": {
-        "bridge_segments": 73,
-        "bridge_layers": 4,
-        "max_bridge_segment_mm": 7.1,
+        "bridge_segments": 110,
+        "bridge_layers": 7,
+        "max_bridge_segment_mm": 7.88,
         "longest_bridge": {
-          "layer": 91,
+          "layer": 35,
           "object": "unknown",
-          "length_mm": 7.097520130299046,
+          "length_mm": 7.878821802782447,
           "start_mm": [
-            125.227,
-            123.268
+            120.773,
+            128.84
           ],
           "end_mm": [
-            120.773,
-            128.794
+            126.065,
+            123.003
           ]
         }
       },
