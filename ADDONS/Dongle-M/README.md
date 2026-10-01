@@ -78,6 +78,8 @@ The holder is intended for normal desktop orientation, not inverted transport.
 - `STL\` — four production parts plus the fit coupon.
 - `Bambu\` — isolated fit-first and production projects.
 - `renders\assembled-on-rack.png` — non-production rack context.
+- `renders\assembled-perspective.png` — labeled full-stack perspective.
+- `renders\rear-side-access.png` — labeled rear/side access perspective.
 - `renders\exploded-addon.png` — add-on-only exploded view.
 - `validation.json` — mesh, bed-volume and native-slicer results.
 - `load_check.txt` — conservative 0.5 kg at 2g screening.
