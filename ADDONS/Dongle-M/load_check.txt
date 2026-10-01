@@ -1,0 +1,7 @@
+Design load: 9.81 N (0.5 kg at 2g)
+Cap-riser root stress: 2.41 MPa
+Cap-riser safety factor vs 8 MPa interlayer allowable: 3.31
+Dovetail shear stress: 0.204 MPa
+Dovetail shear safety factor: 58.7
+Cap-roof bearing stress: 0.146 MPa
+Cap-roof bearing safety factor: 137.0

@@ -1,0 +1,136 @@
+{
+  "status": "prototype / print-ready by CAD and native-slicer gates; physical fit not yet verified",
+  "basis": "Official 169 x 32.5 x 22 mm outer envelope; connector and SMA coordinates unpublished",
+  "tools": {
+    "OpenSCAD": "2021.01",
+    "Bambu Studio": "02.08.02.61",
+    "profile": "A1 0.4 / 0.20 Standard / Generic PLA / 4 walls / 5 top / 4 bottom / 20% gyroid / supports off / brim off / skirt off"
+  },
+  "gates": {
+    "a1_volume_mm": [
+      256,
+      256,
+      256
+    ],
+    "maximum_bridge_mm": 20.0,
+    "one_intended_body_per_stl": true,
+    "on_bed": true
+  },
+  "parts": [
+    {
+      "file": "STL\\01_left_spine_cap.stl",
+      "watertight": true,
+      "intended_bodies": 1,
+      "on_bed_min_z_mm": 0.0,
+      "extents_mm": [
+        24.725,
+        56.575,
+        60.0
+      ],
+      "inside_a1_256x256x256": true,
+      "native_bambu_return_code": 0,
+      "support_enabled": false,
+      "maximum_bridge_mm": 15.92,
+      "warning": "It seems object 01_left_spine_cap.stl has floating cantilever. Please re-orient the object or enable support generation.",
+      "warning_disposition": "Expected conservative cantilever warning on the captured joint roof; measured bridge remains below the 20 mm gate.",
+      "filament_g": 9.76,
+      "estimated_seconds": 2493.5
+    },
+    {
+      "file": "STL\\02_right_spine_cap.stl",
+      "watertight": true,
+      "intended_bodies": 1,
+      "on_bed_min_z_mm": 0.0,
+      "extents_mm": [
+        24.525,
+        56.575,
+        60.0
+      ],
+      "inside_a1_256x256x256": true,
+      "native_bambu_return_code": 0,
+      "support_enabled": false,
+      "maximum_bridge_mm": 15.93,
+      "warning": "It seems object 02_right_spine_cap.stl has floating cantilever. Please re-orient the object or enable support generation.",
+      "warning_disposition": "Expected conservative cantilever warning on the captured joint roof; measured bridge remains below the 20 mm gate.",
+      "filament_g": 9.74,
+      "estimated_seconds": 2510.2
+    },
+    {
+      "file": "STL\\03_center_cradle.stl",
+      "watertight": true,
+      "intended_bodies": 1,
+      "on_bed_min_z_mm": 0.0,
+      "extents_mm": [
+        191.3,
+        37.9,
+        8.0
+      ],
+      "inside_a1_256x256x256": true,
+      "native_bambu_return_code": 0,
+      "support_enabled": false,
+      "maximum_bridge_mm": 19.32,
+      "warning": "",
+      "warning_disposition": "none",
+      "filament_g": 12.17,
+      "estimated_seconds": 1865.0
+    },
+    {
+      "file": "STL\\04_retaining_strap.stl",
+      "watertight": true,
+      "intended_bodies": 1,
+      "on_bed_min_z_mm": 0.0,
+      "extents_mm": [
+        28.05,
+        42.4,
+        8.0
+      ],
+      "inside_a1_256x256x256": true,
+      "native_bambu_return_code": 0,
+      "support_enabled": false,
+      "maximum_bridge_mm": 0,
+      "warning": "",
+      "warning_disposition": "none",
+      "filament_g": 1.84,
+      "estimated_seconds": 776.6
+    },
+    {
+      "file": "STL\\05_spine_fit_coupon.stl",
+      "watertight": true,
+      "intended_bodies": 1,
+      "on_bed_min_z_mm": 0.0,
+      "extents_mm": [
+        19.25,
+        14.4,
+        22.025
+      ],
+      "inside_a1_256x256x256": true,
+      "native_bambu_return_code": 0,
+      "support_enabled": false,
+      "maximum_bridge_mm": 15.93,
+      "warning": "",
+      "warning_disposition": "none",
+      "filament_g": 2.71,
+      "estimated_seconds": 1020.4
+    }
+  ],
+  "production_project": {
+    "file": "Bambu\\Dongle-M-production.3mf",
+    "plates": 1,
+    "objects": [
+      "01_left_spine_cap.stl",
+      "02_right_spine_cap.stl",
+      "03_center_cradle.stl",
+      "04_retaining_strap.stl"
+    ],
+    "maximum_bridge_mm": 19.32,
+    "warning": "It seems object 02_right_spine_cap.stl has floating cantilever. Please re-orient the object or enable support generation.",
+    "warning_disposition": "Expected conservative cantilever warning on cap joint roof; measured maximum remains below 20 mm.",
+    "filament_g": 33.31,
+    "estimated_seconds": 5580.6
+  },
+  "fit_project": {
+    "file": "Bambu\\Dongle-M-fit-first.3mf",
+    "plates": 1
+  },
+  "load_screen": "See load_check.txt; minimum calculated safety factor 3.31 at 0.5 kg and 2g."
+}
