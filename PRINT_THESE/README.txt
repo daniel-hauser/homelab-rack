@@ -32,6 +32,15 @@ Print its standalone 3MF instead of the old chassis object on Plate 3. Do not
 reprint either Pi drawer or the vent. The replacement changes only the outer
 Pi insertion openings from 30 mm to 35 mm.
 
+PI DRAWER 6 MM MAGNET-POCKET REPLACEMENT
+
+If nominal 6 mm magnets do not enter the printed drawer pockets, use:
+
+  REPLACEMENTS\PI-MAGNET-POCKET-6MM\
+
+This package replaces both drawers only. The chassis and vent remain unchanged.
+Use glue; do not press-fit magnets and do not drill through the insulating roof.
+
 Plate 1: UCG-Ultra module + rear spine A
 Plate 2: left USW-Ultra module + rear spine B
 Plate 3: dual-Pi chassis + final rail-guided vent cartridge

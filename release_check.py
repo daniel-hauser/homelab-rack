@@ -13,6 +13,7 @@ from zipfile import ZipFile
 
 import trimesh
 
+from magnet_replacement_check import check as check_magnet_replacement
 from replacement_check import check as check_replacement
 
 
@@ -335,9 +336,10 @@ def main() -> None:
         raise FileNotFoundError(f"Missing release files: {', '.join(missing)}")
 
     check_replacement()
+    check_magnet_replacement()
     print(
         "Release package verified: 20 printable STLs, 10 viewer copies, "
-        "pinned totals, five Bambu projects, and three license texts."
+        "pinned totals, six Bambu projects, and three license texts."
     )
 
 

@@ -92,6 +92,10 @@ pi_magnetic_assumed_screw_head_h = 1.6;
 pi_magnetic_target_gap = 0.35;
 pi_magnetic_insulating_skin = 0.30;
 pi_magnet_pocket_d = stack_magnet_d + magnet_clearance;
+pi_magnet_fit_pocket_d = 6.60;
+pi_magnet_fit_mouth_d = 7.00;
+pi_magnet_fit_leadin_h = 0.70;
+pi_magnet_fit_boss_d = 8.60;
 bay_count = 3;
 bay_width = 62.0;
 bay_gap = 4.0;
@@ -891,7 +895,10 @@ module pi_cartridge_locators() {
             cube([5, 1.5, locator_z - 1.6]);
 }
 
-module pi_cartridge_mount(mount_variant = "magnetic") {
+module pi_cartridge_mount(
+    mount_variant = "magnetic",
+    boss_d = pi_mount_boss_d
+) {
     board_x = (bay_width - pi_board[0]) / 2;
     board_y = 23;
     mount_z = 1.6;
@@ -903,7 +910,7 @@ module pi_cartridge_mount(mount_variant = "magnetic") {
     pi_mount_positions()
         translate([0, 0, mount_z])
             cylinder(
-                d = pi_mount_boss_d,
+                d = boss_d,
                 h = pi_mount_height - mount_z
             );
 
@@ -916,7 +923,10 @@ module pi_cartridge_mount(mount_variant = "magnetic") {
 }
 
 module pi_cartridge_retention_cuts(
-    mount_variant = "magnetic"
+    mount_variant = "magnetic",
+    magnet_pocket_d = pi_magnet_pocket_d,
+    magnet_mouth_d = pi_magnet_pocket_d,
+    magnet_leadin_h = 0
 ) {
     shoulder_z = pi_mount_height - pi_mount_shoulder;
     screw_head_bottom = pi_mount_height
@@ -928,11 +938,24 @@ module pi_cartridge_retention_cuts(
         if (mount_variant == "magnetic") {
             // Underside glue pocket. Hold the magnet against the printed roof
             // while epoxy cures, then fill the access recess flush if desired.
-            translate([0, 0, -0.2])
-                cylinder(
-                    d = pi_magnet_pocket_d,
-                    h = skin_bottom + 0.2
-                );
+            if (magnet_leadin_h > 0) {
+                translate([0, 0, -0.01])
+                    cylinder(
+                        d1 = magnet_mouth_d,
+                        d2 = magnet_pocket_d,
+                        h = magnet_leadin_h + 0.01
+                    );
+                translate([0, 0, magnet_leadin_h - 0.01])
+                    cylinder(
+                        d = magnet_pocket_d,
+                        h = skin_bottom - magnet_leadin_h + 0.02
+                    );
+            } else
+                translate([0, 0, -0.2])
+                    cylinder(
+                        d = magnet_pocket_d,
+                        h = skin_bottom + 0.2
+                    );
             translate([0, 0, skin_top])
                 cylinder(
                     d = pi_mount_head_clearance_d,
@@ -955,7 +978,11 @@ module pi_cartridge_retention_cuts(
 module pi_cartridge(
     label = "PI",
     installed = false,
-    mount_variant = "magnetic"
+    mount_variant = "magnetic",
+    magnet_pocket_d = pi_magnet_pocket_d,
+    magnet_mouth_d = pi_magnet_pocket_d,
+    magnet_leadin_h = 0,
+    boss_d = pi_mount_boss_d
 ) {
     tray_x = bay_clearance + 0.8;
     tray_w = bay_width - 2 * tray_x;
@@ -992,11 +1019,16 @@ module pi_cartridge(
                         3.0,
                         bay_opening_h - 2 * bay_clearance
                     ]);
-                pi_cartridge_mount(mount_variant);
+                pi_cartridge_mount(mount_variant, boss_d);
                 cartridge_service_detents();
             }
 
-            pi_cartridge_retention_cuts(mount_variant);
+            pi_cartridge_retention_cuts(
+                mount_variant,
+                magnet_pocket_d,
+                magnet_mouth_d,
+                magnet_leadin_h
+            );
             translate([
                 (bay_width - connector_w) / 2,
                 -2.6,
@@ -1015,6 +1047,18 @@ module pi_cartridge(
     else
         translate([1.25, 2.4, 0])
             geometry();
+}
+
+module pi_magnet_fit_cartridge(label = "PI") {
+    pi_cartridge(
+        label,
+        false,
+        "magnetic",
+        pi_magnet_fit_pocket_d,
+        pi_magnet_fit_mouth_d,
+        pi_magnet_fit_leadin_h,
+        pi_magnet_fit_boss_d
+    );
 }
 
 module pi_review_hardware(mount_variant = "through_floor") {
@@ -2172,6 +2216,10 @@ else if (part == "pi_cartridge_1")
     pi_cartridge("PI 1", false);
 else if (part == "pi_cartridge_2")
     pi_cartridge("PI 2", false);
+else if (part == "pi_cartridge_1_magnet_fit")
+    pi_magnet_fit_cartridge("PI 1");
+else if (part == "pi_cartridge_2_magnet_fit")
+    pi_magnet_fit_cartridge("PI 2");
 else if (part == "pi_mount_review_magnetic_stl")
     pi_cartridge("REVIEW A", false, "magnetic");
 else if (part == "pi_mount_review_mechanical_stl")

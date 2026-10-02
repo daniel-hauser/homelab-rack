@@ -41,6 +41,16 @@ top power coils. The center vent opening, existing drawers, magnetic holders,
 vent cartridge, rails, detents, and every stack/rack interface remain
 unchanged; do not reprint the drawers or vent.
 
+### Pi drawer 6 mm magnet-pocket replacement
+
+If nominal 6 mm magnets do not enter the original drawer pockets, use
+[`PRINT_THESE\REPLACEMENTS\PI-MAGNET-POCKET-6MM`](PRINT_THESE/REPLACEMENTS/PI-MAGNET-POCKET-6MM).
+These replace both Pi drawers only. Their 6.60 mm straight glue-fit bores have
+7.00 mm flared bed-face entrances to avoid elephant-foot constriction. Do not
+press-fit magnets or drill through the 0.30 mm insulating roof; glue each
+magnet against the roof after confirming polarity. The chassis and vent remain
+unchanged.
+
 | Plate | Objects |
 | --- | --- |
 | 1 | UCG-Ultra module; rear spine A |
