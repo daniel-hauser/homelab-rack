@@ -1,0 +1,28 @@
+{
+  "profile": "Bambu Studio 02.08.02.61 / A1 0.4 / 0.20 Standard / existing pinned filament profile / 4 walls / 5 top / 4 bottom / 20% gyroid / manual targeted normal supports / build-plate-only / no brim or skirt",
+  "plates": [
+    {
+      "plate": "plate_1",
+      "objects": [
+        "04_Dual_Pi_Chassis_5mm_HAT_Clearance.stl",
+        "05_Pi_Drawer_1_6mm_Magnet_Fit.stl",
+        "06_Pi_Drawer_2_6mm_Magnet_Fit.stl"
+      ],
+      "model_time": "6h 21m 15s",
+      "total_time": "6h 27m 32s",
+      "seconds": 23252,
+      "g": 143.52,
+      "m": 48.118610000000004,
+      "cm3": 115.73882,
+      "warning_message": ""
+    }
+  ],
+  "totals": {
+    "beds": 1,
+    "grams": 143.52,
+    "length_m": 48.118610000000004,
+    "volume_cm3": 115.73882,
+    "serial_seconds": 23252,
+    "serial_time": "6h27m32s"
+  }
+}

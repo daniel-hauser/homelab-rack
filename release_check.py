@@ -14,6 +14,9 @@ from zipfile import ZipFile
 import trimesh
 
 from magnet_replacement_check import check as check_magnet_replacement
+from pi_complete_single_plate_check import (
+    check as check_pi_complete_single_plate,
+)
 from replacement_check import check as check_replacement
 
 
@@ -337,9 +340,10 @@ def main() -> None:
 
     check_replacement()
     check_magnet_replacement()
+    check_pi_complete_single_plate()
     print(
         "Release package verified: 20 printable STLs, 10 viewer copies, "
-        "pinned totals, six Bambu projects, and three license texts."
+        "pinned totals, seven Bambu projects, and three license texts."
     )
 
 

@@ -51,6 +51,14 @@ press-fit magnets or drill through the 0.30 mm insulating roof; glue each
 magnet against the roof after confirming polarity. The chassis and vent remain
 unchanged.
 
+### Complete remaining Pi hardware on one plate
+
+For users who still need the corrected chassis and both corrected drawers, use
+[`PRINT_THESE\REPLACEMENTS\PI-COMPLETE-SINGLE-PLATE`](PRINT_THESE/REPLACEMENTS/PI-COMPLETE-SINGLE-PLATE).
+Its A1 project contains exactly those three objects on one plate, preserves the
+validated chassis-only front-rail supports, and excludes the already-printed
+vent.
+
 | Plate | Objects |
 | --- | --- |
 | 1 | UCG-Ultra module; rear spine A |

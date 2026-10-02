@@ -1,0 +1,86 @@
+{
+  "objects": [
+    {
+      "area": 18647.634765625,
+      "bbox": [
+        5.750000000000001,
+        10.0,
+        247.05,
+        162.0
+      ],
+      "id": 66,
+      "layer_height": 0.20000000298023224,
+      "name": "04_Dual_Pi_Chassis_5mm_HAT_Clearance.stl"
+    },
+    {
+      "area": 4897.1376953125,
+      "bbox": [
+        10.0,
+        171.60000000000002,
+        124.4,
+        233.9
+      ],
+      "id": 67,
+      "layer_height": 0.20000000298023224,
+      "name": "05_Pi_Drawer_1_6mm_Magnet_Fit.stl"
+    },
+    {
+      "area": 4897.1376953125,
+      "bbox": [
+        131.60000000000002,
+        171.60000000000002,
+        246.00000000000003,
+        233.9
+      ],
+      "id": 68,
+      "layer_height": 0.20000000298023224,
+      "name": "06_Pi_Drawer_2_6mm_Magnet_Fit.stl"
+    }
+  ],
+  "object_names": [
+    "04_Dual_Pi_Chassis_5mm_HAT_Clearance.stl",
+    "05_Pi_Drawer_1_6mm_Magnet_Fit.stl",
+    "06_Pi_Drawer_2_6mm_Magnet_Fit.stl"
+  ],
+  "pairwise_clearances": [
+    {
+      "objects": [
+        "04_Dual_Pi_Chassis_5mm_HAT_Clearance.stl",
+        "05_Pi_Drawer_1_6mm_Magnet_Fit.stl"
+      ],
+      "x_gap_mm": 0,
+      "y_gap_mm": 9.6,
+      "overlap": false
+    },
+    {
+      "objects": [
+        "04_Dual_Pi_Chassis_5mm_HAT_Clearance.stl",
+        "06_Pi_Drawer_2_6mm_Magnet_Fit.stl"
+      ],
+      "x_gap_mm": 0,
+      "y_gap_mm": 9.6,
+      "overlap": false
+    },
+    {
+      "objects": [
+        "05_Pi_Drawer_1_6mm_Magnet_Fit.stl",
+        "06_Pi_Drawer_2_6mm_Magnet_Fit.stl"
+      ],
+      "x_gap_mm": 7.2,
+      "y_gap_mm": 0,
+      "overlap": false
+    }
+  ],
+  "bed_bbox_mm": [
+    5.750000000000001,
+    10.0,
+    247.05,
+    233.9
+  ],
+  "bed_margins_mm": {
+    "left": 5.75,
+    "bottom": 10.0,
+    "right": 8.95,
+    "top": 22.1
+  }
+}

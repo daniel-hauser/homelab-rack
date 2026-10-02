@@ -41,6 +41,15 @@ If nominal 6 mm magnets do not enter the printed drawer pockets, use:
 This package replaces both drawers only. The chassis and vent remain unchanged.
 Use glue; do not press-fit magnets and do not drill through the insulating roof.
 
+PI COMPLETE SINGLE-PLATE PROJECT
+
+If the corrected chassis and both corrected drawers are still unprinted, use:
+
+  REPLACEMENTS\PI-COMPLETE-SINGLE-PLATE\
+
+This single A1 plate contains those three objects only. It excludes the vent
+and preserves targeted support only beneath the chassis's raised front rails.
+
 Plate 1: UCG-Ultra module + rear spine A
 Plate 2: left USW-Ultra module + rear spine B
 Plate 3: dual-Pi chassis + final rail-guided vent cartridge
