@@ -138,8 +138,9 @@ def main() -> None:
     args = parser.parse_args()
     args.output_dir.mkdir(parents=True, exist_ok=True)
     with ZipFile(args.project) as archive:
-        for index in range(1, 6):
-            paths = support_paths(args.gcode_dir / f"plate_{index}.gcode")
+        for gcode in sorted(args.gcode_dir.glob("plate_*.gcode")):
+            index = int(gcode.stem.split("_")[1])
+            paths = support_paths(gcode)
             if not paths:
                 continue
             plate = json.loads(

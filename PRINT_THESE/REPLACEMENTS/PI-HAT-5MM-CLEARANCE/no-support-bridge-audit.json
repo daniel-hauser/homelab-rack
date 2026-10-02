@@ -1,0 +1,33 @@
+{
+  "maximum_allowed_span_mm": 20.0,
+  "maximum_observed_span_mm": 17.52,
+  "plates": [
+    {
+      "file": "plate_1.gcode",
+      "bridge_segments": 1922,
+      "bridge_layers": 18,
+      "bridge_path_mm": 5071.43,
+      "max_bridge_segment_mm": 17.52,
+      "longest_segment": {
+        "layer": 205,
+        "object": "unknown",
+        "length_mm": 17.515034969990793,
+        "start_mm": [
+          245.299,
+          55.864
+        ],
+        "end_mm": [
+          232.914,
+          68.249
+        ]
+      },
+      "objects": {
+        "unknown": {
+          "bridge_segments": 1922,
+          "bridge_path_mm": 5071.43,
+          "max_bridge_segment_mm": 17.52
+        }
+      }
+    }
+  ]
+}

@@ -22,6 +22,16 @@ peg and magnet geometry changed, so feet from the older test plate are
 obsolete. No other test-only artifact is needed: the final rail-guided vent
 and both rear spines are already included.
 
+WAVESHARE POE M.2 HAT+ (B) REPLACEMENT
+
+If the dual-Pi chassis has not been printed, use:
+
+  REPLACEMENTS\PI-HAT-5MM-CLEARANCE\
+
+Print its standalone 3MF instead of the old chassis object on Plate 3. Do not
+reprint either Pi drawer or the vent. The replacement changes only the outer
+Pi insertion openings from 30 mm to 35 mm.
+
 Plate 1: UCG-Ultra module + rear spine A
 Plate 2: left USW-Ultra module + rear spine B
 Plate 3: dual-Pi chassis + final rail-guided vent cartridge

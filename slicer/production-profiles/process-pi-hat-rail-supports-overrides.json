@@ -1,0 +1,11 @@
+{
+  "enable_support": "1",
+  "support_type": "normal(manual)",
+  "support_on_build_plate_only": "1",
+  "support_critical_regions_only": "0",
+  "support_style": "default",
+  "support_top_z_distance": "0.2",
+  "support_bottom_z_distance": "0.2",
+  "support_interface_top_layers": "2",
+  "support_interface_bottom_layers": "0"
+}

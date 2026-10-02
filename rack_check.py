@@ -20,6 +20,16 @@ SIDE_SOCKET_AXIAL_RESERVE_MM = (
 )
 BAY_OPENING_WIDTH_MM = 62.0
 BAY_OPENING_HEIGHT_MM = 30.0
+PI_HAT_CLEARANCE_EXTRA_MM = 5.0
+PI_HAT_OPENING_HEIGHT_MM = (
+    BAY_OPENING_HEIGHT_MM + PI_HAT_CLEARANCE_EXTRA_MM
+)
+PANEL_HEIGHT_MM = 43.70
+BAY_OPENING_BOTTOM_MM = 6.0
+PI_HAT_TOP_RAIL_MM = (
+    PANEL_HEIGHT_MM - BAY_OPENING_BOTTOM_MM - PI_HAT_OPENING_HEIGHT_MM
+)
+FACE_CLEARANCE_DEPTH_MM = 34.0
 BAY_RECEIVING_CHAMFER_MM = 1.2
 BAY_FRONT_WIDTH_MM = BAY_OPENING_WIDTH_MM + 2 * BAY_RECEIVING_CHAMFER_MM
 BAY_FRONT_HEIGHT_MM = BAY_OPENING_HEIGHT_MM + 2 * BAY_RECEIVING_CHAMFER_MM
@@ -118,6 +128,9 @@ assert isclose(DESIGNED_SEAM_FACE_GAP_MM, 0.0, abs_tol=1e-9)
 assert isclose(SIDE_SOCKET_AXIAL_RESERVE_MM, 1.5, abs_tol=1e-9)
 assert isclose(BAY_FRONT_WIDTH_MM, 64.4, abs_tol=1e-9)
 assert isclose(BAY_FRONT_HEIGHT_MM, 32.4, abs_tol=1e-9)
+assert isclose(PI_HAT_OPENING_HEIGHT_MM, 35.0, abs_tol=1e-9)
+assert isclose(PI_HAT_TOP_RAIL_MM, 2.7, abs_tol=1e-9)
+assert isclose(FACE_CLEARANCE_DEPTH_MM, 34.0, abs_tol=1e-9)
 assert isclose(PI_REPLACEMENT_SCREW_DELTA_MM, 1.2, abs_tol=1e-9)
 assert isclose(
     CARTRIDGE_DETENT_SLOPE_RUN_MM,
@@ -179,6 +192,15 @@ print(
 print(
     "Pi bay retained friction opening: "
     f"{BAY_OPENING_WIDTH_MM:.1f} x {BAY_OPENING_HEIGHT_MM:.1f} mm"
+)
+print(
+    "Pi HAT replacement openings: "
+    f"{PI_HAT_OPENING_HEIGHT_MM:.1f} / "
+    f"{BAY_OPENING_HEIGHT_MM:.1f} / "
+    f"{PI_HAT_OPENING_HEIGHT_MM:.1f} mm high from "
+    f"Z={BAY_OPENING_BOTTOM_MM:.1f} mm, "
+    f"{FACE_CLEARANCE_DEPTH_MM:.1f} mm front depth, "
+    f"{PI_HAT_TOP_RAIL_MM:.1f} mm top rails"
 )
 print(
     "Pi through-floor review stack: "

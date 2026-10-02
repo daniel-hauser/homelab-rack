@@ -13,6 +13,8 @@ from zipfile import ZipFile
 
 import trimesh
 
+from replacement_check import check as check_replacement
+
 
 ROOT = Path(__file__).resolve().parent
 PRODUCTION = [
@@ -332,9 +334,10 @@ def main() -> None:
     if missing:
         raise FileNotFoundError(f"Missing release files: {', '.join(missing)}")
 
+    check_replacement()
     print(
         "Release package verified: 20 printable STLs, 10 viewer copies, "
-        "pinned totals, four Bambu projects, and three license texts."
+        "pinned totals, five Bambu projects, and three license texts."
     )
 
 

@@ -31,6 +31,16 @@ changed, so feet from the older test plate are obsolete. No other test-only
 artifact is required. The revised vent and both rear spines are already
 included as final production objects.
 
+### Waveshare PoE M.2 HAT+ (B) clearance replacement
+
+If the dual-Pi chassis has not yet been printed, use
+[`PRINT_THESE\REPLACEMENTS\PI-HAT-5MM-CLEARANCE`](PRINT_THESE/REPLACEMENTS/PI-HAT-5MM-CLEARANCE)
+instead of the `04_Dual_Pi_Chassis.stl` object on Plate 3. This isolated
+replacement raises only the two Pi openings from 30 mm to 35 mm for the HAT's
+top power coils. The center vent opening, existing drawers, magnetic holders,
+vent cartridge, rails, detents, and every stack/rack interface remain
+unchanged; do not reprint the drawers or vent.
+
 | Plate | Objects |
 | --- | --- |
 | 1 | UCG-Ultra module; rear spine A |

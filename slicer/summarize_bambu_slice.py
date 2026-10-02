@@ -98,11 +98,15 @@ def main() -> None:
         f"{total_seconds % 3600 // 60:02d}m"
         f"{total_seconds % 60:02d}s"
     )
-    support_label = (
-        "manual targeted normal supports / supports may start on model"
-        if project_settings.get("enable_support") == "1"
-        else "no support"
-    )
+    if project_settings.get("enable_support") == "1":
+        support_origin = (
+            "build-plate-only"
+            if project_settings.get("support_on_build_plate_only") == "1"
+            else "supports may start on model"
+        )
+        support_label = f"manual targeted normal supports / {support_origin}"
+    else:
+        support_label = "no support"
     report = {
         "profile": (
             "Bambu Studio 02.08.02.61 / A1 0.4 / 0.20 Standard / "
