@@ -20,6 +20,16 @@ SIDE_SOCKET_AXIAL_RESERVE_MM = (
 )
 BAY_OPENING_WIDTH_MM = 62.0
 BAY_OPENING_HEIGHT_MM = 30.0
+PI_HAT_CLEARANCE_EXTRA_MM = 5.0
+PI_HAT_OPENING_HEIGHT_MM = (
+    BAY_OPENING_HEIGHT_MM + PI_HAT_CLEARANCE_EXTRA_MM
+)
+PANEL_HEIGHT_MM = 43.70
+BAY_OPENING_BOTTOM_MM = 6.0
+PI_HAT_TOP_RAIL_MM = (
+    PANEL_HEIGHT_MM - BAY_OPENING_BOTTOM_MM - PI_HAT_OPENING_HEIGHT_MM
+)
+FACE_CLEARANCE_DEPTH_MM = 34.0
 BAY_RECEIVING_CHAMFER_MM = 1.2
 BAY_FRONT_WIDTH_MM = BAY_OPENING_WIDTH_MM + 2 * BAY_RECEIVING_CHAMFER_MM
 BAY_FRONT_HEIGHT_MM = BAY_OPENING_HEIGHT_MM + 2 * BAY_RECEIVING_CHAMFER_MM
@@ -29,6 +39,15 @@ PI_REPLACEMENT_SCREW_DELTA_MM = PI_DRAWER_SHOULDER_MM
 PI_MAGNETIC_HEAD_PROTRUSION_MM = 1.6
 PI_MAGNETIC_GAP_MM = 0.35
 PI_MAGNETIC_SKIN_MM = 0.30
+PI_MAGNET_FIT_BORE_MM = 6.60
+PI_MAGNET_FIT_MOUTH_MM = 7.00
+PI_MAGNET_FIT_FLARE_HEIGHT_MM = 0.70
+PI_MAGNET_FIT_BOSS_MM = 8.60
+PI_MAGNET_FIT_WALL_MM = (
+    PI_MAGNET_FIT_BOSS_MM - PI_MAGNET_FIT_BORE_MM
+) / 2
+PI_MAGNET_FIT_FRONT_LOCATOR_GAP_MM = 0.20
+PI_MAGNET_FIT_REAR_LOCATOR_GAP_MM = 1.20
 CARTRIDGE_DETENT_PROTRUSION_MM = 0.45
 CARTRIDGE_DETENT_POCKET_DEPTH_MM = 0.65
 CARTRIDGE_DETENT_DEPTH_RELIEF_MM = (
@@ -118,7 +137,16 @@ assert isclose(DESIGNED_SEAM_FACE_GAP_MM, 0.0, abs_tol=1e-9)
 assert isclose(SIDE_SOCKET_AXIAL_RESERVE_MM, 1.5, abs_tol=1e-9)
 assert isclose(BAY_FRONT_WIDTH_MM, 64.4, abs_tol=1e-9)
 assert isclose(BAY_FRONT_HEIGHT_MM, 32.4, abs_tol=1e-9)
+assert isclose(PI_HAT_OPENING_HEIGHT_MM, 35.0, abs_tol=1e-9)
+assert isclose(PI_HAT_TOP_RAIL_MM, 2.7, abs_tol=1e-9)
+assert isclose(FACE_CLEARANCE_DEPTH_MM, 34.0, abs_tol=1e-9)
 assert isclose(PI_REPLACEMENT_SCREW_DELTA_MM, 1.2, abs_tol=1e-9)
+assert isclose(PI_MAGNET_FIT_BORE_MM, 6.6, abs_tol=1e-9)
+assert isclose(PI_MAGNET_FIT_MOUTH_MM, 7.0, abs_tol=1e-9)
+assert isclose(PI_MAGNET_FIT_FLARE_HEIGHT_MM, 0.7, abs_tol=1e-9)
+assert isclose(PI_MAGNET_FIT_WALL_MM, 1.0, abs_tol=1e-9)
+assert PI_MAGNET_FIT_FRONT_LOCATOR_GAP_MM >= 0.2
+assert PI_MAGNET_FIT_REAR_LOCATOR_GAP_MM >= 1.0
 assert isclose(
     CARTRIDGE_DETENT_SLOPE_RUN_MM,
     CARTRIDGE_DETENT_SLOPE_RISE_MM,
@@ -181,6 +209,15 @@ print(
     f"{BAY_OPENING_WIDTH_MM:.1f} x {BAY_OPENING_HEIGHT_MM:.1f} mm"
 )
 print(
+    "Pi HAT replacement openings: "
+    f"{PI_HAT_OPENING_HEIGHT_MM:.1f} / "
+    f"{BAY_OPENING_HEIGHT_MM:.1f} / "
+    f"{PI_HAT_OPENING_HEIGHT_MM:.1f} mm high from "
+    f"Z={BAY_OPENING_BOTTOM_MM:.1f} mm, "
+    f"{FACE_CLEARANCE_DEPTH_MM:.1f} mm front depth, "
+    f"{PI_HAT_TOP_RAIL_MM:.1f} mm top rails"
+)
+print(
     "Pi through-floor review stack: "
     f"{PI_DRAWER_SHOULDER_MM:.1f} mm printed shoulder + "
     f"{PI_PCB_THICKNESS_MM:.1f} mm PCB; replacement screw must be "
@@ -191,6 +228,14 @@ print(
     f"{PI_MAGNETIC_HEAD_PROTRUSION_MM:.2f} mm assumed head protrusion, "
     f"{PI_MAGNETIC_GAP_MM:.2f} mm target gap, "
     f"{PI_MAGNETIC_SKIN_MM:.2f} mm insulating skin"
+)
+print(
+    "Pi magnet-fit replacement: "
+    f"{PI_MAGNET_FIT_BORE_MM:.2f} mm straight bore, "
+    f"{PI_MAGNET_FIT_MOUTH_MM:.2f} mm bed mouth over "
+    f"{PI_MAGNET_FIT_FLARE_HEIGHT_MM:.2f} mm, "
+    f"{PI_MAGNET_FIT_BOSS_MM:.2f} mm boss, "
+    f"{PI_MAGNET_FIT_WALL_MM:.2f} mm radial wall"
 )
 print(
     "Cartridge service detent: "

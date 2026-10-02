@@ -1,0 +1,205 @@
+{
+  "dimensions_mm": {
+    "straight_bore_diameter": 6.6,
+    "bed_face_mouth_diameter": 7.0,
+    "entrance_flare_height": 0.7,
+    "pocket_depth": 4.55,
+    "magnet": [
+      6.0,
+      2.0
+    ],
+    "insulating_skin": 0.3,
+    "target_magnetic_gap": 0.35,
+    "boss_outer_diameter": 8.6,
+    "nominal_radial_wall": 1.0,
+    "screw_head_clearance_diameter": 5.6
+  },
+  "clearance_analysis": {
+    "boss_radius_increase": 0.3,
+    "nearest_front_locator_plan_gap": 0.2,
+    "nearest_rear_locator_plan_gap": 1.2,
+    "boss_height_unchanged": 6.8,
+    "result": "The boss expands only 0.30 mm radially at the existing PCB mounting pads. It remains inside the drawer envelope, below the unchanged PCB mount plane, clear of locators, rails, detents, neighboring pockets, and chassis walls."
+  },
+  "slices": {
+    "drawer_1": {
+      "totals": {
+        "beds": 1,
+        "grams": 15.19,
+        "length_m": 5.09358,
+        "volume_cm3": 12.25151,
+        "serial_seconds": 3608,
+        "serial_time": "1h00m08s"
+      },
+      "warning_message": "",
+      "maximum_bridge_mm": 6.32
+    },
+    "drawer_2": {
+      "totals": {
+        "beds": 1,
+        "grams": 15.19,
+        "length_m": 5.09358,
+        "volume_cm3": 12.25149,
+        "serial_seconds": 3621,
+        "serial_time": "1h00m21s"
+      },
+      "warning_message": "",
+      "maximum_bridge_mm": 6.32
+    },
+    "combined": {
+      "totals": {
+        "beds": 1,
+        "grams": 30.32,
+        "length_m": 10.16542,
+        "volume_cm3": 24.4507,
+        "serial_seconds": 6474,
+        "serial_time": "1h47m54s"
+      },
+      "warning_message": "",
+      "maximum_bridge_mm": 6.32
+    }
+  },
+  "combined_project": {
+    "objects": [
+      "05_Pi_Drawer_1_6mm_Magnet_Fit.stl",
+      "06_Pi_Drawer_2_6mm_Magnet_Fit.stl"
+    ],
+    "bbox_objects": [
+      {
+        "area": 4897.13818359375,
+        "bbox": [
+          130.09998000000002,
+          70.80000000000001,
+          192.39998000000003,
+          185.20000000000002
+        ],
+        "id": 73,
+        "layer_height": 0.20000000298023224,
+        "name": "05_Pi_Drawer_1_6mm_Magnet_Fit.stl"
+      },
+      {
+        "area": 4897.13818359375,
+        "bbox": [
+          63.600030000000004,
+          70.79999000000001,
+          125.90003000000002,
+          185.19999
+        ],
+        "id": 74,
+        "layer_height": 0.20000000298023224,
+        "name": "06_Pi_Drawer_2_6mm_Magnet_Fit.stl"
+      }
+    ],
+    "supports_enabled": "0",
+    "crc_valid": true,
+    "embedded_gcode_md5_valid": true,
+    "sha256": "32755f0483f6580b6f596ef3eb76470d784f6f0c1f939ec3416048f200804013"
+  },
+  "native_reopen_reslice": {
+    "reopened_project_crc_valid": true,
+    "embedded_gcode_md5_valid": true,
+    "totals": {
+      "beds": 1,
+      "grams": 30.32,
+      "length_m": 10.165479999999999,
+      "volume_cm3": 24.450830000000003,
+      "serial_seconds": 6465,
+      "serial_time": "1h47m45s"
+    },
+    "warning_message": "",
+    "maximum_bridge_mm": 6.32,
+    "support_toolpaths": false,
+    "difference_from_release_slice": {
+      "grams": 0.0,
+      "seconds": -9,
+      "maximum_bridge_mm": 0.0
+    }
+  },
+  "replacement_hashes": {
+    "05_Pi_Drawer_1_6mm_Magnet_Fit.stl": "f8d8620ae080e8abb6807afddb5fe610690248605e3302816e0d2e5ebdd796d9",
+    "06_Pi_Drawer_2_6mm_Magnet_Fit.stl": "4c3f8aaa02c8579f0125a5ace3f0a7f1b74bc0d56e13efa3916921ccb25fa2f6",
+    "pi_magnet_pocket_6mm_section.png": "6e7559d0fc10e004d951c0d70168eb157477b2865a8a2d29a7c30f859f7d3c86"
+  },
+  "protected_hashes": {
+    "PRINT_THESE/STLs/01_UCG_Ultra.stl": {
+      "sha256": "285683acebcf1558ec7f9b099929a86e004c7bd8cb1da604708ba6a67f011c53",
+      "unchanged": true
+    },
+    "PRINT_THESE/STLs/02_USW_Ultra_Left.stl": {
+      "sha256": "d170ff259a666a326cfc8dd37e05b264912834ac23a488023032b5031e7e7c29",
+      "unchanged": true
+    },
+    "PRINT_THESE/STLs/03_USW_Ultra_Right.stl": {
+      "sha256": "a6d820ee7f390152fce467c214d1f5b25e861bb094ed32e06bbe30e26909ff85",
+      "unchanged": true
+    },
+    "PRINT_THESE/STLs/04_Dual_Pi_Chassis.stl": {
+      "sha256": "08fd7ff3386ccae4b3b88ac4285c3a5e85b7c5302bdfd340b1199e40791f42a4",
+      "unchanged": true
+    },
+    "PRINT_THESE/STLs/05_Pi_Drawer_1.stl": {
+      "sha256": "55c49cce449b605d9d9ece7d591c2a909a5cee9a78bc5e9efa26bcb8c575efb3",
+      "unchanged": true
+    },
+    "PRINT_THESE/STLs/06_Pi_Drawer_2.stl": {
+      "sha256": "b92f3a2b13bf54b023862d908b86916557379a7aaa5e19d9025a77635f92192f",
+      "unchanged": true
+    },
+    "PRINT_THESE/STLs/07_Vent_Insert.stl": {
+      "sha256": "1cfdda15ff2c9e3d9edf421483dd113ba1d133392142386c6ad1babb63f13df6",
+      "unchanged": true
+    },
+    "PRINT_THESE/homelab-rack-Bambu-Studio-5-plates-NO-TEST.3mf": {
+      "sha256": "b331e5667f108402b362110064e8334d73ac37c19ff9711615402e0f3ae45952",
+      "unchanged": true
+    },
+    "PRINT_THESE/homelab-rack-Bambu-Studio-5-plates-NO-TEST-NO-SUPPORT.3mf": {
+      "sha256": "59feb5793422088235ab3468d249bf7b7320294cbca494943d49c77d45fe89d5",
+      "unchanged": true
+    },
+    "PRINT_THESE/homelab-rack-Bambu-Studio-6-plates.3mf": {
+      "sha256": "4d211d8d3cbb81b5daf098624447622bd220b51a854fc8587bfec761f054e737",
+      "unchanged": true
+    },
+    "PRINT_THESE/REPLACEMENTS/PI-HAT-5MM-CLEARANCE/04_Dual_Pi_Chassis_5mm_HAT_Clearance.stl": {
+      "sha256": "759b33d0a4f450a061f606d94691d4a6cd5945e11bc3c48d9b70e3dd12183cc7",
+      "unchanged": true
+    },
+    "PRINT_THESE/REPLACEMENTS/PI-HAT-5MM-CLEARANCE/bridge-audit.json": {
+      "sha256": "500c5e1f2c080e677d4d599cec1399b172563d5649641d7b370809bf8a5d7c3a",
+      "unchanged": true
+    },
+    "PRINT_THESE/REPLACEMENTS/PI-HAT-5MM-CLEARANCE/homelab-rack-Dual-Pi-Chassis-5mm-HAT-Clearance.3mf": {
+      "sha256": "9094bb29cc75627325d7d7c94f37b7365854a6249794b2e64642c52a20ce2bf4",
+      "unchanged": true
+    },
+    "PRINT_THESE/REPLACEMENTS/PI-HAT-5MM-CLEARANCE/no-support-bridge-audit.json": {
+      "sha256": "342d8811a8bb4e016226fcac473ced97461f182af43acbe7dfcf973ecd5343af",
+      "unchanged": true
+    },
+    "PRINT_THESE/REPLACEMENTS/PI-HAT-5MM-CLEARANCE/no-support-estimate.json": {
+      "sha256": "6e1b88f2dd4bbd7db24a5da623a24a183a31e5d54a56ce8262ba2f4b54cd6f6e",
+      "unchanged": true
+    },
+    "PRINT_THESE/REPLACEMENTS/PI-HAT-5MM-CLEARANCE/PI_HAT_5MM_CLEARANCE_AUDIT.json": {
+      "sha256": "be30df79bbc6f423a7de2071c758003b01afd00c94bb81191fd94e6eb9641322",
+      "unchanged": true
+    },
+    "PRINT_THESE/REPLACEMENTS/PI-HAT-5MM-CLEARANCE/pi_hat_5mm_clearance_front_cutaway.png": {
+      "sha256": "008d28d65e85a416b2c4758aa2f591862bff98e97f38071ebfbe503dd6d3d796",
+      "unchanged": true
+    },
+    "PRINT_THESE/REPLACEMENTS/PI-HAT-5MM-CLEARANCE/README.txt": {
+      "sha256": "c2fe28b06f954c6b7c2b5dcdc60a038df079fc50061ce77b26a9dcb05964ccc5",
+      "unchanged": true
+    },
+    "PRINT_THESE/REPLACEMENTS/PI-HAT-5MM-CLEARANCE/slice-estimate.json": {
+      "sha256": "e215970421014f03863db75fe2fdbb5a0bc5c5f4137929b1f24935210a0f3f38",
+      "unchanged": true
+    },
+    "PRINT_THESE/REPLACEMENTS/PI-HAT-5MM-CLEARANCE/support_toolpaths.png": {
+      "sha256": "d64c5ae66770ea6d023066d7b09b8cdbc7aaceabeece1c19e2f6d7f682e84164",
+      "unchanged": true
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "segments": 3066,
+  "path_mm": 49273.94,
+  "layers": [
+    1,
+    323
+  ],
+  "bbox_mm": [
+    26.05,
+    9.76,
+    224.24,
+    17.65
+  ],
+  "regions": {
+    "left": 1708,
+    "center": 0,
+    "right": 1358
+  },
+  "settings": {
+    "enable_support": "1",
+    "support_type": "normal(manual)",
+    "support_on_build_plate_only": "1",
+    "support_top_z_distance": "0.2",
+    "support_interface_top_layers": "2"
+  },
+  "enforcers_by_object": {
+    "06_Pi_Drawer_2_6mm_Magnet_Fit.stl": [],
+    "04_Dual_Pi_Chassis_5mm_HAT_Clearance.stl": [
+      "Pi bay 1 raised top-rail support enforcer",
+      "Pi bay 2 raised top-rail support enforcer"
+    ],
+    "05_Pi_Drawer_1_6mm_Magnet_Fit.stl": []
+  },
+  "drawers_receive_support": false,
+  "removal_access": "Both support strips remain open to the front edge beneath the raised outer Pi-bay fascia rails. They are reachable from outside the empty chassis before drawer installation."
+}

@@ -1,0 +1,171 @@
+{
+  "maximum_allowed_span_mm": 20.0,
+  "maximum_observed_span_mm": 18.84,
+  "plates": [
+    {
+      "file": "plate_1.gcode",
+      "bridge_segments": 3514,
+      "bridge_layers": 20,
+      "bridge_path_mm": 13185.43,
+      "max_bridge_segment_mm": 17.51,
+      "longest_segment": {
+        "layer": 205,
+        "object": "01_UCG_Ultra.stl",
+        "length_mm": 17.51432787748363,
+        "start_mm": [
+          232.915,
+          68.249
+        ],
+        "end_mm": [
+          245.299,
+          55.864
+        ]
+      },
+      "objects": {
+        "01_UCG_Ultra.stl": {
+          "bridge_segments": 1863,
+          "bridge_path_mm": 4963.89,
+          "max_bridge_segment_mm": 17.51
+        },
+        "09_Rear_Spine_A.stl": {
+          "bridge_segments": 1651,
+          "bridge_path_mm": 8221.54,
+          "max_bridge_segment_mm": 13.08
+        }
+      }
+    },
+    {
+      "file": "plate_2.gcode",
+      "bridge_segments": 3564,
+      "bridge_layers": 20,
+      "bridge_path_mm": 13289.55,
+      "max_bridge_segment_mm": 17.51,
+      "longest_segment": {
+        "layer": 205,
+        "object": "02_USW_Ultra_Left.stl",
+        "length_mm": 17.51432787748363,
+        "start_mm": [
+          232.915,
+          68.249
+        ],
+        "end_mm": [
+          245.299,
+          55.864
+        ]
+      },
+      "objects": {
+        "02_USW_Ultra_Left.stl": {
+          "bridge_segments": 1913,
+          "bridge_path_mm": 5068.02,
+          "max_bridge_segment_mm": 17.51
+        },
+        "10_Rear_Spine_B.stl": {
+          "bridge_segments": 1651,
+          "bridge_path_mm": 8221.54,
+          "max_bridge_segment_mm": 13.08
+        }
+      }
+    },
+    {
+      "file": "plate_3.gcode",
+      "bridge_segments": 2277,
+      "bridge_layers": 20,
+      "bridge_path_mm": 6008.92,
+      "max_bridge_segment_mm": 17.51,
+      "longest_segment": {
+        "layer": 205,
+        "object": "04_Dual_Pi_Chassis.stl",
+        "length_mm": 17.51432787748363,
+        "start_mm": [
+          232.915,
+          68.249
+        ],
+        "end_mm": [
+          245.299,
+          55.864
+        ]
+      },
+      "objects": {
+        "04_Dual_Pi_Chassis.stl": {
+          "bridge_segments": 1922,
+          "bridge_path_mm": 5071.16,
+          "max_bridge_segment_mm": 17.51
+        },
+        "07_Vent_Insert.stl": {
+          "bridge_segments": 355,
+          "bridge_path_mm": 937.76,
+          "max_bridge_segment_mm": 12.4
+        }
+      }
+    },
+    {
+      "file": "plate_4.gcode",
+      "bridge_segments": 2408,
+      "bridge_layers": 24,
+      "bridge_path_mm": 6343.72,
+      "max_bridge_segment_mm": 17.52,
+      "longest_segment": {
+        "layer": 205,
+        "object": "03_USW_Ultra_Right.stl",
+        "length_mm": 17.515034969990776,
+        "start_mm": [
+          9.108,
+          88.477
+        ],
+        "end_mm": [
+          21.493,
+          100.862
+        ]
+      },
+      "objects": {
+        "03_USW_Ultra_Right.stl": {
+          "bridge_segments": 1963,
+          "bridge_path_mm": 5297.36,
+          "max_bridge_segment_mm": 17.52
+        },
+        "06_Pi_Drawer_2.stl": {
+          "bridge_segments": 445,
+          "bridge_path_mm": 1046.36,
+          "max_bridge_segment_mm": 6.33
+        }
+      }
+    },
+    {
+      "file": "plate_5.gcode",
+      "bridge_segments": 2523,
+      "bridge_layers": 8,
+      "bridge_path_mm": 9212.27,
+      "max_bridge_segment_mm": 18.84,
+      "longest_segment": {
+        "layer": 5,
+        "object": "04_Desktop_Feet_Set.stl",
+        "length_mm": 18.843000000000004,
+        "start_mm": [
+          195.847,
+          36.423
+        ],
+        "end_mm": [
+          195.847,
+          17.58
+        ]
+      },
+      "objects": {
+        "04_Desktop_Feet_Set.stl": {
+          "bridge_segments": 1278,
+          "bridge_path_mm": 5801.49,
+          "max_bridge_segment_mm": 18.84
+        },
+        "08_UK_Ultra_Top.stl": {
+          "bridge_segments": 801,
+          "bridge_path_mm": 2364.5,
+          "max_bridge_segment_mm": 16.74
+        },
+        "05_Pi_Drawer_1.stl": {
+          "bridge_segments": 444,
+          "bridge_path_mm": 1046.28,
+          "max_bridge_segment_mm": 6.33
+        }
+      }
+    }
+  ]
+}

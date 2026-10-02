@@ -1,0 +1,26 @@
+{
+  "profile": "Bambu Studio 02.08.02.61 / A1 0.4 / 0.20 Standard / existing pinned filament profile / 4 walls / 5 top / 4 bottom / 20% gyroid / no support / no brim or skirt",
+  "plates": [
+    {
+      "plate": "plate_1",
+      "objects": [
+        "04_Dual_Pi_Chassis_5mm_HAT_Clearance.stl"
+      ],
+      "model_time": "4h 30m 20s",
+      "total_time": "4h 36m 37s",
+      "seconds": 16597,
+      "g": 107.12,
+      "m": 35.91442,
+      "cm3": 86.38431,
+      "warning_message": "It seems object 04_Dual_Pi_Chassis_5mm_HAT_Clearance.stl has floating cantilever. Please re-orient the object or enable support generation."
+    }
+  ],
+  "totals": {
+    "beds": 1,
+    "grams": 107.12,
+    "length_m": 35.91442,
+    "volume_cm3": 86.38431,
+    "serial_seconds": 16597,
+    "serial_time": "4h36m37s"
+  }
+}

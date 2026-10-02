@@ -1,0 +1,38 @@
+{
+  "maximum_allowed_span_mm": 20.0,
+  "maximum_observed_span_mm": 6.32,
+  "plates": [
+    {
+      "file": "plate_1.gcode",
+      "bridge_segments": 922,
+      "bridge_layers": 2,
+      "bridge_path_mm": 2183.22,
+      "max_bridge_segment_mm": 6.32,
+      "longest_segment": {
+        "layer": 13,
+        "object": "05_Pi_Drawer_1_6mm_Magnet_Fit.stl",
+        "length_mm": 6.3215751201737875,
+        "start_mm": [
+          149.001,
+          101.427
+        ],
+        "end_mm": [
+          144.515,
+          96.973
+        ]
+      },
+      "objects": {
+        "05_Pi_Drawer_1_6mm_Magnet_Fit.stl": {
+          "bridge_segments": 461,
+          "bridge_path_mm": 1091.61,
+          "max_bridge_segment_mm": 6.32
+        },
+        "06_Pi_Drawer_2_6mm_Magnet_Fit.stl": {
+          "bridge_segments": 461,
+          "bridge_path_mm": 1091.61,
+          "max_bridge_segment_mm": 6.32
+        }
+      }
+    }
+  ]
+}

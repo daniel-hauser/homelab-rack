@@ -1,0 +1,305 @@
+{
+  "tool": "Bambu Studio CLI",
+  "version": "02.08.02.61",
+  "profile": "Bambu Studio 02.08.02.61 / A1 0.4 / 0.20 Standard / existing pinned filament profile / 4 walls / 5 top / 4 bottom / 20% gyroid / manual targeted normal supports / supports may start on model / no brim or skirt",
+  "project": "homelab-rack-Bambu-Studio-5-plates-NO-TEST.3mf",
+  "project_sha256": "b331e5667f108402b362110064e8334d73ac37c19ff9711615402e0f3ae45952",
+  "optional_no_support_project": "homelab-rack-Bambu-Studio-5-plates-NO-TEST-NO-SUPPORT.3mf",
+  "optional_no_support_sha256": "59feb5793422088235ab3468d249bf7b7320294cbca494943d49c77d45fe89d5",
+  "hard_gate": {
+    "plates": 5,
+    "objects": 11,
+    "duplicates": 0,
+    "omissions": 0,
+    "supports": "one manual support-enforcer volume on the UCG chassis only",
+    "crc_valid": true,
+    "embedded_gcodes": 5,
+    "embedded_gcode_md5_valid": true,
+    "maximum_allowed_bridge_mm": 20.0,
+    "maximum_observed_bridge_mm": 18.84,
+    "support_delta_grams": 0.88,
+    "support_delta_seconds": 383,
+    "unexpected_warnings": 0
+  },
+  "support_analysis": "The long upper paths are 17.51-17.52 mm forward seam-side corner-cap bridges, not roofs over the UCG/USW device cavities. The actual seam towers are farther rearward and remain excluded.",
+  "supported_feature": "One reachable 7 x 7 mm manual support column under the forward seam-side top cap of the UCG chassis. The support starts on the internal bottom cap because build-plate-only support cannot reach the enclosed corner-post cavity.",
+  "usw_decision": "No support is generated on either USW. Their seam-side forward cap overlaps the 34 mm-deep keystone clearance, while the opposite cap is part of the rack-ear/slot region. Supporting either would violate protected functional geometry for a 17.52 mm bridge that already passes the native bridge gate.",
+  "explicit_support_exclusions": [
+    "stack magnet pockets",
+    "peg/socket interfaces",
+    "seam keys and seam towers",
+    "rack-ear slots",
+    "device rails",
+    "keystone openings",
+    "rear-spine interfaces",
+    "inaccessible rear corner cavities"
+  ],
+  "theoretical_minimum": "Five plates: the four chassis and UK-Ultra top each exceed 241 mm x 150 mm in their validated axis-aligned bed footprint, so no pair fits within 256 mm x 256 mm.",
+  "test_artifact_review": "Only the revised desktop feet are required from TEST_FIRST because their stack peg/magnet geometry changed. The final changed vent and both rear spines are included as production objects; coupons and polarity key are not assembly parts.",
+  "plates": [
+    {
+      "plate": 1,
+      "objects": [
+        "09_Rear_Spine_A.stl",
+        "01_UCG_Ultra.stl"
+      ],
+      "bbox_objects": [
+        {
+          "area": 849.8400268554688,
+          "bbox": [
+            39.474990000000005,
+            10.99999,
+            216.52499000000003,
+            24.99999
+          ],
+          "id": 163,
+          "layer_height": 0.20000000298023224,
+          "name": "09_Rear_Spine_A.stl"
+        },
+        {
+          "area": 18647.646484375,
+          "bbox": [
+            5.74999,
+            51.999990000000004,
+            247.04999,
+            203.99999000000003
+          ],
+          "id": 164,
+          "layer_height": 0.20000000298023224,
+          "name": "01_UCG_Ultra.stl"
+        }
+      ],
+      "grams": 115.94,
+      "time": "4h 54m 43s",
+      "warning_message": "",
+      "maximum_bridge_mm": 17.51,
+      "support_toolpaths": {
+        "segments": 1209,
+        "path_mm": 5986.18,
+        "layers": [
+          17,
+          317
+        ],
+        "bbox_mm": [
+          235.31,
+          57.37,
+          243.5,
+          67.2
+        ]
+      },
+      "support_delta": {
+        "grams": 0.88,
+        "seconds": 378
+      }
+    },
+    {
+      "plate": 2,
+      "objects": [
+        "10_Rear_Spine_B.stl",
+        "02_USW_Ultra_Left.stl"
+      ],
+      "bbox_objects": [
+        {
+          "area": 849.8400268554688,
+          "bbox": [
+            39.475,
+            10.99999,
+            216.525,
+            24.99999
+          ],
+          "id": 165,
+          "layer_height": 0.20000000298023224,
+          "name": "10_Rear_Spine_B.stl"
+        },
+        {
+          "area": 18647.646484375,
+          "bbox": [
+            5.750000000000001,
+            51.999990000000004,
+            247.05,
+            203.99999000000003
+          ],
+          "id": 166,
+          "layer_height": 0.20000000298023224,
+          "name": "02_USW_Ultra_Left.stl"
+        }
+      ],
+      "grams": 103.87,
+      "time": "4h 28m 17s",
+      "warning_message": "",
+      "maximum_bridge_mm": 17.51,
+      "support_toolpaths": {
+        "segments": 0,
+        "path_mm": 0,
+        "layers": [],
+        "bbox_mm": null
+      },
+      "support_delta": {
+        "grams": 0.0,
+        "seconds": 0
+      }
+    },
+    {
+      "plate": 3,
+      "objects": [
+        "07_Vent_Insert.stl",
+        "04_Dual_Pi_Chassis.stl"
+      ],
+      "bbox_objects": [
+        {
+          "area": 1484.1199951171875,
+          "bbox": [
+            95.75000000000001,
+            2.4999900000000004,
+            160.25,
+            32.499990000000004
+          ],
+          "id": 167,
+          "layer_height": 0.20000000298023224,
+          "name": "07_Vent_Insert.stl"
+        },
+        {
+          "area": 18647.64453125,
+          "bbox": [
+            5.750000000000001,
+            51.999990000000004,
+            247.05,
+            203.99999000000003
+          ],
+          "id": 168,
+          "layer_height": 0.20000000298023224,
+          "name": "04_Dual_Pi_Chassis.stl"
+        }
+      ],
+      "grams": 119.17,
+      "time": "5h 34m 32s",
+      "warning_message": "",
+      "maximum_bridge_mm": 17.51,
+      "support_toolpaths": {
+        "segments": 0,
+        "path_mm": 0,
+        "layers": [],
+        "bbox_mm": null
+      },
+      "support_delta": {
+        "grams": 0.0,
+        "seconds": 6
+      }
+    },
+    {
+      "plate": 4,
+      "objects": [
+        "03_USW_Ultra_Right.stl",
+        "06_Pi_Drawer_2.stl"
+      ],
+      "bbox_objects": [
+        {
+          "area": 18810.091796875,
+          "bbox": [
+            7.357240000000001,
+            84.61265,
+            248.65724000000003,
+            236.61265000000003
+          ],
+          "id": 169,
+          "layer_height": 0.20000000298023224,
+          "name": "03_USW_Ultra_Right.stl"
+        },
+        {
+          "area": 4925.5693359375,
+          "bbox": [
+            70.00646,
+            19.61306,
+            184.40646,
+            81.91306
+          ],
+          "id": 170,
+          "layer_height": 0.20000000298023224,
+          "name": "06_Pi_Drawer_2.stl"
+        }
+      ],
+      "grams": 110.65,
+      "time": "5h 3m 1s",
+      "warning_message": "",
+      "maximum_bridge_mm": 17.52,
+      "support_toolpaths": {
+        "segments": 0,
+        "path_mm": 0,
+        "layers": [],
+        "bbox_mm": null
+      },
+      "support_delta": {
+        "grams": 0.0,
+        "seconds": 0
+      }
+    },
+    {
+      "plate": 5,
+      "objects": [
+        "04_Desktop_Feet_Set.stl",
+        "08_UK_Ultra_Top.stl",
+        "05_Pi_Drawer_1.stl"
+      ],
+      "bbox_objects": [
+        {
+          "area": 1390.8104248046875,
+          "bbox": [
+            185.00001,
+            13.000000000000002,
+            235.00001000000003,
+            67.0
+          ],
+          "id": 171,
+          "layer_height": 0.20000000298023224,
+          "name": "04_Desktop_Feet_Set.stl"
+        },
+        {
+          "area": 15648.9990234375,
+          "bbox": [
+            12.700000000000001,
+            86.25,
+            254.00000000000003,
+            236.25000000000003
+          ],
+          "id": 172,
+          "layer_height": 0.20000000298023224,
+          "name": "08_UK_Ultra_Top.stl"
+        },
+        {
+          "area": 4925.5693359375,
+          "bbox": [
+            2.00001,
+            20.85,
+            116.40001000000001,
+            83.15
+          ],
+          "id": 173,
+          "layer_height": 0.20000000298023224,
+          "name": "05_Pi_Drawer_1.stl"
+        }
+      ],
+      "grams": 67.95,
+      "time": "3h 12m 46s",
+      "warning_message": "",
+      "maximum_bridge_mm": 18.84,
+      "support_toolpaths": {
+        "segments": 0,
+        "path_mm": 0,
+        "layers": [],
+        "bbox_mm": null
+      },
+      "support_delta": {
+        "grams": 0.0,
+        "seconds": -1
+      }
+    }
+  ],
+  "totals": {
+    "beds": 5,
+    "grams": 517.58,
+    "length_m": 173.53468,
+    "volume_cm3": 417.39985,
+    "serial_seconds": 83599,
+    "serial_time": "23h13m19s"
+  }
+}

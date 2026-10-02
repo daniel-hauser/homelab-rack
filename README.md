@@ -12,7 +12,70 @@ vent insert, and a UK-Ultra top carrier.
 
 ![Assembled desktop homelab rack](renders/desk_preview_final.png)
 
-## Print first
+## Choose the right project
+
+### Already printed the older test-first plate
+
+Open
+[`PRINT_THESE\homelab-rack-Bambu-Studio-5-plates-NO-TEST.3mf`](PRINT_THESE/homelab-rack-Bambu-Studio-5-plates-NO-TEST.3mf)
+or double-click `PRINT_THESE\OPEN_NO_TEST_PROJECT.cmd`. This is the optimized
+production project: five A1 visits, no coupons, no polarity key, every final
+assembly object exactly once, and one deliberately small manual support.
+The optional
+[`homelab-rack-Bambu-Studio-5-plates-NO-TEST-NO-SUPPORT.3mf`](PRINT_THESE/homelab-rack-Bambu-Studio-5-plates-NO-TEST-NO-SUPPORT.3mf)
+preserves the native A/B baseline.
+
+The project deliberately includes the current
+`TEST_FIRST\04_Desktop_Feet_Set.stl`. The foot-to-stack peg and magnet geometry
+changed, so feet from the older test plate are obsolete. No other test-only
+artifact is required. The revised vent and both rear spines are already
+included as final production objects.
+
+### Waveshare PoE M.2 HAT+ (B) clearance replacement
+
+If the dual-Pi chassis has not yet been printed, use
+[`PRINT_THESE\REPLACEMENTS\PI-HAT-5MM-CLEARANCE`](PRINT_THESE/REPLACEMENTS/PI-HAT-5MM-CLEARANCE)
+instead of the `04_Dual_Pi_Chassis.stl` object on Plate 3. This isolated
+replacement raises only the two Pi openings from 30 mm to 35 mm for the HAT's
+top power coils. The center vent opening, existing drawers, magnetic holders,
+vent cartridge, rails, detents, and every stack/rack interface remain
+unchanged; do not reprint the drawers or vent.
+
+### Pi drawer 6 mm magnet-pocket replacement
+
+If nominal 6 mm magnets do not enter the original drawer pockets, use
+[`PRINT_THESE\REPLACEMENTS\PI-MAGNET-POCKET-6MM`](PRINT_THESE/REPLACEMENTS/PI-MAGNET-POCKET-6MM).
+These replace both Pi drawers only. Their 6.60 mm straight glue-fit bores have
+7.00 mm flared bed-face entrances to avoid elephant-foot constriction. Do not
+press-fit magnets or drill through the 0.30 mm insulating roof; glue each
+magnet against the roof after confirming polarity. The chassis and vent remain
+unchanged.
+
+### Complete remaining Pi hardware on one plate
+
+For users who still need the corrected chassis and both corrected drawers, use
+[`PRINT_THESE\REPLACEMENTS\PI-COMPLETE-SINGLE-PLATE`](PRINT_THESE/REPLACEMENTS/PI-COMPLETE-SINGLE-PLATE).
+Its A1 project contains exactly those three objects on one plate, preserves the
+validated chassis-only front-rail supports, and excludes the already-printed
+vent.
+
+| Plate | Objects |
+| --- | --- |
+| 1 | UCG-Ultra module; rear spine A |
+| 2 | left USW-Ultra module; rear spine B |
+| 3 | dual-Pi chassis; final rail-guided vent cartridge |
+| 4 | right USW-Ultra module; Pi drawer 2 |
+| 5 | UK-Ultra top; Pi drawer 1; revised desktop feet set |
+
+The recommended targeted-support estimate is **517.58 g**, **173.53468 m**,
+**417.39985 cm³**, and **23h13m19s** serial printing time. It adds **0.88 g**
+and **6m23s** over the no-support baseline. Five plates remain the
+geometric lower bound: the four chassis and the UK-Ultra top each have an
+axis-aligned footprint wider than 241 mm and deeper than 150 mm, so no two fit
+on one 256 × 256 mm A1 plate without overlap. Smaller parts occupy otherwise
+unused bed regions around those five unavoidable footprints.
+
+### Have not printed a test plate
 
 Use the numbered files exactly as tracked. Do not use old aliases from previous
 design revisions.
@@ -34,24 +97,47 @@ design revisions.
 
 2. Break off and mate the stack tiles, then confirm the magnet pockets,
    keystone opening, Pi bay, seam towers, and rack-ear slots fit your hardware.
-3. If the test plate succeeds, open
+3. If the test plate succeeds, open the original test-first project,
    [`PRINT_THESE\homelab-rack-Bambu-Studio-6-plates.3mf`](PRINT_THESE/homelab-rack-Bambu-Studio-6-plates.3mf)
    or double-click `PRINT_THESE\OPEN_IN_BAMBU_STUDIO.cmd`.
 4. Keep the rear spines flat on their broad faces. All tracked STLs are already
    exported in their intended print orientation.
 
-The six-plate project uses a Bambu Lab A1 with a 0.4 mm nozzle, 0.20 mm layers,
+Both projects use a Bambu Lab A1 with a 0.4 mm nozzle, 0.20 mm layers,
 four walls, five top layers, four bottom layers, 20% gyroid, no supports, no
-brim, and no skirt. The current magnetic-direction candidate estimate is
+brim, and no skirt. The original six-plate magnetic-direction estimate is
 **547.11 g**, **183.43948 m**, **441.22368 cm³**, and **24h43m51s** serial
 printing time. Loose-magnet attraction to all four assembled Pi/HAT screw
 heads has passed physical testing.
 
-Bambu Studio reports a conservative “floating cantilever” warning on the four
+Bambu Studio reports a conservative “floating cantilever/regions” warning on the four
 full-height chassis. Their maximum measured bridge is 17.52 mm. Print plate 1
 first; if both seam-tower coupons are clean, keep automatic supports disabled
 for the production chassis because generated supports obstruct functional
 pockets and fill large open areas.
+
+Native A/B slicing found no roof over the UCG or USW device cavities. The
+17.51–17.52 mm upper paths are forward seam-side corner-cap bridges; the
+seam-tower paths are shorter and farther rearward. The recommended project
+adds one reachable 7 × 7 mm manual support column beneath that cap on the UCG.
+It starts on the internal bottom cap because the
+enclosed corner-post cavity is not reachable from the build plate.
+
+The same seam-side location on each USW intersects its 34 mm-deep keystone
+clearance; the opposite cap is the rack-ear/slot region. Both USWs therefore
+remain unsupported rather than placing material in protected geometry for a
+17.52 mm bridge that already passes the native bridge gate.
+
+No support is generated around magnet pockets, peg/socket interfaces, seam
+keys or towers, rack-ear slots, device rails, keystone openings, rear-spine
+interfaces, or rear corner cavities. Support toolpath renders are under
+`renders\supports-no-test`. The maximum classified bridge remains 18.84 mm
+(the revised feet); supported chassis bridge lines remain classified as
+bridges because of the removable 0.2 mm support gap.
+
+Bambu clears the floating-region banner globally when manual support mode is
+enabled, including on plates with no support extrusion. The A/B audit therefore
+uses actual support toolpath segments—not warning disappearance—as its gate.
 
 ## Production STLs
 
@@ -253,6 +339,16 @@ python .\slicer\render_beds.py `
   .\slicer\production\desktop-strong\desktop-strong.gcode.3mf `
   .\renders\beds
 ```
+
+The separated five-plate evidence is tracked in:
+
+- `slicer\release\no-test-estimate.json`
+- `slicer\release\no-test-bridge-audit.json`
+- `slicer\release\no-test-no-support-estimate.json`
+- `slicer\release\no-test-no-support-bridge-audit.json`
+- `slicer\release\no-test-support-ab-audit.json`
+- `renders\beds-no-test`
+- `renders\supports-no-test`
 
 ## Viewer
 

@@ -1,0 +1,117 @@
+{
+  "decision": "Use two build-plate-only manual support strips beneath the raised outer-bay front rails. The no-support slice emits 61.6 mm Overhang wall paths there; the strips are open to the front and do not enter the drawers, detent pockets, guide lips, vent bay, rails, magnets, rack ears, or chassis interior.",
+  "opening_heights_mm": [
+    35.0,
+    30.0,
+    35.0
+  ],
+  "opening_bottom_z_mm": 6.0,
+  "front_clearance_depth_mm": 34.0,
+  "remaining_top_rail_mm": 2.7,
+  "top_rail_analysis": "Each raised opening leaves a 2.7 mm-high by 3.0 mm-deep front fascia rail. The no-support slice places eight 61.6 mm Overhang wall paths at its first layer, so localized support is retained. The primary load path remains the unchanged base, corner posts, rack-ear bridges, stack-feature webs, seam towers, and rear brace towers; no reinforcement or interface change is required.",
+  "interior_clearance": "The added cut passes through the full 34.0 mm front clearance depth. Mesh probes behind it find no roof or rib above the base, so the coils enter directly into the existing open interior.",
+  "baseline": {
+    "totals": {
+      "beds": 1,
+      "grams": 107.12,
+      "length_m": 35.91442,
+      "volume_cm3": 86.38431,
+      "serial_seconds": 16597,
+      "serial_time": "4h36m37s"
+    },
+    "warning_message": "It seems object 04_Dual_Pi_Chassis_5mm_HAT_Clearance.stl has floating cantilever. Please re-orient the object or enable support generation.",
+    "classified_max_bridge_mm": 17.52,
+    "overhang_walls": {
+      "segments": 1076,
+      "maximum_segment_mm": 77.518,
+      "longest_segment": {
+        "layer": 31,
+        "length_mm": 77.518,
+        "start_mm": [
+          222.675,
+          166.043
+        ],
+        "end_mm": [
+          222.675,
+          88.525
+        ]
+      },
+      "segments_over_40_mm": 18,
+      "raised_front_rail_segments": {
+        "count": 8,
+        "maximum_mm": 61.6,
+        "layers": [
+          206
+        ]
+      }
+    }
+  },
+  "targeted": {
+    "totals": {
+      "beds": 1,
+      "grams": 113.22,
+      "length_m": 37.96089,
+      "volume_cm3": 91.30664,
+      "serial_seconds": 17434,
+      "serial_time": "4h50m34s"
+    },
+    "warning_message": "",
+    "classified_max_bridge_mm": 17.52,
+    "support_toolpaths": {
+      "segments": 3066,
+      "path_mm": 49273.94,
+      "layers": [
+        1,
+        323
+      ],
+      "bbox_mm": [
+        26.05,
+        51.76,
+        224.24,
+        59.65
+      ]
+    }
+  },
+  "delta": {
+    "grams": 6.1,
+    "seconds": 837
+  },
+  "artifact_hashes": {
+    "replacement_stl_sha256": "759b33d0a4f450a061f606d94691d4a6cd5945e11bc3c48d9b70e3dd12183cc7",
+    "replacement_project_sha256": "9094bb29cc75627325d7d7c94f37b7365854a6249794b2e64642c52a20ce2bf4",
+    "protected": {
+      "PRINT_THESE/STLs/04_Dual_Pi_Chassis.stl": {
+        "sha256": "08fd7ff3386ccae4b3b88ac4285c3a5e85b7c5302bdfd340b1199e40791f42a4",
+        "unchanged": true
+      },
+      "PRINT_THESE/STLs/05_Pi_Drawer_1.stl": {
+        "sha256": "55c49cce449b605d9d9ece7d591c2a909a5cee9a78bc5e9efa26bcb8c575efb3",
+        "unchanged": true
+      },
+      "PRINT_THESE/STLs/06_Pi_Drawer_2.stl": {
+        "sha256": "b92f3a2b13bf54b023862d908b86916557379a7aaa5e19d9025a77635f92192f",
+        "unchanged": true
+      },
+      "PRINT_THESE/STLs/07_Vent_Insert.stl": {
+        "sha256": "1cfdda15ff2c9e3d9edf421483dd113ba1d133392142386c6ad1babb63f13df6",
+        "unchanged": true
+      },
+      "PRINT_THESE/homelab-rack-Bambu-Studio-5-plates-NO-TEST.3mf": {
+        "sha256": "b331e5667f108402b362110064e8334d73ac37c19ff9711615402e0f3ae45952",
+        "unchanged": true
+      },
+      "PRINT_THESE/homelab-rack-Bambu-Studio-5-plates-NO-TEST-NO-SUPPORT.3mf": {
+        "sha256": "59feb5793422088235ab3468d249bf7b7320294cbca494943d49c77d45fe89d5",
+        "unchanged": true
+      },
+      "PRINT_THESE/homelab-rack-Bambu-Studio-6-plates.3mf": {
+        "sha256": "4d211d8d3cbb81b5daf098624447622bd220b51a854fc8587bfec761f054e737",
+        "unchanged": true
+      }
+    }
+  },
+  "project_integrity": {
+    "zip_crc_valid": true,
+    "embedded_gcode_md5_valid": true
+  }
+}
